@@ -1,0 +1,78 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contact" title="Restons en contact !" />
+
+  <ContactUs
+    title="Envoyez-nous un message dès aujourd'hui !"
+    subtitle="Pour des réponses plus rapides, appelez-nous. Nos techniciens sont toujours ravis de vous aider à tout moment !"
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Nom et Prénom',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Adress mail',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+    }}
+    disclaimer={{
+      label:
+        'En soumettant ce formulaire de contact, vous reconnaissez et acceptez la collecte de vos informations personnelles.',
+    }}
+    description="Notre équipe de support répond généralement dans les 24 heures ouvrables."
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Nous sommes là pour vous aider !"
+    items={[
+      {
+        title: 'Support général',
+        description: `N'hésitez pas à discuter avec nous pour toutes les questions et demandes liées aux volets roulants. Que ce soit pour des informations sur l'installation, la réparation, le choix de modèles, ou des conseils sur leur entretien, notre équipe est là pour vous assister.`,
+      },
+      {
+        title: 'Besoin dassistance technique ',
+        description:
+          'Ne cherchez plus ! Nos techniciens qualifiés sont à votre disposition pour répondre à toutes vos interrogations concernant les volets roulants. Que ce soit pour des conseils d installation, des réparations, des informations sur les différents types de volets, ou des astuces d entretien, nous sommes là pour vous aider. N hésitez pas à nous contacter, nous sommes toujours heureux de vous assister.',
+      },
+      {
+        title: 'Disponibilité',
+        description:
+          'Chez nous, la disponibilité est une priorité. Peu importe l heure du jour ou de la nuit, nous sommes là pour répondre à vos besoins et vous fournir une assistance de qualité. Vous pouvez compter sur notre équipe dévouée à tout moment, que ce soit pour des questions urgentes, des problèmes techniques ou des conseils précieux. Votre satisfaction est notre objectif principal, et nous sommes prêts à vous accompagner en toute circonstance.',
+      },
+      {
+        title: 'Phone',
+        description: '09 72 10 17 11',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Email',
+        description: 'contact@volet-specialiste.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Location',
+        description: '2 rue des 2 avenues, 75013 Paris',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+</Layout>
