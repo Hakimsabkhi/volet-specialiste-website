@@ -30,18 +30,18 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
 <footer 'relative border-t border-gray-200 not-prose']}>
   <div class=" absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-4xl px-2 sm:px-6">
-    <div class="grid grid-cols-22 md:grid-cols-8 gap-4 gap-y-8 sm:gap-8 py-2 md:py-22">
-      <div class="col-span-22 sm:col-span-4">
+    <div class="grid grid-cols-22 md:grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-2 md:py-12">
+      <div class="col-span-12 sm:col-span-4">
         <div class="mx-auto md:ml-22 ml-5">
           <a href={getHomePermalink()}>
-            <Image src={logo} alt="logo volet specialiste" width="300" height="50" />
+            <Image src={logo} alt="logo volet specialiste" width="250" height="50" />
           </a>
         </div>
         <div class="text-xs text-muted">
           {
             secondaryLinks.map(({ text, href }) => (
               <a
-                class="text-muted hover:text-gray-700 hover:underline transition duration-250 ease-in-out mr-2 rtl:mr-0 rtl:ml-2"
+                class="text-muted hover:text-gray-700 hover:underline transition duration-250 ease-in-out ml-6 md:mr-2 rtl:mr-0 rtl:ml-2"
                 href={href}
                 set:html={text}
               />
