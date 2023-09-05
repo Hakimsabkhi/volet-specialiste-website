@@ -16,10 +16,13 @@ All commands are run from the root of the project, from a terminal:
 
 All commands are run from the root of the project, from a terminal:
 
-| Command               | Action                                             |
-| :-------------------- | :------------------------------------------------- |
-| `git add`         | Snapshots the file in preparation for versioning, adding it to the staging area.                            |
-| `git status`         | Always a good idea, this command shows you what branch you're on, what files|
-| `git push`       | Uploads all local branch commits to the remote.|
-| `git log`     | Browse and inspect the evolution of project files.|
-| `git commit -m "git commit message example"`      | This starts the commit process|
+| Command                                      | Action                                                                           |
+| :------------------------------------------- | :------------------------------------------------------------------------------- |
+| `git add`                                    | Snapshots the file in preparation for versioning, adding it to the staging area. |
+| `git status`                                 | Always a good idea, this command shows you what branch you're on, what files     |
+| `git push`                                   | Uploads all local branch commits to the remote.                                  |
+| `git log`                                    | Browse and inspect the evolution of project files.                               |
+| `git commit -m "git commit message example"` | This starts the commit process                                                   |
+| `git switch "branch name"`                   | switch to branch                                                                 |
+| `git merge -m "git merge message example"`   | switch to branch                                                                 |
+| `git branch -d "branch name"`                | delete branch                                                                    |
