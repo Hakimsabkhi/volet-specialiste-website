@@ -30,17 +30,17 @@ const seoProps: AstroSeoProps = merge(
     titleTemplate: '%s',
     canonical: canonical,
     noindex: true,
-    nofollow: true,
+    nofollow: false,
     description: undefined,
     openGraph: {
       url: canonical,
       site_name: SITE_CONFIG?.name,
       images: [],
-      locale: I18N_CONFIG?.language || 'en',
+      locale: I18N_CONFIG?.language || 'fr',
       type: 'website',
     },
     twitter: {
-      cardType: openGraph?.images?.length ? 'summary_large_image' : 'summary',
+      cardType: openGraph?.images?.length ? 'Volet specialist website' : 'Volet specialiste',
     },
   },
   {

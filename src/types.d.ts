@@ -75,6 +75,7 @@ export interface MetaDataOpenGraph {
 }
 
 export interface MetaDataTwitter {
+ /*  Title?:string; */
   handle?: string;
   site?: string;
   cardType?: string;

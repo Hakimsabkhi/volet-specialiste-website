@@ -22,9 +22,6 @@ const {
 } = Astro.props as Content;
 ---
 
-
-
-
 <WidgetWrapper
   id={id}
   isDark={isDark}
@@ -40,7 +37,7 @@ const {
       subtitle: ' sm:text-center text-xl',
     }}
   />
-  <div class="max-w-3xl md:px-4">
+  <div class="md:max-w-2xl xl:max-w-3xl md:px-8">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
       <div class="self-center">
         {content && <div class="mb-12 text-base font-sans tracking-wide" set:html={content} />}
@@ -73,10 +70,10 @@ const {
                 ) : (
                   <Image
                     class=" w-full rounded-lg bg-gray-500 shadow-lg"
-                    width={400}
-                    height={270}
-                    widths={[400, 768]}
-                    sizes="(max-width: 768px) 100vw, 432px"
+                    width={1200}
+                    height={600}
+                    widths={[600, 1200]}
+                    sizes="(max-width: 600px) 100vw, 600px"
                     layout="responsive"
                     {...(image as any)}
                   />
@@ -85,6 +82,17 @@ const {
             )
           }
         </div>
+        <!-- <div id="logo-sidebar" class=" fixed top-20 right-20 lg:right-0 xl:right-20 w-80 lg:w-60 xl:w-80 h-screen  invisible lg:visible">
+          <div class="h-full px-3 py-4 overflow-y-auto text-center bg-gray-50">
+            <p class="mt-5 mb-6 text-xl uppercase font-bold">Savoir plus:</p>
+             <ul class="space-y-2 font-medium">
+              
+                <li>
+                  <a href="/reparation-volet-roulant" class="items-center text-center text-blod p-2 text-gray-900 rounded-lg hover:bg-gray-100">Comment Réparer un Volet Roulant</a>
+                </li>
+             </ul>
+          </div>
+        </div> -->
       </div>
     </div>
   </div>

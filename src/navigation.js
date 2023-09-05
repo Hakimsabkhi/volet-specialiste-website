@@ -59,6 +59,6 @@ export const footerData = {
     { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: '#' },
   ],
   footNote: `
-    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="/"> © 2023 -Volet specialiste </a> · All rights reserved.
+    Made by <a class="text-blue-600 hover:underline " href="/"> © 2023 -Volet specialiste </a> · All rights reserved.
   `,
 };

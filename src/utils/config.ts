@@ -98,12 +98,12 @@ const getMetadata = () => {
 
   const _default = {
     title: {
-      default: siteConfig?.name || DEFAULT_SITE_NAME,
-      template: '%s',
+      default: siteConfig?.name /*  || DEFAULT_SITE_NAME, */,
+      /* template: '%s', */
     },
     description: '',
     robots: {
-      index: false,
+      index: true,
       follow: false,
     },
     openGraph: {
@@ -116,7 +116,7 @@ const getMetadata = () => {
 
 const getI18N = () => {
   const _default = {
-    language: 'en',
+    language: 'fr',
     textDirection: 'ltr',
   };
 
@@ -164,7 +164,7 @@ const getAppBlog = () => {
       isEnabled: true,
       pathname: 'tag',
       robots: {
-        index: false,
+        index: true,
         follow: true,
       },
     },

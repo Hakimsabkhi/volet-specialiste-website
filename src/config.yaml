@@ -1,6 +1,6 @@
 site:
-  name: volet-specialsite
-  site: 'https://volet-specialsite.vercel.app'
+  name: volet specialiste
+  site: 'https://volet-specialiste.vercel.app'
   base: '/'
   trailingSlash: false
 
@@ -9,16 +9,16 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: volet-specialsite
-    template: '%s — volet-specialsite'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: volet specialiste
+    template: 'volet specialiste'
+  description: "Obtenez des informations essentielles sur les volets roulants grâce à notre d'experts."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: volet-specialsite
+    site_name: volet specialiste
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/imgvoletroulant.png'
         width: 1200
         height: 628
     type: website
@@ -28,7 +28,7 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: fr
   textDirection: ltr
 
 apps:
@@ -58,7 +58,7 @@ apps:
       isEnabled: true
       pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
       robots:
-        index: false
+        index: true
 
 analytics:
   vendors:

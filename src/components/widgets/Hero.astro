@@ -13,15 +13,15 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative md:-mt-[76px] not-prose">
-  <div class="relative max-w-3xl px-4 sm:px-6">
+<section class="relative md:ml-5 md:-mt-[76px] not-prose">
+  <div class="relative md:max-w-3xl xl:max-w-4xl px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="mt-10 py-1 md:py-1">
-      <div class="pb-10 max-w-screen-lg">
+      <div class=" pb-10 max-w-screen-lg">
         {
           tagline && (
             <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
+              class="text-base text-secondary font-bold tracking-wide uppercase"
               set:html={tagline}
             />
           )
@@ -29,13 +29,13 @@ const {
         {
           title && (
             <h1
-              class="text-xl md:text-3xl font-bold leading-tighter tracking-normal mb-4 font-heading dark:text-gray-200"
+              class="text-xl md:text-3xl font-bold leading-tighter tracking-normal mb-4 font-heading"
               set:html={title}
             />
           )
         }
         <div class="max-w-3xl ">
-          {subtitle && <p class=" text-base mb-6 dark:text-gray-200" set:html={subtitle} />}
+          {subtitle && <p class=" text-base mb-6" set:html={subtitle} />}
           <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
             {
               callToAction && (
@@ -116,16 +116,16 @@ const {
     </div>
  </div>
 
-<aside id="logo-sidebar" class="fixed top-20 right-20 w-80 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-  <div class="h-full px-3 py-4 overflow-y-auto text-center bg-gray-50 dark:bg-gray-800">
-    <p class="mt-5 mb-6 text-xl  uppercase font-bold">Savoir plus:</p>
+<!-- <div id="logo-sidebar" class=" fixed top-20 right-20 lg:right-0 xl:right-20 w-80 lg:w-60 xl:w-80 h-screen  invisible lg:visible">
+  <div class="h-full px-3 py-4 overflow-y-auto text-center bg-gray-50">
+    <p class="mt-5 mb-6 text-xl uppercase font-bold">Savoir plus:</p>
      <ul class="space-y-2 font-medium">
       
         <li>
-          <a href="/reparation-volet-roulant" class=" flex items-center text-blod p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">Comment Réparer un Volet Roulant</a>
+          <a href="/reparation-volet-roulant" class="items-center text-center text-blod p-2 text-gray-900 rounded-lg hover:bg-gray-100">Comment Réparer un Volet Roulant</a>
         </li>
      </ul>
   </div>
-</aside>
+</div> -->
 </div>
 </section>

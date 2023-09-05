@@ -37,6 +37,7 @@ const metadataDefinition = () =>
 
       twitter: z
         .object({
+          Title: z.string().optional(),
           handle: z.string().optional(),
           site: z.string().optional(),
           cardType: z.string().optional(),
