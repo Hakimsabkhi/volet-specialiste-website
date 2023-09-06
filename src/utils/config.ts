@@ -99,7 +99,7 @@ const getMetadata = () => {
   const _default = {
     title: {
       default: siteConfig?.name /*  || DEFAULT_SITE_NAME, */,
-      /* template: '%s', */
+      template: '%s',
     },
     description: '',
     robots: {
