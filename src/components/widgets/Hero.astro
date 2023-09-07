@@ -1,7 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
-
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
@@ -17,7 +16,6 @@ const {
   sommaire5 = await Astro.slots.render('sommaire5'),
 } = Astro.props;
 ---
-
 <section class="relative md:ml-5 md:-mt-[76px] not-prose">
   <div class="relative md:max-w-3xl xl:max-w-4xl px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
@@ -76,8 +74,7 @@ const {
               )
             }
           </div>
-        </div>
-
+  </div>
         {content && <Fragment set:html={content} />}
       </div>
       <div>
@@ -138,17 +135,5 @@ const {
         </ul>
     </div>
  </div>
-
-<!-- <div id="logo-sidebar" class=" fixed top-20 right-20 lg:right-0 xl:right-20 w-80 lg:w-60 xl:w-80 h-screen  invisible lg:visible">
-  <div class="h-full px-3 py-4 overflow-y-auto text-center bg-gray-50">
-    <p class="mt-5 mb-6 text-xl uppercase font-bold">Savoir plus:</p>
-     <ul class="space-y-2 font-medium">
-      
-        <li>
-          <a href="/reparation-volet-roulant" class="items-center text-center text-blod p-2 text-gray-900 rounded-lg hover:bg-gray-100">Comment Réparer un Volet Roulant</a>
-        </li>
-     </ul>
-  </div>
-</div> -->
 </div>
 </section>
