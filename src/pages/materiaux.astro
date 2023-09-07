@@ -20,13 +20,17 @@ const metadata = {
     callToAction2={{ text: 'Devis Gratuit', href: '#features' }}
     image={{ src: '~/assets/images/imgvoletroulant.png', alt: 'image volet roulant' }}
   >
-    <Fragment slot="title">Obtenez des informations essentielles sur les volets roulants.</Fragment>
+    <Fragment slot="title">Les Matériaux des Volets Roulants : Bois, PVC et Aluminium.</Fragment>
     <Fragment slot="subtitle">
-      Sur notre site vous découvrez comment les volets roulants peuvent protéger votre maison contre la chaleur estivale
-      et maintenir la chaleur à l'intérieur pendant les périodes froides. Profitez également de leur capacité à
-      préserver votre intimité. Sur notre site, vous trouverez toutes les informations essentielles sur les volets
-      roulants, y compris leurs différentes options de commande et des estimations de prix.
+      Lorsque vous envisagez d'installer des volets roulants, le choix du matériau est une décision cruciale. Les volets
+      roulants sont disponibles dans une variété de matériaux, chacun ayant ses propres avantages et inconvénients.
+      Parmi les matériaux les plus couramment utilisés, nous retrouvons le bois, le PVC et l'aluminium. Dans cet
+      article, nous examinerons en détail ces trois matériaux pour vous aider à prendre une décision éclairée.
     </Fragment>
+    <Fragment slot="sommaire1">1. Le Volet Roulant en Bois : Tradition et Durabilité.</Fragment>
+    <Fragment slot="sommaire2">2. Le Volet Roulant en PVC : Léger et Facile d'Entretien.</Fragment>
+    <Fragment slot="sommaire3">3. Le Volet Roulant en Aluminium : Solidité et Résistance</Fragment>
+    <Fragment slot="sommaire4">4. Comparaison des Coûts et des Avantages</Fragment>
   </Hero>
   <Content
     id="section1"
@@ -37,33 +41,38 @@ const metadata = {
   >
     <Fragment slot="content">
       <h2 class="text-xl font-bold leading-tighter tracking-normal mb-4 font-heading">
-        Explorez les différents types de volets roulants pour trouver celui qui correspond à vos besoins.
+        Le Bois : Tradition et Durabilité.
       </h2>
-      <p>
-        Lorsqu'il s'agit des volets roulants, il existe trois types principaux, chacun étant défini par sa méthode
-        d'installation :
-        <br />
-        <br />
-        <span class="font-semibold"> 1. Volet roulant intégré:</span> Ce type de volet est fréquemment utilisé dans les
-        nouvelles constructions. Il est conçu pour être intégré discrètement dans une alcôve spécialement prévue
-        au-dessus de la fenêtre. Grâce à cette installation, le volet roulant reste invisible lorsqu'il est replié,
-        créant ainsi une esthétique épurée et harmonieuse.
-        <br />
-        <br />
-        <span class="font-semibold">2. Volet à caisson:</span> Un volet roulant à caisson est directement fixé à la
-        façadee votre maison, sans nécessiter de modification de la fenêtre existante. Il s'agit d'une solution pratique
-        et économique qui permet d'ajouter des volets roulants sans entreprendre de travaux supplémentaires sur la
-        fenêtre elle-même.
-        <br />
-        <br />
-        <span class="font-semibold">3. Volet monobloc:</span> Le volet monobloc se distingue par le fait que le caisson
-        est monté au-dessus de la fenêtre, formant ainsi un ensemble uni avec la fenêtre. Ce type de volet est souvent
-        privilégié lors de projets de rénovation complète ou de nouvelles constructions. Le terme "monobloc" provient de
-        la fusion du caisson et de la fenêtre, créant une apparence cohérente et offrant une facilité d'installation. En
-        comprenant les différentes méthodes d'installation des volets roulants, vous pouvez choisir celui qui correspond
-        le mieux à vos besoins, qu'il s'agisse d'une nouvelle construction, d'une rénovation ou d'une installation sur
-        une façade existante.
+      <p class="mb-4">
+        Le bois est un matériau traditionnel et intemporel pour les volets roulants. Il offre plusieurs avantages,
+        notamment une excellente isolation thermique et phonique. Voici un aperçu de ses caractéristiques positives et
+        de ses points à considérer :
       </p>
+      <div class="mb-4">
+        <h3 class="text-xl font-semibold mb-2">Avantages du Bois :</h3>
+        <ul class="list-disc pl-6">
+          <li>
+            Durabilité : Le bois est réputé pour sa durabilité. Avec un entretien régulier, les volets en bois peuvent
+            durer de nombreuses années.
+          </li>
+          <li>
+            Isolation Thermique : Les volets en bois offrent une isolation thermique exceptionnelle, ce qui peut
+            contribuer à réduire vos coûts de chauffage et de climatisation.
+          </li>
+          <li>
+            Isolation Phonique : Le bois est un excellent absorbant sonore, ce qui signifie qu'il peut aider à réduire
+            le bruit extérieur indésirable.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Inconvénients du Bois :</h3>
+        <p>
+          Entretien : Le bois nécessite un entretien régulier pour le protéger des intempéries, de la pourriture et des
+          insectes. Cela peut inclure la peinture ou la lasure périodique et le traitement contre les termites.
+        </p>
+        <p>Coût Initial : Les volets en bois ont tendance à avoir un coût initial plus élevé que d'autres matériaux.</p>
+      </div>
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50"></div>
@@ -78,33 +87,28 @@ const metadata = {
   >
     <Fragment slot="content">
       <h2 class="text-xl font-bold leading-tighter tracking-normal mb-4 font-heading">
-        Méthode de commande des volets roulants : Choisissez le contrôle qui vous convient le mieux !
+        Le PVC : Léger et Facile d'Entretien.
       </h2>
-      <p>
-        Contrôler vos volets roulants peut se faire de différentes manières, offrant un confort adapté à vos
-        préférences. Découvrez les différentes méthodes de commande disponibles pour les volets roulants :
-        <br />
-        <br />
-        <span class="font-semibold">1. Commande manuelle:</span> La méthode traditionnelle consiste à utiliser une
-        manivelle ou une sangle pour ouvrir et fermer les volets. Bien que simple et fiable, cette méthode peut être
-        moins pratique, surtout pour les volets situés en hauteur ou dans des endroits difficiles d'accès. <br />
-        <br />
-        <span class="font-semibold">2. Commande électrique:</span> Les volets roulants électriques sont équipés d'un
-        moteur intégré dans le caisson. Vous pouvez contrôler vos volets d'un simple geste, en appuyant sur un bouton.
-        La plupart des volets roulants électriques sont fournis avec une télécommande, vous permettant de les contrôler
-        à distance, depuis n'importe quel endroit de votre maison. <br />
-        <br />
-        <span class="font-semibold">3. Commande domotique :</span> Intégrez la commande de vos volets roulants à votre
-        système domotique pour un maximum de confort et de praticité. Vous pouvez programmer des horaires d'ouverture et
-        de fermeture automatiques, ou même régler les volets en fonction de la luminosité ou de la température. Vous
-        avez également la possibilité de commander vos volets à partir d'une application sur votre smartphone, offrant
-        une flexibilité totale.<br />
-        <br />L'intégration des volets roulants à votre système domotique présente également des avantages en termes de
-        sécurité. Vous pouvez simuler une présence en programmant l'ouverture et la fermeture automatique des volets,
-        dissuadant ainsi les intrus potentiels. Pour en savoir plus sur les avantages des volets roulants électriques,
-        consultez cet article détaillé. Choisissez la méthode de commande qui correspond à vos besoins et profitez d'un
-        contrôle pratique et confortable de vos volets roulants.
+      <p class="mb-4">
+        Le PVC est un matériau populaire pour les volets roulants en raison de sa légèreté et de son entretien facile.
+        Voici ce que vous devez savoir sur les volets en PVC :
       </p>
+      <div class="mb-4">
+        <h3 class="text-xl font-semibold mb-2">Avantages du PVC :</h3>
+        <ul class="list-disc pl-6">
+          <li>Légèreté : Les volets en PVC sont légers, ce qui facilite leur manipulation et leur installation.</li>
+          <li>Isolation Thermique : Comme le bois, le PVC offre une isolation thermique efficace.</li>
+          <li>Isolation Phonique : Les volets en PVC réduisent également les nuisances sonores de l'extérieur.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Inconvénients du PVC :</h3>
+        <p>
+          Moins Durable : Bien que le PVC soit résistant aux intempéries, il est moins durable que le bois ou
+          l'aluminium.
+        </p>
+        <p>Aspect Esthétique : Certains peuvent considérer que le PVC a un aspect moins traditionnel que le bois.</p>
+      </div>
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50"></div>
@@ -119,37 +123,27 @@ const metadata = {
   >
     <Fragment slot="content">
       <h2 class="text-xl font-bold leading-tighter tracking-normal mb-4 font-heading">
-        Quel est le coût des volets roulants ? Découvrez les facteurs qui influencent les prix.
+        L'Aluminium : Solidité et Résistance
       </h2>
-      <p>
-        Lorsque vous envisagez l'achat de volets roulants, le montant que vous dépenserez dépendra de plusieurs facteurs
-        clés :
-        <br />
-        <br />
-        <span class="font-semibold">1. Superficie totale des volets:</span> Le coût sera déterminé en fonction de la
-        surface à couvrir avec les volets roulants.<br />
-        <br />
-        <span class="font-semibold">2. Méthode de commande:</span> Si vous optez pour des volets électriques, vous aurez
-        besoin d'un caisson motorisé. Cela rendra l'installation plus complexe et donc plus coûteuse par rapport aux
-        volets manuels. <br />
-        <br />
-        <span class="font-semibold">3. Méthode d'installation:</span> Le choix entre un volet roulant intégré, un volet
-        à caisson ou un volet monobloc aura un impact sur le coût global de l'installation. <br />
-        <br />
-        <span class="font-semibold">4. Choix du matériau :</span> La plupart des particuliers choisissent des volets en
-        PVC, car ils sont solides, peu exigeants en entretien et disponibles dans différentes couleurs. Les options
-        alternatives sont l'aluminium et le bois. L'aluminium est souvent privilégié dans les applications
-        industrielles, tandis que les volets en bois sont devenus plus rares. Pour vous donner une idée des prix
-        indicatifs, un volet roulant en PVC d'une superficie de 1 m² avec une commande manuelle coûtera environ 100 €
-        (hors frais d'installation). En revanche, pour un volet roulant identique mais avec une commande électrique, le
-        prix peut atteindre 200 €.<br />
-        <br />
-         Si vous souhaitez obtenir davantage d'informations et des estimations de prix plus détaillées, vous pouvez
-        consulter notre article dédié. Pour trouver les meilleurs prix pour votre projet, il est conseillé de demander
-        des devis à plusieurs entreprises spécialisées. Grâce à notre service de demande de devis, vous pouvez
-        facilement obtenir des devis personnalisés de professionnels qualifiés et comparer leurs prix. Ce service est
-        entièrement gratuit et sans engagement.
+      <p class="mb-4">
+        L'aluminium est un matériau robuste et résistant, idéal pour les volets roulants. Voici ce qu'il faut savoir sur
+        les volets en aluminium :
       </p>
+      <div class="mb-4">
+        <h3 class="text-xl font-semibold mb-2">Avantages de l'Aluminium :</h3>
+        <ul class="list-disc pl-6">
+          <li>
+            Solidité : L'aluminium est extrêmement solide et durable, capable de résister aux intempéries et aux chocs.
+          </li>
+          <li>Isolation Thermique : Les volets en aluminium offrent une excellente isolation thermique.</li>
+          <li>Isolation Phonique : Ils contribuent également à réduire les bruits extérieurs indésirables.</li>
+          <li>Faible Entretien : L'aluminium nécessite très peu d'entretien par rapport au bois.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Inconvénients de l'Aluminium :</h3>
+        <p>Coût : Les volets en aluminium ont tendance à être plus coûteux que ceux en PVC ou en bois.</p>
+      </div>
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50"></div>
@@ -173,29 +167,59 @@ const metadata = {
   >
     <Fragment slot="content">
       <h2 class="text-xl md:text-xl font-bold leading-tighter tracking-normal mb-4 font-heading">
-        Foire aux questions sur les volets roulants : Obtenez les réponses à vos interrogations!
+        Comparaison des Coûts et des Avantages:
       </h2>
       <p>
-        Lorsque vous envisagez d'installer des volets roulants, il est tout à fait normal d'avoir de nombreuses
-        questions. Voici un aperçu des questions les plus fréquemment posées pour vous guider dans votre démarche :<br
-        /><br />
-        <span class="font-semibold">Peut-on motoriser des volets roulants existants ?</span><br /><br />Si vous possédez
-        déjà des volets roulants manuels et que vous souhaitez ajouter plus de confort à votre quotidien, il est tout à
-        fait possible de les motoriser. Un moteur de caisson peut être installé pour remplacer le mécanisme manuel. Vous
-        pourrez ainsi contrôler vos volets à l'aide d'un interrupteur ou d'une télécommande, éliminant ainsi la
-        nécessité d'utiliser une manivelle ou une sangle. Comment protéger les volets roulants ? Pour renforcer la
-        sécurité de vos volets roulants, différentes options s'offrent à vous. Vous pouvez opter pour des volets
-        roulants coupe-feu pour une protection supplémentaire contre les incendies, ou installer un système
-        anti-soulèvement pour dissuader les cambrioleurs potentiels. De plus, pour prévenir les dommages, les volets
-        roulants peuvent être équipés d'un détecteur d'obstacle. Ainsi, si le volet détecte la présence d'un objet lors
-        de sa fermeture, il s'arrête automatiquement. Qu'en est-il de l'entretien des volets roulants ? La plupart des
-        matériaux utilisés dans la construction des volets roulants nécessitent peu d'entretien. Pour préserver leur
-        aspect neuf, il est recommandé de nettoyer régulièrement les volets avec de l'eau claire et un produit de
-        nettoyage doux. Il est également conseillé de nettoyer les rails et les guides. Vous pouvez nettoyer les joints
-        en caoutchouc et les traiter avec un spray spécifique pour assurer un fonctionnement fluide des volets roulants.<br
-        /><br />Si vous recherchez des informations supplémentaires sur les volets roulants pour votre maison ou votre
-        entreprise, n'hésitez pas à faire appel à un professionnel. Un installateur expérimenté pourra vous fournir des
-        conseils personnalisés et vous garantir une installation sans faille.
+        Voici une comparaison des coûts et des avantages de chaque matériau :<br /><br />
+        <table class="min-w-full">
+          <tr class="border-b border-gray-300">
+            <td class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">Matériau</td>
+            <td class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">Avantages</td>
+            <td class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">Inconvénients</td>
+          </tr>
+          <tr class="bg-gray-100 border-b border-gray-300">
+            <td class="px-6 py-3">Bois</td>
+            <td class="px-6 py-3">
+              • Durabilité<br>
+              • Isolation thermique et phonique
+            </td>
+            <td class="px-6 py-3">
+              • Nécessite un entretien régulier<br>
+              • Coût initial plus élevé
+            </td>
+          </tr>
+          <tr class="bg-white border-b border-gray-300">
+            <td class="px-6 py-3">PVC</td>
+            <td class="px-6 py-3">
+              • Légèreté<br>
+              • Isolation thermique et phonique
+            </td>
+            <td class="px-6 py-3">
+              • Moins durable<br>
+              • Aspect esthétique
+            </td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="px-6 py-3">Aluminium</td>
+            <td class="px-6 py-3">
+              • Solidité<br>
+              • Isolation thermique et phonique<br>
+              • Faible entretien
+            </td>
+            <td class="px-6 py-3">
+              • Coût initial plus élevé
+            </td>
+          </tr>
+        </table>
+      </p>
+      <br />
+      <br />
+      <p class="mb-4">
+        En conclusion, le choix du matériau des volets roulants dépend de vos besoins, de votre budget et de vos
+        préférences esthétiques. Le bois offre une touche traditionnelle et une grande durabilité, mais nécessite un
+        entretien régulier. Le PVC est léger et facile à entretenir, mais moins durable. L'aluminium est solide,
+        résistant et nécessite peu d'entretien, mais peut être plus coûteux. Prenez le temps de réfléchir à vos
+        priorités et aux conditions locales avant de faire votre choix final.
       </p>
     </Fragment>
     <Fragment slot="bg">

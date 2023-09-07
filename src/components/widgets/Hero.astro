@@ -10,6 +10,11 @@ const {
   callToAction = await Astro.slots.render('callToAction'),
   callToAction2 = await Astro.slots.render('callToAction2'),
   image = await Astro.slots.render('image'),
+  sommaire1 = await Astro.slots.render('sommaire1'),
+  sommaire2 = await Astro.slots.render('sommaire2'),
+  sommaire3 = await Astro.slots.render('sommaire3'),
+  sommaire4 = await Astro.slots.render('sommaire4'),
+  sommaire5 = await Astro.slots.render('sommaire5'),
 } = Astro.props;
 ---
 
@@ -101,17 +106,35 @@ const {
         <p class="mt-5 ml-4 mb-6 text-xl uppercase font-bold">Sommaire:</p>
         <ul class="text-gray-500 font-sm ml-4 mb-2">
             <li class="">
-                <a href="#section1" class="hover:underline"> 1. Explorez les différents types de volets roulants</a>
+              {
+                sommaire1 && (
+                <a href="#section1" class="hover:underline" set:html={sommaire1}></a>
+                )}
             </li>
-            <li>
-                <a href="#section2" class="hover:underline">2. Méthode de commande des volets roulants</a>
+            <li class="">
+              {
+                sommaire2 && (
+                <a href="#section2" class="hover:underline" set:html={sommaire2}></a>
+                )}
             </li>
-            <li>
-              <a href="#section3" class="hover:underline">3. Quel est le coût des volets roulants ?</a>
-          </li>
-          <li>
-            <a href="#section4" class="hover:underline">4. Foire aux questions sur les volets roulants</a>
-        </li>
+            <li class="">
+              {
+                sommaire3 && (
+                <a href="#section3" class="hover:underline" set:html={sommaire3}></a>
+                )}
+            </li>
+            <li class="">
+              {
+                sommaire4 && (
+                <a href="#section4" class="hover:underline" set:html={sommaire4}></a>
+                )}
+            </li>
+            <li class="">
+              {
+                sommaire5 && (
+                <a href="#section5" class="hover:underline" set:html={sommaire5}></a>
+                )}
+            </li>
         </ul>
     </div>
  </div>
