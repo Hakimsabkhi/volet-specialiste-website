@@ -17,14 +17,10 @@ const {
   button,
   description,
 
-  id,
-  isDark = false,
-  classes = {},
-  bg = await Astro.slots.render('bg'),
 } = Astro.props as Contact;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-3xl ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper  containerClass={"max-w-3xl"}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
   {
