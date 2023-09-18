@@ -8,15 +8,16 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 ---
+
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
   <Hero
     callToAction={{
-      text: 'Applez-Nous',
-      href: '/',
+      text: 'Applez Nous',
+      href: 'tel:09 72 10 17 11',
       icon: 'tabler:download',
     }}
-    callToAction2={{ text: 'Devis Gratuit', href: '#features' }}
+    callToAction2={{ text: 'Devis Gratuit', href: '/devis-gratuit' }}
     image={{ src: '~/assets/images/imgvoletroulant.png', alt: 'les volets roulants' }}
   >
     <Fragment slot="title">Obtenez des informations essentielles sur les volets roulants.</Fragment>
@@ -161,7 +162,7 @@ const metadata = {
   <CallToAction
     callToAction={{
       text: 'Applez Nous',
-      href: '/',
+      href: 'tel:09 72 10 17 11',
     }}
   >
     <Fragment slot="title">Demandez un devis gratuite dès aujourd'hui.</Fragment>
@@ -208,7 +209,7 @@ const metadata = {
   <CallToAction
     callToAction={{
       text: 'Applez Nous',
-      href: '/',
+      href: 'tel:09 72 10 17 11',
     }}
   >
     <Fragment slot="title">Demandez une devis gratuite dès aujourd'hui.</Fragment>

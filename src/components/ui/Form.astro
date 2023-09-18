@@ -1,10 +1,12 @@
 ---
 import { Form } from '~/types';
 
-const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props as Form;
+const { inputs, textarea, disclaimer, button = 'Envoyer', description = '' } = Astro.props as Form;
 ---
 
-<form>
+<form action="https://api.web3forms.com/submit" method="POST" id="form" class="needs-validation" novalidate>
+  <input type="hidden" name="access_key" value="9dc3fdae-4f70-4220-adfa-2f70ddc15def" />
+  <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   {
     inputs &&
       inputs.map(
@@ -22,6 +24,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                 id={name}
                 autocomplete={autocomplete}
                 placeholder={placeholder}
+                required
                 class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200  bg-white "
               />
             </div>
@@ -40,6 +43,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
           name="textarea"
           rows={textarea.rows ? textarea.rows : 4}
           placeholder={textarea.placeholder}
+          required
           class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 bg-white "
         />
       </div>
@@ -54,6 +58,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
             id="disclaimer"
             name="disclaimer"
             type="checkbox"
+            required
             class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200  bg-white "
           />
         </div>
@@ -83,4 +88,75 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
       </div>
     )
   }
+  <div id="result" class="mt-3 text-center"></div>
 </form>
+
+<style>
+  .invalid-feedback,
+  .empty-feedback {
+    display: none;
+  }
+
+  .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+    display: block;
+  }
+
+  .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+    display: block;
+  }
+
+  .is-invalid,
+  .was-validated :invalid {
+    border-color: #dc3545;
+  }
+</style>
+
+<script is:inline>
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    form.classList.add('was-validated');
+    if (!form.checkValidity()) {
+      form.querySelectorAll(':invalid')[0].focus();
+      return;
+    }
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.innerHTML = 'Sending...';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: json,
+    })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.classList.add('text-green-500');
+          result.innerHTML = json.message;
+        } else {
+          console.log(response);
+          result.classList.add('text-red-500');
+          result.innerHTML = json.message;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        result.innerHTML = 'Something went wrong!';
+      })
+      .then(function () {
+        form.reset();
+        form.classList.remove('was-validated');
+        setTimeout(() => {
+          result.style.display = 'none';
+        }, 5000);
+      });
+  });
+</script>

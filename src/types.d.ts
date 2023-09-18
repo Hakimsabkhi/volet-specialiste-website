@@ -75,7 +75,7 @@ export interface MetaDataOpenGraph {
 }
 
 export interface MetaDataTwitter {
- /*  Title?:string; */
+  /*  Title?:string; */
   handle?: string;
   site?: string;
   cardType?: string;
@@ -155,9 +155,13 @@ export interface Testimonial {
 }
 
 export interface Input {
+  text: string;
   type: HTMLInputTypeAttribute;
   name: string;
   label?: string;
+  label1?: string;
+  label2?: string;
+  label3?: string;
   autocomplete?: string;
   placeholder?: string;
 }
@@ -169,6 +173,10 @@ export interface Textarea {
 }
 
 export interface Disclaimer {
+  label?: string;
+}
+
+export interface question {
   label?: string;
 }
 
@@ -198,8 +206,11 @@ export interface Collapse {
 
 export interface Form {
   inputs?: Array<Input>;
+  boxinputs?: Array<Input>;
+  boxinputs2?: Array<Input>;
   textarea?: Textarea;
   disclaimer?: Disclaimer;
+  question?: question;
   button?: string;
   description?: string;
 }
