@@ -1,0 +1,195 @@
+---
+import { FormDevis } from '~/types';
+
+const { inputs, textarea, disclaimer, button = 'Envoyer', description = '' } = Astro.props as FormDevis;
+---
+
+<form action="https://api.web3forms.com/submit" method="POST" id="form" class="needs-validation" novalidate>
+  <input type="hidden" name="access_key" value="9dc3fdae-4f70-4220-adfa-2f70ddc15def" />
+  <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
+  <div id="question-container" class="mb-4">
+    <div id="question-1" class="mb-4">
+      <p class="text-lg font-semibold mb-2">Choisissez un produit:</p>
+      <label for="username" class="bloc">
+        <input type="radio" name="question1" value="Volet roulant" id="question1o1" class="mr-2" />
+         Volet roulant
+      </label>
+      <label class="block">
+        <input type="radio" name="question1" value="Rideau metallique" id="question1o2" class="mr-2" />
+         Rideau metallique
+      </label>
+      <label class="bloc">
+        <input type="radio" name="question1" value="Store banne" id="question1o3" class="mr-2" />
+         Store banne
+      </label>
+      <label class="block">
+        <input type="radio" name="question1" value="Port Garage" id="question1o4" class="mr-2" />
+         Port Garage
+      </label>
+    </div>
+    <div id="question-2" class="mb-4 hidden">
+      <p class="text-lg font-semibold mb-2">Sélectionnez le type d'intervention:</p>
+      <label class="block">
+        <input type="radio" name="question2[]" value="option1" class="mr-2" />
+         Instalation
+      </label>
+      <label class="block">
+        <input type="radio" name="question2[]" value="option2" class="mr-2" />
+         Reparation
+      </label>
+      <label class="block">
+        <input type="radio" name="question2[]" value="option3" class="mr-2" />
+         Motorisation
+      </label>
+    </div>
+    <div id="question-3" class="mb-4 hidden">
+      <p class="text-lg font-semibold mb-2">Sélectionnez le type d'intervention:</p>
+      <label class="block">
+        <input type="radio" name="question3[]" value="option1" class="mr-2" />
+         Instalation
+      </label>
+      <label class="block">
+        <input type="radio" name="question3[]" value="option2" class="mr-2" />
+         Reparation
+      </label>
+      <label class="block">
+        <input type="radio" name="question3[]" value="option3" class="mr-2" />
+         Motorisation
+      </label>
+      <label class="block">
+        <input type="radio" name="question3[]" value="option4" class="mr-2" />
+         Entretien
+      </label>
+    </div>
+    <div id="question-4" class="mb-4 hidden">
+      <p class="text-lg font-semibold mb-2">Sélectionnez le type d'intervention:</p>
+      <label class="block">
+        <input type="radio" name="question4[]" value="option1" class="mr-2" />
+         Instalation
+      </label>
+      <label class="block">
+        <input type="radio" name="question4[]" value="option2" class="mr-2" />
+         Reparation
+      </label>
+    </div>
+  </div>
+  <div class="mt-4">
+    <button type="submit" class="btn btn-primary cursor-pointer">
+      {button}
+    </button>
+  </div>
+  <div id="result" class="mt-3 text-center"></div>
+</form>
+
+<style>
+  .invalid-feedback,
+  .empty-feedback {
+    display: none;
+  }
+
+  .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+    display: block;
+  }
+
+  .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+    display: block;
+  }
+
+  .is-invalid,
+  .was-validated :invalid {
+    border-color: #dc3545;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const question1RadioInputs = document.querySelectorAll('input[type="radio"][name="question1"]');
+    const question2 = document.querySelector('#question-2');
+    const question3 = document.querySelector('#question-3');
+    const question4 = document.querySelector('#question-4');
+    const form = document.querySelector('form');
+    const result = document.getElementById('result');
+
+    if (form && question2 && question3 && question4 && result) {
+      // Check if form, question2, question3, and result are not null
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        form.classList.add('was-validated');
+
+        const selectedQuestion1Value = document.querySelector('input[type="radio"][name="question1"]:checked');
+        if (!selectedQuestion1Value) {
+          alert('Veuillez répondre à la question 1.');
+          return;
+        }
+
+        if (!question2.classList.contains('hidden')) {
+          const selectedQuestion2Value = document.querySelector('input[type="radio"][name="question2[]"]:checked');
+          if (!selectedQuestion2Value) {
+            alert('Veuillez répondre à la question 2.');
+            return;
+          }
+        }
+
+        if (!question3.classList.contains('hidden')) {
+          const selectedQuestion3Value = document.querySelector('input[type="radio"][name="question3[]"]:checked');
+          if (!selectedQuestion3Value) {
+            alert('Veuillez répondre à la question 3.');
+            return;
+          }
+        }
+
+        if (!question4.classList.contains('hidden')) {
+          const selectedQuestion3Value = document.querySelector('input[type="radio"][name="question4[]"]:checked');
+          if (!selectedQuestion3Value) {
+            alert('Veuillez répondre à la question 4.');
+            return;
+          }
+        }
+
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        result.innerHTML = 'Sending...';
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: json,
+        })
+          .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+              result.classList.add('text-green-500');
+              result.innerHTML = 'Message envoyé avec succès.';
+            } else {
+              console.log(response);
+              result.classList.add('text-red-500');
+              result.innerHTML = json.message;
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            result.innerHTML = 'Something went wrong!';
+          })
+          .then(function () {
+            form.reset();
+            form.classList.remove('was-validated');
+            setTimeout(() => {
+              result.style.display = 'none';
+            }, 5000);
+          });
+      });
+
+      question1RadioInputs.forEach((radio) => {
+        radio.addEventListener('change', function () {
+          question2.classList.toggle('hidden', this.id !== 'question1o1');
+          question3.classList.toggle('hidden', this.id !== 'question1o2');
+          question4.classList.toggle('hidden', this.id !== 'question1o3' && this.id !== 'question1o4');
+        });
+      });
+    }
+  });
+</script>

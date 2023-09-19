@@ -8,6 +8,7 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 ---
+
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
   <Hero
@@ -49,13 +50,16 @@ const metadata = {
         :
         <br />
         <br />
-        <span class="font-bold"> 1. Volet roulant en PVC</span><br /> 
-        <li class="ml-6"><span class="font-semibold ml"> Commande manuelle :</span> Environ 100 - 250 €/m² </li> <li class="ml-6"><span class="font-semibold ml">Commande électrique :</span> Environ 200 - 500 €/m²</li><br />
+        <span class="font-bold"> 1. Volet roulant en PVC</span><br />
+        <li class="ml-6"><span class="font-semibold ml"> Commande manuelle :</span> Environ 100 - 250 €/m²</li>
+        <li class="ml-6"><span class="font-semibold ml">Commande électrique :</span> Environ 200 - 500 €/m²</li><br />
         <span class="font-bold">2. Volet roulant en aluminium</span>
         <br />
-        <li class="ml-6"><span class="font-semibold ml"> Commande manuelle :</span> Environ 110 - 270 €/m²
-          <br /></li>
-          <li class="ml-6"><span class="font-semibold ml"> Commande électrique :</span> Environ 200 - 750 €/m²</li><br />
+        <li class="ml-6">
+          <span class="font-semibold ml"> Commande manuelle :</span> Environ 110 - 270 €/m²
+          <br />
+        </li>
+        <li class="ml-6"><span class="font-semibold ml"> Commande électrique :</span> Environ 200 - 750 €/m²</li><br />
          N'oubliez pas de prendre en compte les frais d'installation, qui sont généralement d'environ 70 € par heure
         (TVA et frais de déplacement inclus). Vous pouvez également demander des devis personnalisés et gratuits via
         notre page de devis, sans aucun engagement.
@@ -79,24 +83,41 @@ const metadata = {
       <p>
         Il existe trois principaux types de volets roulants : le volet roulant intégré, le volet roulant à caisson et le
         volet roulant monobloc. Chacun d'entre eux présente des caractéristiques spécifiques et des prix indicatifs en
-        fonction du matériau et de la méthode de commande (TVA incluse, mais hors frais d'installation). <br /> 
-        <br /> 
-        <span class="font-bold">1. Volet Roulant Intégré :</span> Le volet roulant intégré est particulièrement élégant, car son caisson est dissimulé dans une alcôve au-dessus de la fenêtre et derrière la façade. Cette discrétion a un prix, car l'installation nécessite
-        des travaux de démolition. Il est donc recommandé de l'envisager lors de la construction de votre logement ou
-        pendant une rénovation complète.<br /><br /><span class="font-semibold">PVC</span><li class="ml-6">Manuel,avec sangle (1 m x 1 m) : Environ 90 €</li><li class="ml-6">Électrique, avec émetteur et
-          télécommande (1 m x 1 m) : Environ 480 € </li> <br /><span class="font-semibold">Aluminium</span><li class="ml-6">Manuel, avec sangle (1 m x 1 m) : Environ 160 €</li><li class="ml-6">Électrique,
-            avec émetteur et télécommande (1 m x 1 m) : Environ 730 €</li><br /><span class="font-semibold">2. Volet Roulant à Caisson :</span> Les volets roulants à
-        caisson sont plus simples à installer, car ils se montent directement sur la façade avec un caisson. Ils
-        conviennent parfaitement aux maisons en rénovation, car aucune démolition n'est nécessaire. Cependant, gardez à
-        l'esprit que le caisson est visible sur la façade, ce qui peut être considéré comme un inconvénient esthétique.
-        <br /><br /><span class="font-semibold">PVC</span><li class="ml-6"> Manuel, avec sangle (1 m x 1 m) : Environ 150 € </li><li class="ml-6">Électrique, avec émetteur et télécommande (1 m x 1 m) :Environ 400 €</li><li class="ml-6">Aluminium Manuel, avec sangle (1 m x 1 m) : Environ 200 €</li><li class="ml-6"> Électrique, avec émetteur et
-        télécommande (1 m x 1 m) : Environ 500 €</li><br /><span class="font-semibold">3. Volet Roulant Monobloc:</span>Dans le cas d'un volet roulant monobloc, le
-        caisson est monté du côté intérieur de la maison, donnant ainsi l'apparence d'une uniformité vue de l'extérieur.
-        Ces volets offrent également une bonne isolation, car ils sont fixés sur les fenêtres. Comme pour les volets
-        intégrés, l'installation nécessite des travaux de démolition, ce qui les rend plus adaptés aux nouvelles
-        constructions.<br /><br /><span class="font-semibold">PVC</span><li class="ml-6">Manuel, avec sangle (1 m x 1 m) : Environ 250 €</li><li class="ml-6">Électrique, avec émetteur et télécommande (1
-        m x 1 m) : Environ 450 € </li> <br /><span class="font-semibold">Aluminium</span><li class="ml-6"> Manuel, avec sangle (1 m x 1 m) : Environ 220 €</li><li class="ml-6">Électrique, avec émetteur et
-        télécommande (1 m x 1 m) : Environ 600 €</li>
+        fonction du matériau et de la méthode de commande (TVA incluse, mais hors frais d'installation). <br />
+        <br />
+        <span class="font-bold">1. Volet Roulant Intégré :</span> Le volet roulant intégré est particulièrement élégant,
+        car son caisson est dissimulé dans une alcôve au-dessus de la fenêtre et derrière la façade. Cette discrétion a
+        un prix, car l'installation nécessite des travaux de démolition. Il est donc recommandé de l'envisager lors de
+        la construction de votre logement ou pendant une rénovation complète.<br /><br /><span class="font-semibold"
+          >PVC</span
+        ><li class="ml-6">Manuel,avec sangle (1 m x 1 m) : Environ 90 €</li><li class="ml-6">
+          Électrique, avec émetteur et télécommande (1 m x 1 m) : Environ 480 €
+        </li>
+        <br /><span class="font-semibold">Aluminium</span><li class="ml-6">
+          Manuel, avec sangle (1 m x 1 m) : Environ 160 €
+        </li><li class="ml-6">Électrique, avec émetteur et télécommande (1 m x 1 m) : Environ 730 €</li><br /><span
+          class="font-semibold">2. Volet Roulant à Caisson :</span
+        > Les volets roulants à caisson sont plus simples à installer, car ils se montent directement sur la façade avec
+        un caisson. Ils conviennent parfaitement aux maisons en rénovation, car aucune démolition n'est nécessaire.
+        Cependant, gardez à l'esprit que le caisson est visible sur la façade, ce qui peut être considéré comme un
+        inconvénient esthétique.
+        <br /><br /><span class="font-semibold">PVC</span><li class="ml-6">
+          Manuel, avec sangle (1 m x 1 m) : Environ 150 €
+        </li><li class="ml-6">Électrique, avec émetteur et télécommande (1 m x 1 m) :Environ 400 €</li><li class="ml-6">
+          Aluminium Manuel, avec sangle (1 m x 1 m) : Environ 200 €
+        </li><li class="ml-6">Électrique, avec émetteur et télécommande (1 m x 1 m) : Environ 500 €</li><br /><span
+          class="font-semibold">3. Volet Roulant Monobloc:</span
+        >Dans le cas d'un volet roulant monobloc, le caisson est monté du côté intérieur de la maison, donnant ainsi
+        l'apparence d'une uniformité vue de l'extérieur. Ces volets offrent également une bonne isolation, car ils sont
+        fixés sur les fenêtres. Comme pour les volets intégrés, l'installation nécessite des travaux de démolition, ce
+        qui les rend plus adaptés aux nouvelles constructions.<br /><br /><span class="font-semibold">PVC</span><li
+          class="ml-6"
+        >
+          Manuel, avec sangle (1 m x 1 m) : Environ 250 €
+        </li><li class="ml-6">Électrique, avec émetteur et télécommande (1 m x 1 m) : Environ 450 €</li>
+        <br /><span class="font-semibold">Aluminium</span><li class="ml-6">
+          Manuel, avec sangle (1 m x 1 m) : Environ 220 €
+        </li><li class="ml-6">Électrique, avec émetteur et télécommande (1 m x 1 m) : Environ 600 €</li>
       </p>
     </Fragment>
     <Fragment slot="bg">
@@ -118,9 +139,9 @@ const metadata = {
         Il est fortement recommandé de faire appel à un professionnel pour l'installation de vos volets roulants, car
         l'expérience est un atout essentiel. Une installation incorrecte pourrait entraîner des coûts considérables en
         réparations. En moyenne, un installateur professionnel facture environ 280 € pour 4 heures de travail, TVA et
-        frais de déplacement inclus.<br /><br />Lorsque vous envisagez d'installer des volets roulants, prenez le temps de comparer
-        les options en fonction de vos besoins et de votre budget. Cela vous permettra de faire un choix éclairé en
-        assurant la qualité et la sécurité de votre installation.
+        frais de déplacement inclus.<br /><br />Lorsque vous envisagez d'installer des volets roulants, prenez le temps
+        de comparer les options en fonction de vos besoins et de votre budget. Cela vous permettra de faire un choix
+        éclairé en assurant la qualité et la sécurité de votre installation.
       </p>
     </Fragment>
     <Fragment slot="bg">
@@ -130,7 +151,7 @@ const metadata = {
   <CallToAction
     callToAction={{
       text: 'Applez Nous',
-      href: 'tel:09 72 10 17 11',
+      href: 'tel:01  85 49 07 07',
     }}
   >
     <Fragment slot="title">Demandez un devis gratuite dès aujourd'hui.</Fragment>

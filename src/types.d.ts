@@ -206,8 +206,16 @@ export interface Collapse {
 
 export interface Form {
   inputs?: Array<Input>;
+  textarea?: Textarea;
+  disclaimer?: Disclaimer;
+  question?: question;
+  button?: string;
+  description?: string;
+}
+
+export interface FormDevis {
+  inputs?: Array<Input>;
   boxinputs?: Array<Input>;
-  boxinputs2?: Array<Input>;
   textarea?: Textarea;
   disclaimer?: Disclaimer;
   question?: question;
@@ -288,3 +296,6 @@ export interface Content extends Headline, Widget {
 }
 
 export interface Contact extends Headline, Form, Widget {}
+export interface Devis extends Headline, FormDevis, Widget {}
+
+

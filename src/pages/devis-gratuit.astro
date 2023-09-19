@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
+import Devis from '~/components/widgets/Devis.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
@@ -14,14 +14,30 @@ const metadata = {
 
   <HeroText title="Devis Gratuit" />
 
-  <ContactUs
+  <Devis
     title="Obtenez votre devis en quelques étapes !"
     subtitle="Veuillez remplir les informations ci-dessous et envoyez-les afin que nous puissions estimer votre projet !"
     inputs={[
       {
+        type: 'Nom',
+        name: 'Nom',
+        label: 'Nom et Prénon',
+      },
+      {
         type: 'adress',
-        name: 'name',
+        name: 'Adress',
         label: 'Adress ou emplacement de votre local',
+      },
+      {
+        type: 'Produit',
+        name: 'Produit',
+        label: 'Sur quel produit cherchez-vous à intervenir ?',
+      },
+
+      {
+        type: 'intervention',
+        name: 'intervention',
+        label: "type d'intervention",
       },
     ]}
     boxinputs={[
@@ -34,14 +50,13 @@ const metadata = {
       },
     ]}
     textarea={{
-      label: 'Decrive plus votre projet',
+      label: 'Décrivez davantage votre projet.',
     }}
     disclaimer={{
       label:
         'En soumettant ce formulaire de contact, vous reconnaissez et acceptez la collecte de vos informations personnelles.',
     }}
     description="Notre équipe de support répond généralement dans les 24 heures ouvrables."
-
   />
 
   <!-- Features2 Widget ************** -->
