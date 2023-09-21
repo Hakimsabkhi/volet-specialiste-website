@@ -3,74 +3,227 @@ import { FormDevis } from '~/types';
 
 const { inputs, textarea, disclaimer, button = 'Envoyer', description = '' } = Astro.props as FormDevis;
 ---
-
-<form action="https://api.web3forms.com/submit" method="POST" id="form" class="needs-validation" novalidate>
+<form action="https://api.web3forms.com/submit" method="POST" id="form" class="needs-validation" novalidate enctype="multipart/form-data">
+<!-- <form action="https://api.web3forms.com/submit" method="POST" id="form" class="needs-validation" novalidate> -->
   <input type="hidden" name="access_key" value="9dc3fdae-4f70-4220-adfa-2f70ddc15def" />
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   <div id="question-container" class="mb-4">
+    <div class="my-4">
+      <label for="Nom" class="text-sm font-semibold">Nom et Prenom :</label>
+      <input
+        type="text"
+        id="Nom"
+        name="Nom"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+        placeholder="Exemple: John"
+        required
+      />
+    </div>
+    <div class="my-4">
+      <label for="Adress" class="text-sm font-semibold">Adresse de domicile à intervenir :</label>
+      <input
+        type="text"
+        id="Adress"
+        name="Adress"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+        placeholder="Exemple: 23 rue du Paradis, 75004 Paris"
+        required
+      />
+    </div>
+
+    <div class="my-4">
+      <label for="phone" class="text-sm font-semibold">Phone number :</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Exemple: 01 23 45 67 89"
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+        required
+      />
+    </div>
     <div id="question-1" class="mb-4">
-      <p class="text-lg font-semibold mb-2">Choisissez un produit:</p>
-      <label for="username" class="bloc">
-        <input type="radio" name="question1" value="Volet roulant" id="question1o1" class="mr-2" />
-         Volet roulant
-      </label>
-      <label class="block">
-        <input type="radio" name="question1" value="Rideau metallique" id="question1o2" class="mr-2" />
-         Rideau metallique
-      </label>
-      <label class="bloc">
-        <input type="radio" name="question1" value="Store banne" id="question1o3" class="mr-2" />
-         Store banne
-      </label>
-      <label class="block">
-        <input type="radio" name="question1" value="Port Garage" id="question1o4" class="mr-2" />
-         Port Garage
-      </label>
+      <p class="text-sm font-semibold mb-2">Choisissez un produit:</p>
+      <div class="flex items-center mb-1">
+        <input
+          type="radio"
+          value="Volet roulant"
+          name="question1"
+          id="question1o1"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-2"
+        />
+        <label for="question1o1" class="ml-2 text-sm font-medium text-gray-900">Volet roulant</label>
+      </div>
+      <div class="flex items-center mb-1">
+        <input
+          type="radio"
+          name="question1"
+          value="Rideau metallique"
+          id="question1o2"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-2"
+        />
+        <label for="question1o2" class="ml-2 text-sm font-medium text-gray-900">Rideau metallique</label>
+      </div>
+      <div class="flex items-center mb-1">
+        <input
+          type="radio"
+          name="question1"
+          value="Store banne"
+          id="question1o3"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-2"
+        />
+        <label for="question1o3" class="ml-2 text-sm font-medium text-gray-900">Store banne</label>
+      </div>
+      <div class="flex items-center mb-1">
+        <input
+          type="radio"
+          name="question1"
+          value="Port Garage"
+          id="question1o4"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-2"
+        />
+        <label for="question1o4" class="ml-2 text-sm font-medium text-gray-900">Port Garage</label>
+      </div>
     </div>
     <div id="question-2" class="mb-4 hidden">
-      <p class="text-lg font-semibold mb-2">Sélectionnez le type d'intervention:</p>
-      <label class="block">
-        <input type="radio" name="question2[]" value="option1" class="mr-2" />
-         Instalation
-      </label>
-      <label class="block">
-        <input type="radio" name="question2[]" value="option2" class="mr-2" />
-         Reparation
-      </label>
-      <label class="block">
-        <input type="radio" name="question2[]" value="option3" class="mr-2" />
-         Motorisation
-      </label>
+      <p class="text-sm font-semibold mb-2">Sélectionnez le type d'intervention:</p>
+      <div class="flex items-center mb-1">
+        <input
+          type="radio"
+          name="question2[]"
+          value="Instalation"
+          id="question2-o1"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-2"
+        />
+        <label for="question2-o1" class="ml-2 text-sm font-medium text-gray-900">Instalation</label>
+      </div>
+      <div class="flex items-center mb-1">
+        <input
+          type="radio"
+          name="question2[]"
+          value="Reparation"
+          id="question2-o2"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-2"
+        />
+        <label for="question2-o2" class="ml-2 text-sm font-medium text-gray-900">Reparation</label>
+      </div>
+      <div class="flex items-center mb-1">
+        <input
+          type="radio"
+          name="question2[]"
+          value="Motorisation"
+          id="question2-o3"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-2"
+        />
+        <label for="question2-o3" class="ml-2 text-sm font-medium text-gray-900">Motorisation</label>
+      </div>
     </div>
     <div id="question-3" class="mb-4 hidden">
-      <p class="text-lg font-semibold mb-2">Sélectionnez le type d'intervention:</p>
-      <label class="block">
-        <input type="radio" name="question3[]" value="option1" class="mr-2" />
-         Instalation
-      </label>
-      <label class="block">
-        <input type="radio" name="question3[]" value="option2" class="mr-2" />
-         Reparation
-      </label>
-      <label class="block">
-        <input type="radio" name="question3[]" value="option3" class="mr-2" />
-         Motorisation
-      </label>
-      <label class="block">
-        <input type="radio" name="question3[]" value="option4" class="mr-2" />
-         Entretien
-      </label>
+      <p class="text-sm font-semibold mb-2">Sélectionnez le type d'intervention:</p>
+      <div class="flex items-center mb-1">
+        <input
+          type="radio"
+          name="question3[]"
+          value="Instalation"
+          id="question3-o1"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-2"
+        />
+        <label for="question3-o1" class="ml-2 text-sm font-medium text-gray-900">Instalation</label>
+      </div>
+      <div class="flex items-center mb-1">
+        <input
+          type="radio"
+          name="question3[]"
+          value="Reparation"
+          id="question3-o2"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-2"
+        />
+        <label for="question3-o2" class="ml-2 text-sm font-medium text-gray-900">Reparation</label>
+      </div>
+      <div class="flex items-center mb-1">
+        <input
+          type="radio"
+          name="question3[]"
+          value="Motorisation"
+          id="question3-o3"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-2"
+        />
+        <label for="question3-o3" class="ml-2 text-sm font-medium text-gray-900">Motorisation</label>
+      </div>
+      <div class="flex items-center mb-1">
+        <input
+          type="radio"
+          name="question3[]"
+          value="Entretien"
+          id="question3-o4"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-2"
+        />
+        <label for="question3-o3" class="ml-2 text-sm font-medium text-gray-900">Entretien</label>
+      </div>
     </div>
     <div id="question-4" class="mb-4 hidden">
-      <p class="text-lg font-semibold mb-2">Sélectionnez le type d'intervention:</p>
-      <label class="block">
-        <input type="radio" name="question4[]" value="option1" class="mr-2" />
-         Instalation
+      <p class="text-sm font-semibold mb-2">Sélectionnez le type d'intervention:</p>
+      <div class="flex items-center mb-1">
+        <input
+          type="radio"
+          name="question4[]"
+          value="Instalation"
+          id="question4-o1"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-2"
+        />
+        <label for="question4-o1" class="ml-2 text-sm font-medium text-gray-900">Instalation</label>
+      </div>
+      <div class="flex items-center mb-1">
+        <input
+          type="radio"
+          name="question4[]"
+          value="Reparation"
+          id="question4-o2"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-2"
+        />
+        <label for="question4-o2" class="ml-2 text-sm font-medium text-gray-900">Reparation</label>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label for="description" class="block mb-2 text-sm font-semibold text-gray-900"
+        >Veuillez décrire votre intervention :</label
+      >
+      <textarea
+      name="description de l'intervention"
+        id="description"
+        rows="4"
+        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+        placeholder="Veuillez fournir tous les détails concernant votre projet."></textarea>
+    </div>
+    <div class="my-4">
+      <label for="Images" class="block mb-2 text-sm font-semibold text-gray-900" for="file_input"
+        >Joignez une image la façade à intervenir:<br />
+        <span class="text-xs font-normal"
+          >( L'image que vous joignez de la façade à intervenir ou de votre produit nous aide à déterminer la meilleure
+          solution pour vous )</span
+        >
       </label>
-      <label class="block">
-        <input type="radio" name="question4[]" value="option2" class="mr-2" />
-         Reparation
-      </label>
+      <input
+      name="Images"
+        class="block w-full text-sm text-gray-900 border border-gray-300 roun cursor-pointer bg-gray-50 focus:outline-none 0"
+        id="file_input"
+        type="file"
+      />
+    </div>
+    <div class="flex items-start mb-6">
+      <div class="flex items-center h-5">
+        <input
+          id="remember"
+          type="checkbox"
+          value=""
+          class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
+          required
+        />
+      </div>
+      <label for="remember" class="ml-2 text-sm font-medium text-gray-900"
+        >I agree with the <a href="#" class="text-blue-600 hover:underline">terms and conditions</a>.</label
+      >
     </div>
   </div>
   <div class="mt-4">
@@ -101,95 +254,78 @@ const { inputs, textarea, disclaimer, button = 'Envoyer', description = '' } = A
   }
 </style>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const question1RadioInputs = document.querySelectorAll('input[type="radio"][name="question1"]');
-    const question2 = document.querySelector('#question-2');
-    const question3 = document.querySelector('#question-3');
-    const question4 = document.querySelector('#question-4');
-    const form = document.querySelector('form');
-    const result = document.getElementById('result');
+ document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('form');
+  const result = document.getElementById('result');
 
-    if (form && question2 && question3 && question4 && result) {
-      // Check if form, question2, question3, and result are not null
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        form.classList.add('was-validated');
+  if (form && result) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      form.classList.add('was-validated');
 
-        const selectedQuestion1Value = document.querySelector('input[type="radio"][name="question1"]:checked');
-        if (!selectedQuestion1Value) {
-          alert('Veuillez répondre à la question 1.');
-          return;
-        }
+      const selectedQuestion1Value = document.querySelector('input[name="question1"]:checked');
+      if (!selectedQuestion1Value) {
+        alert('Veuillez répondre à la question 1.');
+        return;
+      }
 
-        if (!question2.classList.contains('hidden')) {
-          const selectedQuestion2Value = document.querySelector('input[type="radio"][name="question2[]"]:checked');
-          if (!selectedQuestion2Value) {
-            alert('Veuillez répondre à la question 2.');
-            return;
-          }
-        }
+      const formData = new FormData(form);
 
-        if (!question3.classList.contains('hidden')) {
-          const selectedQuestion3Value = document.querySelector('input[type="radio"][name="question3[]"]:checked');
-          if (!selectedQuestion3Value) {
-            alert('Veuillez répondre à la question 3.');
-            return;
-          }
-        }
+      result.innerHTML = 'Sending...';
 
-        if (!question4.classList.contains('hidden')) {
-          const selectedQuestion3Value = document.querySelector('input[type="radio"][name="question4[]"]:checked');
-          if (!selectedQuestion3Value) {
-            alert('Veuillez répondre à la question 4.');
-            return;
-          }
-        }
-
-        const formData = new FormData(form);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-
-        result.innerHTML = 'Sending...';
-
-        fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: json,
-        })
-          .then(async (response) => {
-            let json = await response.json();
-            if (response.status == 200) {
-              result.classList.add('text-green-500');
-              result.innerHTML = 'Message envoyé avec succès.';
-            } else {
-              console.log(response);
-              result.classList.add('text-red-500');
-              result.innerHTML = json.message;
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-            result.innerHTML = 'Something went wrong!';
-          })
-          .then(function () {
-            form.reset();
-            form.classList.remove('was-validated');
-            setTimeout(() => {
-              result.style.display = 'none';
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: formData, // Use formData directly as the body
+      })
+        .then(async (response) => {
+          let json = await response.json();
+          if (response.status == 200) {
+            result.classList.add('text-green-500');
+            result.innerHTML = 'Message envoyé avec succès.';
+            setTimeout(function () {
+              window.location.reload();
             }, 5000);
-          });
-      });
-
-      question1RadioInputs.forEach((radio) => {
-        radio.addEventListener('change', function () {
-          question2.classList.toggle('hidden', this.id !== 'question1o1');
-          question3.classList.toggle('hidden', this.id !== 'question1o2');
-          question4.classList.toggle('hidden', this.id !== 'question1o3' && this.id !== 'question1o4');
+          } else {
+            console.log(response);
+            result.classList.add('text-red-500');
+            result.innerHTML = json.message;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          result.innerHTML = 'Something went wrong!';
+        })
+        .then(function () {
+          form.reset();
+          form.classList.remove('was-validated');
+          setTimeout(() => {
+            result.style.display = 'none';
+          }, 5000);
         });
+    });
+
+    const question1RadioInputs = document.querySelectorAll('input[name="question1"]');
+    question1RadioInputs.forEach((radio) => {
+      radio.addEventListener('change', function () {
+        const question2 = document.querySelector('#question-2');
+        const question3 = document.querySelector('#question-3');
+        const question4 = document.querySelector('#question-4');
+
+        if (question2 !== null) {
+          question2.classList.toggle('hidden', this.id !== 'question1o1');
+        }
+        if (question3 !== null) {
+          question3.classList.toggle('hidden', this.id !== 'question1o2');
+        }
+        if (question4 !== null) {
+          question4.classList.toggle('hidden', this.id !== 'question1o3' && this.id !== 'question1o4');
+        }
       });
-    }
-  });
+    });
+  }
+});
+
 </script>
