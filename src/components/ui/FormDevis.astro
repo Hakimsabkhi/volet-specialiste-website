@@ -3,8 +3,16 @@ import { FormDevis } from '~/types';
 
 const { inputs, textarea, disclaimer, button = 'Envoyer', description = '' } = Astro.props as FormDevis;
 ---
-<form action="https://api.web3forms.com/submit" method="POST" id="form" class="needs-validation" novalidate enctype="multipart/form-data">
-<!-- <form action="https://api.web3forms.com/submit" method="POST" id="form" class="needs-validation" novalidate> -->
+
+<form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  id="form"
+  class="needs-validation"
+  novalidate
+  enctype="multipart/form-data"
+>
+  <!-- <form action="https://api.web3forms.com/submit" method="POST" id="form" class="needs-validation" novalidate> -->
   <input type="hidden" name="access_key" value="9dc3fdae-4f70-4220-adfa-2f70ddc15def" />
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   <div id="question-container" class="mb-4">
@@ -190,14 +198,14 @@ const { inputs, textarea, disclaimer, button = 'Envoyer', description = '' } = A
         >Veuillez décrire votre intervention :</label
       >
       <textarea
-      name="description de l'intervention"
+        name="description de l'intervention"
         id="description"
         rows="4"
         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
         placeholder="Veuillez fournir tous les détails concernant votre projet."></textarea>
     </div>
     <div class="my-4">
-      <label for="Images" class="block mb-2 text-sm font-semibold text-gray-900" for="file_input"
+      <label for="images" class="block mb-2 text-sm font-semibold text-gray-900" for="file_input"
         >Joignez une image la façade à intervenir:<br />
         <span class="text-xs font-normal"
           >( L'image que vous joignez de la façade à intervenir ou de votre produit nous aide à déterminer la meilleure
@@ -205,9 +213,9 @@ const { inputs, textarea, disclaimer, button = 'Envoyer', description = '' } = A
         >
       </label>
       <input
-      name="Images"
+        name="Images"
         class="block w-full text-sm text-gray-900 border border-gray-300 roun cursor-pointer bg-gray-50 focus:outline-none 0"
-        id="file_input"
+        id="images"
         type="file"
       />
     </div>
@@ -254,78 +262,77 @@ const { inputs, textarea, disclaimer, button = 'Envoyer', description = '' } = A
   }
 </style>
 <script>
- document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('form');
-  const result = document.getElementById('result');
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    const result = document.getElementById('result');
 
-  if (form && result) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      form.classList.add('was-validated');
+    if (form && result) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        form.classList.add('was-validated');
 
-      const selectedQuestion1Value = document.querySelector('input[name="question1"]:checked');
-      if (!selectedQuestion1Value) {
-        alert('Veuillez répondre à la question 1.');
-        return;
-      }
+        const selectedQuestion1Value = document.querySelector('input[name="question1"]:checked');
+        if (!selectedQuestion1Value) {
+          alert('Veuillez répondre à la question 1.');
+          return;
+        }
 
-      const formData = new FormData(form);
+        const formData = new FormData(form);
 
-      result.innerHTML = 'Sending...';
+        result.innerHTML = 'Sending...';
 
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-        },
-        body: formData, // Use formData directly as the body
-      })
-        .then(async (response) => {
-          let json = await response.json();
-          if (response.status == 200) {
-            result.classList.add('text-green-500');
-            result.innerHTML = 'Message envoyé avec succès.';
-            setTimeout(function () {
-              window.location.reload();
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+          },
+          body: formData, // Use formData directly as the body
+        })
+          .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+              result.classList.add('text-green-500');
+              result.innerHTML = 'Message envoyé avec succès.';
+              setTimeout(function () {
+                window.location.reload();
+              }, 5000);
+            } else {
+              console.log(response);
+              result.classList.add('text-red-500');
+              result.innerHTML = json.message;
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            result.innerHTML = 'Something went wrong!';
+          })
+          .then(function () {
+            form.reset();
+            form.classList.remove('was-validated');
+            setTimeout(() => {
+              result.style.display = 'none';
             }, 5000);
-          } else {
-            console.log(response);
-            result.classList.add('text-red-500');
-            result.innerHTML = json.message;
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-          result.innerHTML = 'Something went wrong!';
-        })
-        .then(function () {
-          form.reset();
-          form.classList.remove('was-validated');
-          setTimeout(() => {
-            result.style.display = 'none';
-          }, 5000);
-        });
-    });
-
-    const question1RadioInputs = document.querySelectorAll('input[name="question1"]');
-    question1RadioInputs.forEach((radio) => {
-      radio.addEventListener('change', function () {
-        const question2 = document.querySelector('#question-2');
-        const question3 = document.querySelector('#question-3');
-        const question4 = document.querySelector('#question-4');
-
-        if (question2 !== null) {
-          question2.classList.toggle('hidden', this.id !== 'question1o1');
-        }
-        if (question3 !== null) {
-          question3.classList.toggle('hidden', this.id !== 'question1o2');
-        }
-        if (question4 !== null) {
-          question4.classList.toggle('hidden', this.id !== 'question1o3' && this.id !== 'question1o4');
-        }
+          });
       });
-    });
-  }
-});
 
+      const question1RadioInputs = document.querySelectorAll('input[name="question1"]');
+      question1RadioInputs.forEach((radio) => {
+        radio.addEventListener('change', function () {
+          const question2 = document.querySelector('#question-2');
+          const question3 = document.querySelector('#question-3');
+          const question4 = document.querySelector('#question-4');
+
+          if (question2 !== null) {
+            question2.classList.toggle('hidden', this.id !== 'question1o1');
+          }
+          if (question3 !== null) {
+            question3.classList.toggle('hidden', this.id !== 'question1o2');
+          }
+          if (question4 !== null) {
+            question4.classList.toggle('hidden', this.id !== 'question1o3' && this.id !== 'question1o4');
+          }
+        });
+      });
+    }
+  });
 </script>
