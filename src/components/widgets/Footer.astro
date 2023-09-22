@@ -28,13 +28,13 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
 ---
 
 <footer 'relative border-t border-gray-200 not-prose']}>
-  <div class=" absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-3xl">
     <div class="grid grid-cols-22 md:grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-2 md:py-12">
       <div class="col-span-6 md:col-span-6">
         <div class="md:ml-22 ml-5">
           <a href={getHomePermalink()}>
-            <Image src={logo} alt="logo volet specialiste" width="250" height="50" class="mx-auto"  />
+            <Image src={logo} alt="logo volet specialiste" width="250" height="50" class="mx-auto" />
           </a>
         </div>
         <div class="text-xs text-muted">
@@ -97,54 +97,77 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
       <div class="text-xs text-center md:mr-4">
         <Fragment set:html={footNote} />
       </div>
-      <div id="logo-sidebar" class=" fixed top-20 right-10 sm:right-0 xl:right-10 w-80 sm:w-60 xl:w-80 h-screen  invisible lg:visible">
+      <!-- <div class="sticky top-20 right-10 sm:right-0 xl:right-10 w-80 sm:w-60 xl:w-80 h-screen invisible lg:visible"
+      >
         <div class="h-full px-3 py-4 overflow-y-auto text-center bg-gray-50">
-          <p class=" mt-4 mb-2 text-sm uppercase font-bold">INFOS GÉNÉRALES</p>
-           <ul class="space-y-2 font-medium">
-              <li>
-                <a href="/quel-volet-roulant-choisir" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200">Quel volet roulant acheter</a>
-              </li>
-              <li>
-                <a href="/prix-volet-roulant-aluminium" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200">Prix d'un volet roulant aluminium</a>
-              </li>
-           </ul>
-           <p class=" mt-4 mb-2 text-sm uppercase font-bold">TYPES DE VOLETS</p>
-           <ul class="space-y-2 font-medium">
-              <li>
-                <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200">Volet roulant à caisson</a>
-              </li>
-              <li>
-                <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200">Volet roulant anti-effraction</a>
-              </li>
-              <li>
-                <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200">Volet roulant solaire</a>
-              </li>
-              <li>
-                <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200">Volet roulant pour Velux</a>
-              </li>
-           </ul>
-          <p class=" mt-4 mb-2 text-sm uppercase font-bold">POSE ET ENTRETIEN</p>
-           <ul class="space-y-2 font-medium">
-              <li>
-                <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200">Comment Réparer un Volet Roulant</a>
-              </li>
-              <li>
-                <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200">Remplacer la sangle d'un volet roulant</a>
-              </li>
-           </ul>
-           <p class=" mt-4 mb-2 text-sm uppercase font-bold">COMMANDE</p>
-           <ul class="space-y-2 font-medium">
-              <li>
-                <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200">Volet roulant électrique</a>
-              </li>
-              <li>
-                <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200">Motoriser un volet roulant</a>
-              </li>
-           </ul>
-       
-           
+          <p class="mt-4 mb-2 text-sm uppercase font-bold">INFOS GÉNÉRALES</p>
+          <ul class="space-y-2 font-medium">
+            <li>
+              <a
+                href="/quel-volet-roulant-choisir"
+                class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
+                >Quel volet roulant acheter</a
+              >
+            </li>
+            <li>
+              <a
+                href="/prix-volet-roulant-aluminium"
+                class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
+                >Prix d'un volet roulant aluminium</a
+              >
+            </li>
+          </ul>
+          <p class="mt-4 mb-2 text-sm uppercase font-bold">TYPES DE VOLETS</p>
+          <ul class="space-y-2 font-medium">
+            <li>
+              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
+                >Volet roulant à caisson</a
+              >
+            </li>
+            <li>
+              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
+                >Volet roulant anti-effraction</a
+              >
+            </li>
+            <li>
+              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
+                >Volet roulant solaire</a
+              >
+            </li>
+            <li>
+              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
+                >Volet roulant pour Velux</a
+              >
+            </li>
+          </ul>
+          <p class="mt-4 mb-2 text-sm uppercase font-bold">POSE ET ENTRETIEN</p>
+          <ul class="space-y-2 font-medium">
+            <li>
+              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
+                >Comment Réparer un Volet Roulant</a
+              >
+            </li>
+            <li>
+              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
+                >Remplacer la sangle d'un volet roulant</a
+              >
+            </li>
+          </ul>
+          <p class="mt-4 mb-2 text-sm uppercase font-bold">COMMANDE</p>
+          <ul class="space-y-2 font-medium">
+            <li>
+              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
+                >Volet roulant électrique</a
+              >
+            </li>
+            <li>
+              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
+                >Motoriser un volet roulant</a
+              >
+            </li>
+          </ul>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </footer>

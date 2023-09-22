@@ -116,7 +116,7 @@ const getMetadata = () => {
 
 const getI18N = () => {
   const _default = {
-    language: 'fr',
+    language: 'FR',
     textDirection: 'ltr',
   };
 

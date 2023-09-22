@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import Sidebar from '~/components/widgets/sidebar.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 const metadata = {
@@ -11,6 +12,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
+  <Sidebar></Sidebar>
   <Hero
     callToAction={{
       text: 'Applez Nous',
