@@ -1,14 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components';
-
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
-
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
-
 import type { Post } from '~/types';
+import Sommaire from '~/components/widgets/Sommaire.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 export interface Props {
   post: Post;
@@ -19,65 +18,99 @@ const { post, url } = Astro.props;
 const Content = post?.Content || null;
 ---
 
-<section class="pt-8 sm:pt-16 lg:pt-20 ">
-  <article>
-    <header class={post.image ? '' : ''}>
-      <div class="flex justify-between flex-col sm:flex-row max-w-3xl mt-0 mb-2 px-4 sm:px-6 sm:items-center">
-        <p>
-          <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5" />
-          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
-          {
-            post.category && (
-              <>
-                {' '}
-                ·{' '}
-                <a class="capitalize hover:underline inline-block" href={getPermalink(post.category, 'category')}>
-                  {post.category.replaceAll('-', ' ')}
-                </a>
-              </>
-            )
-          }
-          {post.readingTime && <> · {post.readingTime} min read</>}
+<section class="pt-8 sm:pt-16 sm:px-16 lg:pt-20">
+  <article class="md:flex md:justify-between">
+    <div>
+      <header class={post.image ? '' : ''}>
+        <div
+          class="flex justify-between text-sm md:text-base flex-col sm:flex-row max-w-2xl mt-0 mb-2 px-4 sm:px-6 sm:items-center"
+        >
+          <p>
+            <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5" />
+            <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
+            {
+              post.category && (
+                <>
+                  {' '}
+                  ·{' '}
+                  <a class="capitalize hover:underline inline-block" href={getPermalink(post.category, 'category')}>
+                    {post.category.replaceAll('-', ' ')}
+                  </a>
+                </>
+              )
+            }
+            {post.readingTime && <> · {post.readingTime} min read</>}
+          </p>
+        </div>
+        <p class="max-w-2xl mb-8 px-6 text-base md:text-base">
+          {post.author}
         </p>
-      </div>
-      <h1
-        class="px-4 sm:px-6 max-w-3xl text-4xl md:text-3xl font-bold leading-tighter tracking-normal font-heading"
-      >
-        {post.title}
-      </h1>
-      <p class="max-w-3xl mt-4 mb-8 px-4 sm:px-6 text-base md:text-base">
-        {post.excerpt}
-      </p>
+        <h1
+          class="px-4 sm:px-6 max-w-xl 2xl:max-w-4xl text-xl md:text-2xl font-bold leading-tighter tracking-normal font-heading"
+        >
+          {post.title}
+        </h1>
+        <p class="max-w-2xl mt-4 mb-8 px-4 sm:px-6 text-base md:text-base">
+          {post.excerpt}
+        </p>
 
-      {
-        post.image ? (
-          <Image
-            src={post.image}
-            class="max-w-full mx-auto md:ml-5 lg:max-w-[900px] mb-6 sm:rounded-md bg-gray-400"
-            widths={[400, 900]}
-            sizes="(max-width: 900px) 400px, 900px"
-            alt={post?.excerpt || ''}
-            loading="eager"
-            width={800}
-            height={400}
-            loading="eager"
-            decoding="async"
-          />
-        ) : (
-          <div class="max-w-3xl px-4 sm:px-6">
-            <div class="border-t " />
-          </div>
-        )
-      }
-    </header>
-    <div
-      class="text-lg px-6 sm:px-6 max-w-3xl prose prose-lg prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-normal prose-headings:font-bold prose-a:text-primary prose-img:rounded-md prose-img:shadow-lg mt-8"
-    >
-      {Content ? <Content /> : <Fragment set:html={post.content} />}
+        {
+          post.image ? (
+            <Image
+              src={post.image}
+              class="max-w-full mx-auto lg:max-w-[900px] mb-6 sm:rounded-md bg-gray-400"
+              widths={[350, 950]}
+              sizes="(max-width: 700px) 350px, 700px"
+              alt={post?.excerpt || ''}
+              loading="eager"
+              width={950}
+              height={350}
+              loading="eager"
+              decoding="async"
+            />
+          ) : (
+            <div class="max-w-3xl px-4 sm:px-6">
+              <div class="border-t " />
+            </div>
+          )
+        }
+      </header>
+      <div
+        class="text-lg tracking-wide px-6 sm:px-6 max-w-2xl 2xl:max-w-4xl prose prose-md :font-heading prose-headings:leading-tighter prose-headings:tracking-wide prose-headings:font-bold prose-th:text-xs prose-headings:text-xl prose-a:text-primary prose-img:rounded-md"
+      >
+        {Content ? <Content /> : <Fragment set:html={post.content} />}
+      </div>
+      <div class="px-6 sm:px-6 max-w-2xl mt-8 flex justify-between flex-col sm:flex-row">
+        <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
+        <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500" />
+      </div>
     </div>
-    <div class=" px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
-      <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
-      <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500" />
+    <div class="invisible md:visible mx-12">
+      <Sommaire>
+        <Fragment slot="sommaire1">{post.sec1}</Fragment>
+        <Fragment slot="sommaire2">{post.sec2}</Fragment>
+        <Fragment slot="sommaire3">{post.sec3}</Fragment>
+        <Fragment slot="sommaire4">{post.sec4}</Fragment>
+        <Fragment slot="sommaire5">{post.sec5}</Fragment>
+        <Fragment slot="sommaire6">{post.sec6}</Fragment>
+        <Fragment slot="sommaire7">{post.sec7}</Fragment>
+        <Fragment slot="sommaire8">{post.sec8}</Fragment>
+        <Fragment slot="sommaire9">{post.sec9}</Fragment>
+      </Sommaire>
+      <div class="mt-8">
+        <CallToAction
+          callToAction={{
+            text: 'Applez Nous',
+            href: 'tel:01  85 49 07 07',
+          }}
+        >
+          <Fragment slot="title">Obtenez un devis gratuit dès maintenant.</Fragment>
+          <Fragment slot="subtitle">
+            Volet Spécialiste: Des artisans experts à votre disposition pour répondre à toutes vos questions et
+            satisfaire tous vos besoins en matière de volets.
+          </Fragment>
+        </CallToAction>
+      </div>
     </div>
   </article>
 </section>

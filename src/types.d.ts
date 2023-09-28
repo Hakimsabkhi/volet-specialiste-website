@@ -17,6 +17,7 @@ export interface Post {
   title: string;
   /** Optional summary of post content. */
   excerpt?: string;
+
   /**  */
   image?: string;
 
@@ -26,6 +27,17 @@ export interface Post {
   tags?: Array<string>;
   /**  */
   author?: string;
+
+  sec1?: string;
+  sec2?: string;
+  sec3?: string;
+  sec4?: string;
+  sec5?: string;
+  sec6?: string;
+  sec7?: string;
+  sec8?: string;
+  sec9?: string;
+  sec10?: string;
 
   /**  */
   metadata?: MetaData;
@@ -297,5 +309,3 @@ export interface Content extends Headline, Widget {
 
 export interface Contact extends Headline, Form, Widget {}
 export interface Devis extends Headline, FormDevis, Widget {}
-
-

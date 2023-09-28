@@ -71,7 +71,7 @@ ui:
   tokens:
     default:
       fonts:
-        sans: InterVariable
+        sans: Lexend
         serif: var(--ph-font-sans)
         heading: var(--ph-font-sans)
       colors:

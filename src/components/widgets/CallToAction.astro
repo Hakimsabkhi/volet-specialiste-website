@@ -25,17 +25,15 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl ${classes?.container ?? ''}`} bg={bg}>
-  <div
-    class="max-w-3xl text-center p-6 rounded-md shadow-xl"
-  >
+  <div class="max-w-lg text-center p-6 rounded-md shadow-xl">
     <Headline
       title={title}
       subtitle={subtitle}
       tagline={tagline}
       classes={{
         container: 'mb-5 md:mb-0',
-        title: 'text-2xl md:text-3xl font-bold leading-tighter tracking-normal mb-4 font-heading',
-        subtitle: 'text-xl',
+        title: 'text-2xl md:text-xl font-bold leading-tighter tracking-wide mb-4 font-heading',
+        subtitle: 'text-base',
       }}
     />
     {
@@ -46,7 +44,7 @@ const {
         callToAction.text &&
         callToAction.href && (
           <div class="mt-6 max-w-xs mx-auto">
-            <a class="btn btn-primary w-full sm:w-auto" href={callToAction.href} target="_blank" rel="noopener">
+            <a class=" btn btn-primary w-full sm:w-auto" href={callToAction.href} target="_blank" rel="noopener">
               {callToAction.icon && <Icon name={callToAction.icon} class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" />}
               {callToAction.text}
             </a>

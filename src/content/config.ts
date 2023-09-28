@@ -60,6 +60,17 @@ const postCollection = defineCollection({
     tags: z.array(z.string()).optional(),
     author: z.string().optional(),
 
+    sec1: z.string().optional(),
+    sec2: z.string().optional(),
+    sec3: z.string().optional(),
+    sec4: z.string().optional(),
+    sec5: z.string().optional(),
+    sec6: z.string().optional(),
+    sec7: z.string().optional(),
+    sec8: z.string().optional(),
+    sec9: z.string().optional(),
+    sec10: z.string().optional(),
+
     metadata: metadataDefinition(),
   }),
 });

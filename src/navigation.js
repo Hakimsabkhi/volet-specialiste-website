@@ -40,7 +40,7 @@ export const footerData = {
       title: 'INFOS LÉGALES',
       links: [
         { text: 'Conditions générales', href: '#' },
-        { text: 'Politique de vie privée', href: '#' },
+        { text: 'politique de confidentialité', href: '#' },
       ],
     },
     {
