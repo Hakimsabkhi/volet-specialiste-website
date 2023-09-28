@@ -130,7 +130,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             <span class=" md:ml-4 rtl:ml-0 rtl:mr-4">
               {actions.map(({ text, href, class: className }) => (
                 <a
-                  class:list={['btn ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-base', className]}
+                  class:list={['btn ml-2 py-2.5 px-5.5 md:px-6 font-base shadow-none text-base', className]}
                   href={href}
                 >
                   <Fragment set:html={text} />
