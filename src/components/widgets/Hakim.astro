@@ -1,0 +1,76 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import type { CallToAction, Widget } from '~/types';
+import Headline from '../ui/Headline.astro';
+import Image from '~/components/common/Image.astro';
+
+interface Props extends Widget {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  callToAction?: CallToAction;
+  image;
+}
+
+const {
+  image = await Astro.slots.render('image'),
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  callToAction = await Astro.slots.render('callToAction'),
+
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as Props;
+---
+
+<WidgetWrapper containerClass={`max-w-6xl ${classes?.container ?? ''}`} bg={bg}>
+  <div class="max-w-lg text-center p-6 rounded-md shadow-xl">
+    <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
+      {
+        image && (
+          <div class="">
+            {typeof image === 'string' ? (
+              <Fragment set:html={image} />
+            ) : (
+            <Image
+                  class="rounded-md w-full"
+                  widths={[400, 768, 1024, 2040]}
+                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                  loading="eager"
+                  width={800}
+                  height={600}
+                  {...image}
+                />
+            )}
+          </div>
+        )
+      }
+    </div>
+    <Headline
+      title={title}
+      subtitle={subtitle}
+      tagline={tagline}
+      classes={{
+        container: 'my-5 md:mb-0',
+        title: 'text-2xl md:text-xl font-bold leading-tighter tracking-wide mb-4 font-heading',
+        subtitle: 'text-base',
+      }}
+    />
+    {
+      typeof callToAction === 'string' ? (
+        <Fragment set:html={callToAction} />
+      ) : (
+        callToAction &&
+        callToAction.text &&
+        callToAction.href && (
+          <div class="mt-6 max-w-xs mx-auto">
+            <a class=" btn btn-primary w-full sm:w-auto" href={callToAction.href} target="_blank" rel="noopener">
+              {callToAction.text}
+            </a>
+          </div>
+        )
+      )
+    }
+  </div>
+</WidgetWrapper>

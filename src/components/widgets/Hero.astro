@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
+
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
@@ -89,11 +90,11 @@ const {
               ) : (
                 <Image
                   class="rounded-md w-full"
-                  widths={[400, 768, 1024, 2040]}
+                  widths={[200, 368, 524, 1040]}
                   sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
                   loading="eager"
-                  width={800}
-                  height={600}
+                  width={400}
+                  height={300}
                   {...image}
                 />
               )}
