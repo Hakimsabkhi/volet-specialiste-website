@@ -85,7 +85,7 @@ const Content = post?.Content || null;
         <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500" />
       </div>
     </div>
-    <div class="invisible md:visible mx-12">
+    <div class="hidden md:block mx-12">
       <Sommaire>
         <Fragment slot="sommaire1">{post.sec1}</Fragment>
         <Fragment slot="sommaire2">{post.sec2}</Fragment>

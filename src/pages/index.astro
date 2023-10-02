@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import TelMob from '~/components/widgets/telMob.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Hakim from '~/components/widgets/Hakim.astro';
@@ -14,7 +15,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <div class="mx-10 md:flex">
+  <div class="mx-4 md:mx-10 md:flex">
     <div>
       <Hero
         callToAction={{
@@ -35,11 +36,10 @@ const metadata = {
         <Fragment slot="sommaire2">II. les Volets Roulants?</Fragment>
         <Fragment slot="sommaire3">III. Types et Installation de Volets Roulants</Fragment>
         <Fragment slot="sommaire4">IV. Options de Commande et Intégration Domotique</Fragment>
-        <Fragment slot="sommaire5">V. Matériaux et Esthétique:</Fragment>
-        <Fragment slot="sommaire6">VI. Coût et Entretien:</Fragment>
-        <Fragment slot="sommaire7">VII. Conclusion:</Fragment>
+        <Fragment slot="sommaire5">V. Matériaux et Esthétique</Fragment>
+        <Fragment slot="sommaire6">VI. Coût et Entretien</Fragment>
+        <Fragment slot="sommaire7">VII. Conclusion</Fragment>
       </Hero>
-
       <Content id="section1">
         <Fragment slot="content">
           <div class="my-8">
@@ -144,6 +144,20 @@ const metadata = {
           </p>
         </Fragment>
       </Content>
+      <div class="md:hidden">
+        <TelMob
+          callToAction={{
+            text: 'Applez Nous',
+            href: 'tel:01  85 49 07 07',
+          }}
+          callToAction2={{ text: 'Devis Gratuit', href: '/devis-gratuit' }}
+        >
+          <Fragment slot="title">Obtenez une estimation gratuite aujourd'hui !</Fragment>
+          <Fragment slot="subtitle">
+          Nos artisans experts sont là pour répondre à vos questions et combler vos besoins avec des solutions de qualité et sur mesure.
+          </Fragment>
+           />
+      </div>
       <Content
         id="section4"
         image={{
@@ -219,7 +233,7 @@ const metadata = {
         <Fragment slot="content">
           <div class="my-8">
             <h2 class="text-xl font-bold leading-tighter tracking-normal my-4 font-heading">
-              V. Matériaux et Esthétique:
+              V. Matériaux et Esthétique
             </h2>
             <p>
               Les volets roulants, en plus de leurs fonctionnalités pratiques, jouent un rôle crucial dans l’esthétique
@@ -347,6 +361,20 @@ const metadata = {
           </p>
         </Fragment>
       </Content>
+      <div class="md:hidden">
+        <TelMob
+          callToAction={{
+            text: 'Applez Nous',
+            href: 'tel:01  85 49 07 07',
+          }}
+          callToAction2={{ text: 'Devis Gratuit', href: '/devis-gratuit' }}
+        >
+          <Fragment slot="title">Obtenez une estimation gratuite aujourd'hui !</Fragment>
+          <Fragment slot="subtitle">
+          Nos artisans experts sont là pour répondre à vos questions et combler vos besoins avec des solutions de qualité et sur mesure.
+          </Fragment>
+           />
+      </div>
       <Content id="section7">
         <Fragment slot="content">
           <div class="my-8">
@@ -402,7 +430,7 @@ const metadata = {
         </Fragment>
       </Content>
     </div>
-    <div class="md:mt-10">
+    <div class="hidden md:mt-10 md:block">
       <Hakim image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants' }}>
         <Fragment slot="title">Rédacteur: S.Abdelhakim</Fragment>
         <Fragment slot="subtitle">
@@ -412,7 +440,7 @@ const metadata = {
           roulants pour assurer une satisfaction client optimale.
         </Fragment>
       </Hakim>
-      <div class="mt-2 sticky top-28 ">
+      <div class="mt-2 sticky top-28">
         <CallToAction
           callToAction={{
             text: 'Applez Nous',

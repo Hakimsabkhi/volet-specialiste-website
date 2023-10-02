@@ -23,8 +23,8 @@ const {
 <section class="relative md:ml-5 md:-mt-[76px] not-prose">
   <div class="relative md:max-w-3xl xl:max-w-4xl px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="mt-10 py-1 md:py-1">
-      <div class=" pb-10 max-w-screen-lg">
+    <div class="mt-2 py-1 md:py-1">
+      <div class=" max-w-screen-lg">
         {
           tagline && (
             <p
@@ -35,14 +35,14 @@ const {
         }
         {
           title && (
-            <h1
-              class="text-xl md:text-3xl font-bold leading-tighter tracking-normal mb-4 font-heading"
+            <p
+              class="text-lg font-bold text-center leading-tighter tracking-normal mb-4 font-heading"
               set:html={title}
             />
           )
         }
         <div class="max-w-3xl ">
-          {subtitle && <p class=" text-base mb-6" set:html={subtitle} />}
+          {subtitle && <p class=" text-center text-base mb-6" set:html={subtitle} />}
           <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
             {
               callToAction && (
@@ -81,81 +81,5 @@ const {
   </div>
         {content && <Fragment set:html={content} />}
       </div>
-      <div>
-        {
-          image && (
-            <div class="m-auto max-w-5xl">
-              {typeof image === 'string' ? (
-                <Fragment set:html={image} />
-              ) : (
-                <Image
-                  class="items-center w-full"
-                  widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-                  loading="eager"
-                  width={800}
-                  height={600}
-                  {...image}
-                />
-              )}
-            </div>
-          )
-        }
-  </div>
-  <div class="">
-    <div>
-        <p class="mt-5 ml-4 mb-6 text-xl uppercase font-bold">Sommaire:</p>
-        <ul class="text-gray-500 font-sm ml-4 mb-2">
-            <li class="">
-              {
-                sommaire1 && (
-                <a href="#section1" class="hover:underline" set:html={sommaire1}></a>
-                )}
-            </li>
-            <li class="">
-              {
-                sommaire2 && (
-                <a href="#section2" class="hover:underline" set:html={sommaire2}></a>
-                )}
-            </li>
-            <li class="">
-              {
-                sommaire3 && (
-                <a href="#section3" class="hover:underline" set:html={sommaire3}></a>
-                )}
-            </li>
-            <li class="">
-              {
-                sommaire4 && (
-                <a href="#section4" class="hover:underline" set:html={sommaire4}></a>
-                )}
-            </li>
-            <li class="">
-              {
-                sommaire5 && (
-                <a href="#section5" class="hover:underline" set:html={sommaire5}></a>
-                )}
-            </li>
-            <li class="">
-              {
-                sommaire6 && (
-                <a href="#section6" class="hover:underline" set:html={sommaire6}></a>
-                )}
-            </li>
-            <li class="">
-              {
-                sommaire7 && (
-                <a href="#section7" class="hover:underline" set:html={sommaire7}></a>
-                )}
-            </li>
-            <li class="">
-              {
-                sommaire8 && (
-                <a href="#section8" class="hover:underline" set:html={sommaire8}></a>
-                )}
-            </li>
-        </ul>
-    </div>
- </div>
 </div>
 </section>
