@@ -5,6 +5,7 @@ import TelMob from '~/components/widgets/telMob.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Hakim from '~/components/widgets/Hakim.astro';
+import HakimMobi from '~/components/widgets/HakimMobi.astro';
 
 const metadata = {
   title: 'Révolution des Volets Roulants: Guide Complet et Perspectives Innovantes par Volet Spécialiste',
@@ -17,6 +18,12 @@ const metadata = {
 <Layout metadata={metadata}>
   <div class="mx-2 md:mx-10 md:flex">
     <div>
+      <div class="md:hidden">
+      <HakimMobi image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants' }}>
+        <Fragment slot="subtitle"><span class="font-bold">Rédacteur: S.Abdelhakim</span>
+          <br/>Je suis un spécialiste qualifié dans le domaine des volets roulants.
+        </Fragment>
+      </HakimMobi></div>
       <Hero
         callToAction={{
           text: 'Applez Nous',

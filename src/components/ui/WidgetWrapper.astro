@@ -9,13 +9,10 @@ const WrapperTag = as;
 
 <WrapperTag class="relative not-prose scroll-mt-[72px]" {...id ? { id } : {}}>
   <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
-    <slot name="bg">
-      {bg ? <Fragment set:html={bg} /> : <Background isDark={isDark} />}
-    </slot>
   </div>
   <div
     class:list={[
-      twMerge("relative max-w-7xl px-4 md:px-6 py-5 md:py-16 lg:py-5 text-default", containerClass),
+      twMerge("relative max-w-7xl px-4 md:px-6 my-4 md:py-16 lg:py-5 text-default", containerClass),
     ]}
   >
     <slot />

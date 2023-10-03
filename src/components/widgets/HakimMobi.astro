@@ -1,0 +1,73 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import type { CallToAction, Widget } from '~/types';
+import Headline from '../ui/Headline.astro';
+import Image from '~/components/common/Image.astro';
+
+interface Props extends Widget {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  callToAction?: CallToAction;
+  image;
+}
+
+const {
+  image = await Astro.slots.render('image'),
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  callToAction = await Astro.slots.render('callToAction'),
+} = Astro.props as Props;
+---
+
+<WidgetWrapper>
+  <div class="flex">
+    <div>
+      {
+        image && (
+          <div class="">
+            {typeof image === 'string' ? (
+              <Fragment set:html={image} />
+            ) : (
+              <Image
+                class="rounded-md w-full mx-auto"
+                widths={[50, 70, 100, 200]}
+                sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                loading="eager"
+                width={70}
+                height={70}
+                {...image}
+              />
+            )}
+          </div>
+        )
+      }
+    </div>
+    <Headline
+      title={title}
+      subtitle={subtitle}
+      tagline={tagline}
+      classes={{
+        container: '',
+        title: 'text-sm font-bold leading-tighter align-top tracking-wide font-heading',
+        subtitle: 'text-xs mx-2 align-top',
+      }}
+    />
+    {
+      typeof callToAction === 'string' ? (
+        <Fragment set:html={callToAction} />
+      ) : (
+        callToAction &&
+        callToAction.text &&
+        callToAction.href && (
+          <div class=" max-w-xs mx-auto">
+            <a class=" btn btn-primary w-full sm:w-auto" href={callToAction.href} target="_blank" rel="noopener">
+              {callToAction.text}
+            </a>
+          </div>
+        )
+      )
+    }
+  </div>
+</WidgetWrapper>
