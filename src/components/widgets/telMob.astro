@@ -20,8 +20,8 @@ const {
   sommaire8 = await Astro.slots.render('sommaire8'),
 } = Astro.props;
 ---
-<section class="relative md:ml-5 md:-mt-[76px] not-prose">
-  <div class="relative md:max-w-3xl xl:max-w-4xl px-4 sm:px-6">
+<section class="md:ml-5 md:-mt-[76px] not-prose">
+  <div class="md:max-w-3xl xl:max-w-4xl px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="mt-2 py-1 md:py-1">
       <div class=" max-w-screen-lg">
@@ -36,7 +36,7 @@ const {
         {
           title && (
             <p
-              class="text-lg font-bold text-center leading-tighter tracking-normal mb-4 font-heading"
+              class="text-lg font-bold text-center leading-tighter tracking-normal mb-4 "
               set:html={title}
             />
           )

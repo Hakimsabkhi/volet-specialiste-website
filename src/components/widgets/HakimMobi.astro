@@ -22,8 +22,8 @@ const {
 ---
 
 <WidgetWrapper>
-  <div class="flex">
-    <div>
+  <div class="flex justify-around w-full">
+    <div class="w-1/5 p-2">
       {
         image && (
           <div class="">
@@ -31,9 +31,9 @@ const {
               <Fragment set:html={image} />
             ) : (
               <Image
-                class="rounded-md w-full mx-auto"
-                widths={[50, 70, 100, 200]}
-                sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                class="rounded-md"
+                widths={[20, 40, 60, 70]}
+                sizes="(max-width: 70px) 20px, (max-width: 70px) 20px, (max-width: 70px) 40px, 70px"
                 loading="eager"
                 width={70}
                 height={70}
@@ -44,30 +44,32 @@ const {
         )
       }
     </div>
-    <Headline
-      title={title}
-      subtitle={subtitle}
-      tagline={tagline}
-      classes={{
-        container: '',
-        title: 'text-sm font-bold leading-tighter align-top tracking-wide font-heading',
-        subtitle: 'text-xs mx-2 align-top',
-      }}
-    />
-    {
-      typeof callToAction === 'string' ? (
-        <Fragment set:html={callToAction} />
-      ) : (
-        callToAction &&
-        callToAction.text &&
-        callToAction.href && (
-          <div class=" max-w-xs mx-auto">
-            <a class=" btn btn-primary w-full sm:w-auto" href={callToAction.href} target="_blank" rel="noopener">
-              {callToAction.text}
-            </a>
-          </div>
+    <div class="flex flex-col justify-around w-3/4">
+      <Headline
+        title={title}
+        subtitle={subtitle}
+        tagline={tagline}
+        classes={{
+          container: '',
+          title: 'text-sm font-bold leading-tighter align-top tracking-wide ',
+          subtitle: 'text-xs',
+        }}
+      />
+      {
+        typeof callToAction === 'string' ? (
+          <Fragment set:html={callToAction} />
+        ) : (
+          callToAction &&
+          callToAction.text &&
+          callToAction.href && (
+            <div class=" max-w-xs mx-auto">
+              <a class=" btn btn-primary w-full sm:w-auto" href={callToAction.href} target="_blank" rel="noopener">
+                {callToAction.text}
+              </a>
+            </div>
+          )
         )
-      )
-    }
+      }
+    </div>
   </div>
 </WidgetWrapper>

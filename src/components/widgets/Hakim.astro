@@ -33,15 +33,15 @@ const {
             {typeof image === 'string' ? (
               <Fragment set:html={image} />
             ) : (
-            <Image
-                  class="rounded-md w-full mx-auto"
-                  widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-                  loading="eager"
-                  width={600}
-                  height={300}
-                  {...image}
-                />
+              <Image
+                class="rounded-md w-full mx-auto"
+                widths={[400, 768, 1024, 2040]}
+                sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                loading="eager"
+                width={600}
+                height={300}
+                {...image}
+              />
             )}
           </div>
         )
@@ -53,7 +53,7 @@ const {
       tagline={tagline}
       classes={{
         container: 'my-5 md:mb-0',
-        title: 'text-2xl md:text-xl font-bold leading-tighter tracking-wide mb-4 font-heading',
+        title: 'text-2xl md:text-xl font-bold leading-tighter tracking-wide mb-4 ',
         subtitle: 'text-base',
       }}
     />
