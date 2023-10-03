@@ -6,7 +6,6 @@ import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Hakim from '~/components/widgets/Hakim.astro';
 import HakimMobi from '~/components/widgets/HakimMobi.astro';
-
 const metadata = {
   title: 'Révolution des Volets Roulants: Guide Complet et Perspectives Innovantes par Volet Spécialiste',
   description:
@@ -14,7 +13,6 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 ---
-
 <Layout metadata={metadata}>
   <section class="relative md:-mt-[76px] not-prose mt-4 px-2 md:mx-10 md:flex ">
     <div>
@@ -147,8 +145,7 @@ const metadata = {
           </p>
         </Fragment>
       </Content>
-      <div class="md:hidden">
-        <TelMob
+      <TelMob
           callToAction={{
             text: 'Applez Nous',
             href: 'tel:01  85 49 07 07',
@@ -161,8 +158,8 @@ const metadata = {
             qualité et sur mesure.
           </Fragment>
            />
-        </TelMob>
-        <Content
+      </TelMob>
+      <Content
           id="section4"
           image={{
             src: '~/assets/images/cout-des-volets-roulants.png',
@@ -225,8 +222,8 @@ const metadata = {
               préférences, tout en leur offrant la possibilité de surveiller et de contrôler leur domicile à distance.
             </p>
           </Fragment>
-        </Content>
-        <Content
+      </Content>
+      <Content
           id="section5"
           image={{
             src: '~/assets/images/cout-des-volets-roulants.png',
@@ -279,8 +276,8 @@ const metadata = {
               et à la sécurité de la maison.
             </p>
           </Fragment>
-        </Content>
-        <Content
+      </Content>
+      <Content
           id="section6"
           image={{
             src: '~/assets/images/cout-des-volets-roulants.png',
@@ -358,9 +355,8 @@ const metadata = {
               </ul>
             </p>
           </Fragment>
-        </Content>
-        <div class="md:hidden">
-          <TelMob
+      </Content>
+      <TelMob
             callToAction={{
               text: 'Applez Nous',
               href: 'tel:01  85 49 07 07',
@@ -373,8 +369,8 @@ const metadata = {
               qualité et sur mesure.
             </Fragment>
              />
-          </TelMob>
-          <Content id="section7">
+      </TelMob>
+      <Content id="section7">
             <Fragment slot="content">
               <div class="my-8">
                 <h2 class="text-xl font-bold leading-tighter tracking-normal my-4">VII. Conclusion:</h2>
@@ -389,7 +385,6 @@ const metadata = {
                   <span class="font-bold">Q1: Pourquoi devrais-je installer des volets roulants?</span><br />Les volets
                   roulants offrent une sécurité accrue, une meilleure isolation thermique, et permettent de gérer
                   efficacement la luminosité dans vos pièces, tout en ajoutant une touche esthétique à votre propriété.
-
                   <br /><br />
                   <span class="font-bold">Q2: Quels sont les différents types de volets roulants disponibles?</span><br
                   />R: Les principaux types de volets roulants sont le volet roulant intégré, le volet à caisson, et le
@@ -430,7 +425,7 @@ const metadata = {
                 </p>
               </div>
             </Fragment>
-          </Content>
+        </Content>
         </div>
         <div class="hidden md:mt-10 md:block">
           <Hakim image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants' }}>
