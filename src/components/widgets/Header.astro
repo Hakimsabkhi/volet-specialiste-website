@@ -71,7 +71,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       </div>
     </div>
     <nav
-      class="w-full mt-10 sm:mt-1 md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5"
+      class="w-full mt-10 sm:mt-1 md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto"
       aria-label="Main navigation"
     >
       <ul
@@ -120,20 +120,20 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     </nav>
     <div
       class:list={[
-        { 'ml-auto rtl:ml-0 rtl:mr-auto': position === 'left' },
-        'hidden mb-10 md:self-center flex md:flex  md:mb-0 fixed w-full md:w-auto md:static justify-center bottom-28',
+        { 'ml-auto rtl:ml-0 rtl:mr-auto': position === '' },
+        'hidden md:self-center md:flex mt-6 md:mt-0 md:w-auto md:static ',
       ]}
     >
       <div class="">
         {
           actions?.length ? (
-            <span class=" md:ml-4 rtl:ml-0 rtl:mr-4">
+            <div class="w-4/5 md:w-full flex flex-col mx-auto md:ml-4 rtl:ml-0 rtl:mr-4">
               {actions.map(({ text, href, class: className }) => (
-                <a class:list={['btn ', className]} href={href}>
+                <a class:list={['btn mt-4 md:mt-4', className]} href={href}>
                   <Fragment set:html={text} />
                 </a>
               ))}
-            </span>
+            </div>
           ) : (
             ''
           )

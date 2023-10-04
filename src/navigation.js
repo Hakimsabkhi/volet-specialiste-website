@@ -27,7 +27,14 @@ export const headerData = {
     {
       type: 'button',
       class:
-        'text-white bg-[var(--aw-color-secondary)] hover:bg-[#2557D6]/90 focus:ring-4 focus:ring-[#2557D6]/50 focus:outline-none font-medium rounded-4xl text-sm px-5 py-3 text-center inline-flex items-center ml-2  2xl:mr-24',
+        'text-white bg-[var(--aw-color-secondary)] hover:bg-[#2557D6]/90 focus:ring-4 focus:ring-[#2557D6]/50 focus:outline-none font-medium rounded-4xl text-sm px-5 py-3 text-center inline-flex items-center 2xl:mr-24',
+      text: 'Appelez Nous',
+      href: 'tel:01 85 49 07 07',
+    },
+    {
+      type: 'button',
+      class:
+        'md:hidden text-white bg-[var(--aw-color-secondary)] hover:bg-[#2557D6]/90 focus:ring-4 focus:ring-[#2557D6]/50 focus:outline-none font-medium rounded-4xl text-sm px-5 py-3 text-center inline-flex items-center 2xl:mr-24',
       text: 'Contactez-nous',
       href: '/contact',
     },
