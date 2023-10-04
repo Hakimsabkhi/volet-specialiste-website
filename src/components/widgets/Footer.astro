@@ -28,146 +28,63 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
 ---
 
 <footer 'relative border-t border-gray-200 not-prose']}>
-  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-  <div class="relative max-w-3xl 2xl:max-w-7xl">
-    <div class="grid grid-cols-22 md:grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-2 md:py-12">
-      <div class="col-span-6 md:col-span-6">
-        <div class="md:ml-22 ml-5">
+
+      <div class=" my-4 flex flex-col md:flex-row md:flex-li justify-around w-full items-center">
+        <div class="w-full md:w-1/4" >
           <a href={getHomePermalink()}>
             <Image src={logo} alt="logo volet specialiste" width="250" height="50" class="mx-auto" />
           </a>
         </div>
-        <div class="text-xs text-muted">
+        <div class="flex justify-around w-full md:w-3/5 text-center my-4">
           {
-            secondaryLinks.map(({ text, href }) => (
-              <a
-                class="text-muted hover:text-gray-700 hover:underline transition duration-250 ease-in-out ml-6 md:mr-2 rtl:mr-0 rtl:ml-2"
-                href={href}
-                set:html={text}
-              />
+            links.map(({ title, links }) => (
+              <div class="w-2/5">
+                <div class="mb-2 ">{title}</div>
+                {links && Array.isArray(links) && links.length > 0 && (
+                  <ul class="text-xs">
+                    {links.map(({ text, href, ariaLabel }) => (
+                      <li class="mb-2">
+                        <a
+                          class="text-muted hover:text-gray-700 hover:underline transition duration-250 ease-in-out"
+                          href={href}
+                          aria-label={ariaLabel}
+                        >
+                          <Fragment set:html={text} />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             ))
           }
         </div>
       </div>
-      {
-        links.map(({ title, links }) => (
-          <div class="col-span-3 md:col-span-3 sm:col-span-2 text-center">
-            <div class="font-medium mb-2">{title}</div>
-            {links && Array.isArray(links) && links.length > 0 && (
-              <ul class="text-xs">
-                {links.map(({ text, href, ariaLabel }) => (
-                  <li class="mb-2">
-                    <a
-                      class="text-muted hover:text-gray-700 hover:underline transition duration-250 ease-in-out"
-                      href={href}
-                      aria-label={ariaLabel}
-                    >
-                      <Fragment set:html={text} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))
-      }
-    </div>
-    <div class="md:flex md:items-center md:justify-between mb-5">
-      {
-        socialLinks?.length ? (
-          <ul class="flex md:ml-5 justify-center">
-            {socialLinks.map(({ ariaLabel, href, text, icon }) => (
-              <li>
-                <a
-                  class="text-muted hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-sm text-xs p-2.5 inline-flex items-center"
-                  aria-label={ariaLabel}
-                  href={href}
-                >
-                  {icon && <Icon name={icon} class="w-5 h-5" />}
-                  <Fragment set:html={text} />
-                </a>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          ''
-        )
-      }
 
-      <div class="text-xs text-center md:mr-4">
-        <Fragment set:html={footNote} />
-      </div>
-      <!-- <div class="sticky top-20 right-10 sm:right-0 xl:right-10 w-80 sm:w-60 xl:w-80 h-screen invisible lg:visible"
-      >
-        <div class="h-full px-3 py-4 overflow-y-auto text-center bg-gray-50">
-          <p class="mt-4 mb-2 text-sm uppercase font-bold">INFOS GÉNÉRALES</p>
-          <ul class="space-y-2 font-medium">
+  <!-- low part footer -->
+  <div class="flex flex-col md:flex-row md:items-center md:justify-around mb-5">
+    {
+      socialLinks?.length ? (
+        <ul class="flex justify-center md:w-1/4">
+          {socialLinks.map(({ ariaLabel, href, text, icon }) => (
             <li>
               <a
-                href="/quel-volet-roulant-choisir"
-                class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
-                >Quel volet roulant acheter</a
+                class="text-muted hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-sm text-xs p-2.5 inline-flex items-center"
+                aria-label={ariaLabel}
+                href={href}
               >
+                {icon && <Icon name={icon} class="w-5 h-5" />}
+                <Fragment set:html={text} />
+              </a>
             </li>
-            <li>
-              <a
-                href="/prix-volet-roulant-aluminium"
-                class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
-                >Prix d'un volet roulant aluminium</a
-              >
-            </li>
-          </ul>
-          <p class="mt-4 mb-2 text-sm uppercase font-bold">TYPES DE VOLETS</p>
-          <ul class="space-y-2 font-medium">
-            <li>
-              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
-                >Volet roulant à caisson</a
-              >
-            </li>
-            <li>
-              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
-                >Volet roulant anti-effraction</a
-              >
-            </li>
-            <li>
-              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
-                >Volet roulant solaire</a
-              >
-            </li>
-            <li>
-              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
-                >Volet roulant pour Velux</a
-              >
-            </li>
-          </ul>
-          <p class="mt-4 mb-2 text-sm uppercase font-bold">POSE ET ENTRETIEN</p>
-          <ul class="space-y-2 font-medium">
-            <li>
-              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
-                >Comment Réparer un Volet Roulant</a
-              >
-            </li>
-            <li>
-              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
-                >Remplacer la sangle d'un volet roulant</a
-              >
-            </li>
-          </ul>
-          <p class="mt-4 mb-2 text-sm uppercase font-bold">COMMANDE</p>
-          <ul class="space-y-2 font-medium">
-            <li>
-              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
-                >Volet roulant électrique</a
-              >
-            </li>
-            <li>
-              <a href="/" class="items-center text-center text-xs p-2 text-gray-900 rounded-sm hover:bg-gray-200"
-                >Motoriser un volet roulant</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div> -->
+          ))}
+        </ul>
+      ) : (
+        ''
+      )
+    }
+    <div class="text-xs text-center md:w-3/5 md:mr-4">
+      <Fragment set:html={footNote} />
     </div>
   </div>
 </footer>

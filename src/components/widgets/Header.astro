@@ -48,7 +48,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
 <header
   class:list={[
-    { sticky: isSticky, relative: !isSticky},
+    { sticky: isSticky, relative: !isSticky },
     'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out bg-page',
   ]}
   {...id ? { id } : {}}
@@ -121,18 +121,15 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     <div
       class:list={[
         { 'ml-auto rtl:ml-0 rtl:mr-auto': position === 'left' },
-        'hidden mb-10 md:self-center flex md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-40 p-3 md:p-0',
+        'hidden mb-10 md:self-center flex md:flex  md:mb-0 fixed w-full md:w-auto md:static justify-center bottom-28',
       ]}
     >
-      <div class="items-center flex justify-between w-full md:w-auto">
+      <div class="">
         {
           actions?.length ? (
             <span class=" md:ml-4 rtl:ml-0 rtl:mr-4">
               {actions.map(({ text, href, class: className }) => (
-                <a
-                  class:list={['btn ml-2 py-2.5 px-5.5 md:px-6 font-base shadow-none text-base', className]}
-                  href={href}
-                >
+                <a class:list={['btn ', className]} href={href}>
                   <Fragment set:html={text} />
                 </a>
               ))}

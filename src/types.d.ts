@@ -227,7 +227,6 @@ export interface Form {
 
 export interface FormDevis {
   inputs?: Array<Input>;
-  boxinputs?: Array<Input>;
   textarea?: Textarea;
   disclaimer?: Disclaimer;
   question?: question;
