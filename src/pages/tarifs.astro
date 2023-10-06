@@ -1,156 +1,455 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import TelMob from '~/components/widgets/telMob.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Hakim from '~/components/widgets/Hakim.astro';
+import HakimMobi from '~/components/widgets/HakimMobi.astro';
 const metadata = {
-  title: 'Volet Roulant : Comprendre les Prix ',
+  title: 'Les Volets Roulants : Guide Complet des Prix et des Options',
+  description:
+    'Un guide détaillé pour comprendre les coûts associés aux volets roulants, les matériaux disponibles, et les facteurs qui peuvent influencer ces coûts.',
+  keywords: [
+    'volets roulants',
+    'prix volets',
+    'guide volets',
+    'PVC',
+    'aluminium',
+    'bois',
+    'aides financières',
+    'installation volets',
+    'mécanisme volets',
+  ],
+  tags: ['maison', 'rénovation', 'décoration', 'sécurité', 'esthétique', 'efficacité énergétique'],
+  slug: 'guide-complet-volets-roulants',
+  canonical: 'volet-specialiste.com/guide-complet-volets-roulants', // Replace 'yourwebsite.com' with your actual domain
+  altText: [
+    'Volets roulants fermés',
+    'Volet roulant en PVC',
+    'Volet roulant en aluminium',
+    'Volet roulant en bois',
+    'Installation de volet roulant',
+  ],
   ignoreTitleTemplate: true,
 };
 ---
-
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-  <Hero
-    callToAction={{
-      text: 'Applez-Nous',
-      href: '/',
-      icon: 'tabler:download',
-    }}
-    callToAction2={{ text: 'Devis Gratuit', href: '#features' }}
-    image={{ src: '~/assets/images/imgvoletroulant.png', alt: 'Volet Roulant : Comprendre les Prix' }}
-  >
-    <Fragment slot="title">Volet Roulant : Comprendre les Prix.</Fragment>
-    <Fragment slot="subtitle">
-      Lorsque vous envisagez l'installation de volets roulants dans votre maison, il est crucial de comprendre les
-      différents facteurs qui influencent les prix. Les volets roulants se déclinent en divers matériaux et méthodes de
-      commande, chacun ayant un impact sur le coût total. Dans cet article, nous examinerons de près les prix indicatifs
-      des volets roulants en fonction de divers critères.
-    </Fragment>
-    <Fragment slot="sommaire1">1. Prix en Fonction du Matériau et de la Méthode de Commande</Fragment>
-    <Fragment slot="sommaire2">2. Prix Selon le Type de Volet Roulant</Fragment>
-    <Fragment slot="sommaire3">3. Frais d'Installation des Volets Roulants</Fragment>
-  </Hero>
-  <Content
-    id="section1"
-    image={{
-      src: '~/assets/images/types-de-volets-roulants.png',
-      alt: 'Prix en Fonction du Matériau et de la Méthode de Commande',
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-xl font-bold leading-tighter tracking-wide mb-4">
-        Prix en Fonction du Matériau et de la Méthode de Commande.
-      </h2>
-      <p>
-        Les matériaux et la méthode de commande sont des aspects cruciaux qui déterminent le prix de vos volets
-        roulants. Les deux matériaux les plus couramment utilisés sont l'aluminium et le PVC. En ce qui concerne la
-        méthode de commande, vous avez le choix entre plusieurs options : manuelle avec une manivelle ou une sangle,
-        électrique avec un interrupteur ou électrique avec une télécommande. Voici un tableau présentant les prix moyens
-        :
-        <br />
-        <br />
-        <span class="font-bold"> 1. Volet roulant en PVC</span><br />
-        <li class="ml-6"><span class="font-semibold ml"> Commande manuelle :</span> Environ 100 - 250 €/m²</li>
-        <li class="ml-6"><span class="font-semibold ml">Commande électrique :</span> Environ 200 - 500 €/m²</li><br />
-        <span class="font-bold">2. Volet roulant en aluminium</span>
-        <br />
-        <li class="ml-6">
-          <span class="font-semibold ml"> Commande manuelle :</span> Environ 110 - 270 €/m²
-          <br />
-        </li>
-        <li class="ml-6"><span class="font-semibold ml"> Commande électrique :</span> Environ 200 - 750 €/m²</li><br />
-         N'oubliez pas de prendre en compte les frais d'installation, qui sont généralement d'environ 70 € par heure
-        (TVA et frais de déplacement inclus). Vous pouvez également demander des devis personnalisés et gratuits via
-        notre page de devis, sans aucun engagement.
-      </p>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50"></div>
-    </Fragment>
-  </Content>
-  <Content
-    id="section2"
-    image={{
-      src: '~/assets/images/methode-de-commande-des-volets-roulants.png',
-      alt: 'Prix Selon le Type de Volet Roulant',
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-xl font-bold leading-tighter tracking-wide mb-4">Prix Selon le Type de Volet Roulant</h2>
-      <p>
-        Il existe trois principaux types de volets roulants : le volet roulant intégré, le volet roulant à caisson et le
-        volet roulant monobloc. Chacun d'entre eux présente des caractéristiques spécifiques et des prix indicatifs en
-        fonction du matériau et de la méthode de commande (TVA incluse, mais hors frais d'installation). <br />
-        <br />
-        <span class="font-bold">1. Volet Roulant Intégré :</span> Le volet roulant intégré est particulièrement élégant,
-        car son caisson est dissimulé dans une alcôve au-dessus de la fenêtre et derrière la façade. Cette discrétion a
-        un prix, car l'installation nécessite des travaux de démolition. Il est donc recommandé de l'envisager lors de
-        la construction de votre logement ou pendant une rénovation complète.<br /><br /><span class="font-semibold"
-          >PVC</span
-        ><li class="ml-6">Manuel,avec sangle (1 m x 1 m) : Environ 90 €</li><li class="ml-6">
-          Électrique, avec émetteur et télécommande (1 m x 1 m) : Environ 480 €
-        </li>
-        <br /><span class="font-semibold">Aluminium</span><li class="ml-6">
-          Manuel, avec sangle (1 m x 1 m) : Environ 160 €
-        </li><li class="ml-6">Électrique, avec émetteur et télécommande (1 m x 1 m) : Environ 730 €</li><br /><span
-          class="font-semibold">2. Volet Roulant à Caisson :</span
-        > Les volets roulants à caisson sont plus simples à installer, car ils se montent directement sur la façade avec
-        un caisson. Ils conviennent parfaitement aux maisons en rénovation, car aucune démolition n'est nécessaire.
-        Cependant, gardez à l'esprit que le caisson est visible sur la façade, ce qui peut être considéré comme un
-        inconvénient esthétique.
-        <br /><br /><span class="font-semibold">PVC</span><li class="ml-6">
-          Manuel, avec sangle (1 m x 1 m) : Environ 150 €
-        </li><li class="ml-6">Électrique, avec émetteur et télécommande (1 m x 1 m) :Environ 400 €</li><li class="ml-6">
-          Aluminium Manuel, avec sangle (1 m x 1 m) : Environ 200 €
-        </li><li class="ml-6">Électrique, avec émetteur et télécommande (1 m x 1 m) : Environ 500 €</li><br /><span
-          class="font-semibold">3. Volet Roulant Monobloc:</span
-        >Dans le cas d'un volet roulant monobloc, le caisson est monté du côté intérieur de la maison, donnant ainsi
-        l'apparence d'une uniformité vue de l'extérieur. Ces volets offrent également une bonne isolation, car ils sont
-        fixés sur les fenêtres. Comme pour les volets intégrés, l'installation nécessite des travaux de démolition, ce
-        qui les rend plus adaptés aux nouvelles constructions.<br /><br /><span class="font-semibold">PVC</span><li
-          class="ml-6"
+  <section class="relative md:-mt-[76px] not-prose mt-4 md:mx-10 md:flex md:justify-around">
+    <div>
+      <div class="relative my-2 visible md:hidden">
+        <HakimMobi image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants' }}>
+          <Fragment slot="subtitle">
+            <span class="font-bold">Rédacteur: S.Abdelhakim</span>
+            <br />Je suis un spécialiste qualifié dans le domaine des volets roulants.
+          </Fragment>
+        </HakimMobi>
+      </div>
+      <Hero
+        callToAction={{
+          text: 'Appelez Nous',
+          href: 'tel:01 85 49 07 07',
+        }}
+        callToAction2={{ text: 'Devis Gratuit', href: '/devis-gratuit' }}
+        image={{ src: '~/assets/images/Volet-roulant.png', alt: 'les volets roulants' }}
+      >
+        <Fragment slot="title">Prix des Volets Roulants 2023 : Tarifs, Options et Conseils d'Achat.</Fragment>
+        <Fragment slot="subtitle">
+          Découvrez les nuances des coûts associés aux volets roulants, les matériaux disponibles, et les divers
+          éléments qui peuvent influencer votre choix. Ce guide vous éclaire pour un investissement éclairé et adapté à
+          vos besoins.
+        </Fragment>
+        <Fragment slot="sommaire1">I. Introduction</Fragment>
+        <Fragment slot="sommaire2">II. Quel est le prix des volets roulants</Fragment>
+        <Fragment slot="sommaire3">III. Critères qui influencent le prix des volets roulants ?</Fragment>
+        <Fragment slot="sommaire4">IV. Volets roulants solaires : Une technologie verte à un coût</Fragment>
+        <Fragment slot="sommaire5">V. Volets roulants en polycarbonate : Esthétique, sécurité et coût</Fragment>
+        <Fragment slot="sommaire6">VI. Aides financières pour les volets roulants ?</Fragment>
+        <Fragment slot="sommaire7">VII. Conclusion</Fragment>
+      </Hero>
+      <Content id="section1">
+        <Fragment slot="content">
+          <div class="my-8">
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">I. Introduction</h2>
+            <p>
+              Les volets roulants sont de plus en plus prisés dans les foyers modernes. Ils allient esthétique,
+              fonctionnalité et sécurité. Toutefois, il est primordial de comprendre les coûts associés et les divers
+              facteurs qui peuvent influencer ces coûts.
+            </p>
+            <div class="mt-8 max-w-2xl mx-auto">
+              <blockquote class="italic border-l-4 pl-4 border-gray-400 text-gray-700">
+                "Un bon volet roulant est un investissement, pas une dépense."
+              </blockquote>
+              <cite class="block mt-2 text-gray-500"> - Jean-Pierre Lévesque, architecte renommé.</cite>
+            </div>
+          </div>
+        </Fragment>
+      </Content>
+      <Content
+        id="section2"
+        image={{
+          src: '~/assets/images/cout-des-volets-roulants.png',
+          alt: 'Volet Roulant pour Velux',
+        }}
+      >
+        <Fragment slot="content">
+          <div class="my-8">
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">
+              II. Quel est le prix des volets roulants ?
+            </h2>
+            <p>Le choix du matériau est déterminant pour le prix des volets roulants :</p>
+          </div>
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">a. PVC</h3>
+          <p>
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Volet manuel :</span>Léger et résistant aux intempéries, il est proposé entre
+                100 € et 300 €. Le PVC est également reconnu pour ses propriétés isolantes.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Volet électrique :</span>Offrant plus de confort, son prix varie entre 400 € et
+                800 €.
+              </li>
+            </ul>
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">b. Aluminium</h3>
+          <p>
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Volet manuel :</span>Plus durable et élégant, il se situe entre 150 € et 250 €.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Volet électrique :</span>Son prix peut varier considérablement, allant de 150 €
+                à 2 000 €, en fonction des fonctionnalités offertes.
+              </li>
+            </ul>
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">c. Bois</h3>
+          <p>
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Volet manuel :</span>Plus durable et élégant, il se situe entre 150 € et 250 €.
+              </li>
+              <br />
+              <li class="list-disc">
+                <span class="font-bold">Volet électrique :</span>Offrant une esthétique rustique et une excellente
+                isolation, son coût est compris entre 500 € et 1 200 €.
+              </li>
+            </ul>
+          </p>
+        </Fragment>
+      </Content>
+      <Content
+        id="section3"
+        image={{
+          src: '~/assets/images/cout-des-volets-roulants.png',
+          alt: 'Volet Roulant pour Velux',
+        }}
+      >
+        <Fragment slot="content">
+          <div class="my-8">
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">
+              III. Quels sont les autres critères qui influencent le prix des volets roulants ?
+            </h2>
+            <p>D'autres éléments peuvent faire varier le coût des volets roulants :</p>
+          </div>
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">a. Choix de la marque du volet roulant :</h3>
+          <p>
+            L'identité de la marque du volet roulant est un élément prépondérant dans la fixation de son tarif. Les
+            enseignes prestigieuses, ayant une solide réputation, mettent souvent l'accent sur la recherche et le
+            développement, ce qui se traduit par des produits haut de gamme. Ces enseignes garantissent généralement une
+            durabilité supérieure, des matériaux de premier choix et un service après-vente de qualité. Cela dit, cette
+            excellence a un coût. Pour illustrer :
+          </p><br />
+          <p>
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Somfy :</span> C'est l'une des marques les plus zrenommées en France pour les
+                volets roulants électriques. Les prix peuvent varier en fonction du modèle et de la taille, mais
+                attendez-vous à payer entre 300€ et 800€ pour un volet roulant électrique
+              </li>
+              <br />
+              <li class="list-disc">
+                <span class="font-bold">Bubendorff :</span>Une autre marque bien établie en France. Les volets roulants
+                Bubendorff sont réputés pour leur qualité et leur durabilité. Les prix peuvent varier de 250€ à 700€.
+              </li>
+              <br />
+              <li class="list-disc">
+                <span class="font-bold">Velux :</span>Si vous recherchez des volets roulants pour fenêtres de toit,
+                Velux est l'une des meilleures marques disponibles. Les prix peuvent commencer à partir de 200€ et aller
+                jusqu'à 600€ ou plus, en fonction de la taille et des fonctionnalités.
+              </li>
+              <br /><li class="list-disc">
+                <span class="font-bold">Profalux :</span>
+                 Une marque qui offre une gamme variée de volets roulants. Les prix peuvent commencer à partir de 150€
+                et varier en fonction du modèle et de la taille.
+              </li>
+            </ul>
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">b. Types de volet roulant :</h3>
+          <p>
+            En fonction du mécanisme : manuel à tirage, à sangle, à manivelle, ou encore électrique, chaque type a ses
+            avantages et ses inconvénients.
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">c. Gestion thermique :</h3>
+          <p>
+            Certains volets sont conçus pour offrir une meilleure isolation, ce qui peut contribuer à réduire vos
+            factures d'énergie.
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">d. Sécurité :</h3>
+          <p>
+            Les modèles renforcés avec des technologies anti-effraction peuvent coûter plus cher, mais offrent une
+            meilleure protection.
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">e. Taille des volets :</h3>
+          <p>
+            La taille des volets roulants est un facteur déterminant dans le coût total du projet. Voici une estimation
+            approximative des coûts en fonction de la taille des volets :
+          </p><br />
+          <p>
+            <span class="font-bold"> Pour fenêtres standard (1m x 1m) :</span><ul class="ml-8">
+              <li class="ml-4 list-disc">Manuel : entre 100€ et 200€</li><li class="ml-4 list-disc">
+                Électrique : entre 200€ et 400€
+              </li>
+            </ul><br />
+            <span class="font-bold"> Volets pour portes-fenêtres (1m x 2,2m) :</span><ul class="ml-8">
+              <li class="ml-4 list-disc">Manuel : entre 150€ et 300€</li><li class="ml-4 list-disc">
+                Électrique : entre 300€ et 600€
+              </li>
+            </ul><br />
+            <span class="font-bold">Volets pour baies vitrées (3m x 2,2m) :</span><ul class="ml-8">
+              <li class="ml-4 list-disc">Manuel : entre 300€ et 600€</li><li class="ml-4 list-disc">
+                Électrique : entre 600€ et 1200€
+              </li>
+            </ul>
+          </p>
+        </Fragment>
+      </Content>
+      <TelMob
+        callToAction={{
+          text: 'Appelez Nous',
+          href: 'tel:01 85 49 07 07',
+        }}
+        callToAction2={{ text: 'Devis Gratuit', href: '/devis-gratuit' }}
+      >
+        <Fragment slot="title">Obtenez une estimation gratuite aujourd'hui !</Fragment>
+        <Fragment slot="subtitle">
+          Nos artisans experts sont là pour répondre à vos questions et combler vos besoins avec des solutions de
+          qualité et sur mesure.
+        </Fragment>
+         />
+      </TelMob>
+      <Content
+        id="section4"
+        image={{
+          src: '~/assets/images/cout-des-volets-roulants.png',
+          alt: 'Volet Roulant pour Velux',
+        }}
+      >
+        <Fragment slot="content">
+          <div class="my-8">
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">
+              IV. Volets roulants solaires : Une technologie verte à un coût
+            </h2>
+            <p>
+              Les volets roulants solaires représentent une innovation majeure dans le domaine des volets. Fonctionnant
+              grâce à l'énergie solaire, ils offrent une solution écologique et économique sur le long terme. Voici un
+              aperçu des prix et des avantages de cette technologie :
+            </p>
+          </div>
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">a. Avantages :</h3>
+          <p>
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Écologique :</span> Ils réduisent l'empreinte carbone en utilisant une source
+                d'énergie renouvelable.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Économique :</span>Bien que l'investissement initial puisse être plus élevé, les
+                économies réalisées sur les factures d'électricité compensent sur le long terme.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Autonomie :</span>Pas besoin de raccordement électrique, ce qui facilite
+                l'installation et la rend idéale pour les rénovations ou les bâtiments éloignés des sources
+                d'électricité.
+              </li>
+            </ul>
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">b. Prix :</h3>
+          <p>
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Volets pour fenêtres standard (1m x 1m) :</span>Les prix débutent aux alentours
+                de 400€ et peuvent aller jusqu'à 900€ ou plus, en fonction de la marque et des spécificités.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Volets pour portes-fenêtres (1m x 2,2m) :</span>Les tarifs oscillent
+                généralement entre 600€ et 1 200€.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Volets pour baies vitrées (3m x 2,2m) :</span>Comptez entre 1 000€ et 2 500€,
+                voire plus pour des modèles haut de gamme.
+              </li>
+            </ul><br />
+             Il est important de souligner que ces prix sont approximatifs et peuvent varier en fonction des
+            fournisseurs, des promotions en cours et de la région. De plus, certains crédits d'impôt ou aides peuvent
+            être disponibles pour encourager l'adoption de solutions éco-responsables comme les volets roulants
+            solaires.
+          </p><br />
+        </Fragment>
+      </Content>
+      <Content
+        id="section5"
+        image={{
+          src: '~/assets/images/cout-des-volets-roulants.png',
+          alt: 'Volet Roulant pour Velux',
+        }}
+      >
+        <Fragment slot="content">
+          <div class="my-8">
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">
+              V. Volets roulants en polycarbonate : Esthétique, sécurité et coût
+            </h2>
+            <p>
+              Les volets roulants en polycarbonate combinent esthétique moderne et robustesse, offrant une alternative
+              intéressante aux matériaux traditionnels. Le polycarbonate est un matériau transparent, résistant aux
+              chocs et aux intempéries, ce qui en fait un choix populaire pour ceux qui recherchent à la fois sécurité
+              et design. Voici un aperçu des prix et des caractéristiques de cette option :
+            </p>
+          </div>
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">a. Avantages :</h3>
+          <p>
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Sécurité renforcée :</span>Sa robustesse le rend difficile à briser ou à forcer.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Esthétique :</span>Les volets en polycarbonate offrent un design moderne et
+                épuré, adapté aux architectures contemporaines.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Entretien facile :</span>Le polycarbonate est un matériau facile à nettoyer et
+                ne jaunit pas avec le temps.
+              </li>
+            </ul>
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">b. Prix :</h3>
+          <p>
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Volets pour fenêtres standard (1m x 1m) :</span>Les prix peuvent commencer à
+                partir de 250€ et aller jusqu'à 600€, en fonction de l'épaisseur et de la qualité du polycarbonate.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Volets pour portes-fenêtres (1m x 2,2m) :</span>Les tarifs varient généralement
+                entre 400€ et 1 000€.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Volets pour baies vitrées (3m x 2,2m) :</span>Les prix peuvent osciller entre
+                800€ et 2 000€, selon les spécifications et les options choisies.
+              </li>
+            </ul><br />
+             Il est essentiel de noter que ces estimations sont indicatives. Les coûts réels peuvent varier en fonction
+            des fournisseurs, des régions et des promotions en cours. Comme toujours, il est recommandé de demander
+            plusieurs devis pour obtenir une idée précise des coûts et de comparer les offres disponibles sur le marché.
+          </p><br />
+        </Fragment>
+      </Content>
+      <Content
+        id="section6"
+        image={{
+          src: '~/assets/images/cout-des-volets-roulants.png',
+          alt: 'Volet Roulant pour Velux',
+        }}
+      >
+        <Fragment slot="content">
+          <div class="my-8">
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">
+              VI. Quelles aides financières pour les volets roulants ?
+            </h2>
+            <p>L'installation de volets roulants peut bénéficier de diverses aides :</p>
+          </div>
+          <p>
+            <ul>
+              <li><a href="https://www.maprimerenov.gouv.fr/" target="_blank" class="text-blue-500 hover:underline">MaPrimeRénov’ Sérénité :</a>C'est une subvention, donc elle est accordée sans avoir à la rembourser. Il n'y a pas de frais associés à la réception de cette aide. Cependant, il peut y avoir des critères d'éligibilité à respecter pour en bénéficier.</li><br />
+              <li><a href="https://www.economie.gouv.fr/particuliers/eco-pret-taux-zero" target="_blank" class="text-blue-500 hover:underline">Éco-prêt à taux zéro (éco-PTZ) :</a>Comme son nom l'indique, c'est un prêt à taux zéro, ce qui signifie qu'il n'y a pas d'intérêt à payer sur le montant emprunté. Cependant, c'est toujours un prêt, donc le montant principal doit être remboursé. Il n'y a pas de frais supplémentaires associés à ce prêt en termes d'intérêts.</li>
+          </ul>
+          </p>
+        </Fragment>
+      </Content>
+      <TelMob
+        callToAction={{
+          text: 'Appelez Nous',
+          href: 'tel:01 85 49 07 07',
+        }}
+        callToAction2={{ text: 'Devis Gratuit', href: '/devis-gratuit' }}
+      >
+        <Fragment slot="title">Obtenez une estimation gratuite aujourd'hui !</Fragment>
+        <Fragment slot="subtitle">
+          Nos artisans experts sont là pour répondre à vos questions et combler vos besoins avec des solutions de
+          qualité et sur mesure.
+        </Fragment>
+         />
+      </TelMob>
+      <Content id="section7">
+        <Fragment slot="content">
+          <div class="my-8">
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">VII. Conclusion:</h2>
+            <p>
+              Opter pour des volets roulants n'est pas une simple décision d'achat, c'est un investissement judicieux pour les années à venir. Ils apportent non seulement une touche esthétique moderne à votre domicile, mais garantissent également une sécurité renforcée et un confort optimal. Qu'il s'agisse de modèles traditionnels, solaires ou en polycarbonate, chaque type de volet roulant offre des avantages spécifiques adaptés aux besoins et aux préférences de chacun. En fin de compte, bien choisir ses volets roulants, c'est valoriser son habitat, réaliser des économies d'énergie et améliorer son quotidien. Il est donc essentiel de bien s'informer, de comparer les offres et de considérer cet achat comme un investissement à long terme pour votre maison et votre bien-être.
+            </p><br /><br />
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">Foire aux questions</h2>
+            <p>
+              <span class="font-bold"
+                >Q1: Pourquoi existe-t-il une telle variation de prix entre les volets roulants en PVC et en aluminium ?</span
+              ><br />Le coût des matériaux, le processus de fabrication, et la durabilité diffèrent entre le PVC et l'aluminium. L'aluminium est souvent plus coûteux car il est robuste, ne rouille pas, et est généralement considéré comme ayant une meilleure longévité que le PVC.
+              <br /><br />
+              <span class="font-bold"
+                >Q2: La motorisation de mes volets roulants actuels sera-t-elle coûteuse ?</span
+              ><br /> Motoriser des volets roulants existants peut coûter entre 200 € et 700 € par volet, selon le type de motorisation choisi et la complexité de l'installation.
+              <br /><br /><span class="font-bold"
+                >Q3: Pourquoi les volets roulants en bois sont-ils généralement plus chers ?</span
+              ><br />Le bois est un matériau naturel qui offre une esthétique distincte et une excellente isolation. Cependant, sa production, son traitement contre les parasites et les intempéries, et le coût intrinsèque du matériau contribuent à un prix plus élevé.
+              <br /><br /><span class="font-bold">Q4: Est-ce que les fonctionnalités supplémentaires comme les capteurs de soleil ou les commandes à distance augmentent considérablement le prix ?</span><br />Oui, ces fonctionnalités peuvent majorer le prix. Par exemple, un capteur de soleil peut ajouter entre 50 € et 100 €, tandis qu'une commande à distance peut coûter entre 30 € et 70 € supplémentaires.
+              <br /><br /><span class="font-bold"
+                >Q5: L'installation est-elle généralement incluse dans le prix des volets roulants ?</span
+              ><br />Pas toujours. Certains fournisseurs peuvent offrir une installation à un tarif réduit ou comme une promotion, mais généralement, le coût de l'installation est facturé séparément et varie en fonction de la complexité de la tâche. <br /><br /><span class="font-bold"
+              >Q6: Y a-t-il des aides ou des subventions disponibles pour réduire le coût des volets roulants ?</span
+            ><br />Oui, en fonction de votre région et de vos qualifications, il peut y avoir des aides financières telles que MaPrimeRénov’ Sérénité ou l'éco-prêt à taux zéro pour aider à financer les volets roulants, surtout s'ils contribuent à l'efficacité énergétique de votre maison.
+            <br /><br /><span class="font-bold"
+              >Q6: Les volets roulants solaires sont-ils plus chers ?</span
+            ><br />Oui, en général, les volets roulants solaires ont un coût initial plus élevé en raison de la technologie solaire intégrée. Cependant, ils peuvent générer des économies sur le long terme en réduisant les coûts énergétiques.<br /><br /><span class="font-bold"
+            >Q6: Les volets roulants en polycarbonate sont-ils plus chers ?</span
+          ><br />En général, les volets roulants en polycarbonate peuvent être plus coûteux en raison de la robustesse et de la transparence du matériau. Les prix peuvent commencer à partir de 250€ pour une fenêtre standard.
+            </p>
+          </div>
+        </Fragment>
+      </Content>
+    </div>
+    <div class="hidden md:mt-10 md:block">
+      <Hakim image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants' }}>
+        <Fragment slot="title">Rédacteur: S.Abdelhakim</Fragment>
+        <Fragment slot="subtitle">
+          Je suis un spécialiste qualifié dans le domaine des volets roulants, avec une expertise approfondie dans les
+          systèmes de volets roulants modernes et traditionnels. Ma formation et mon expérience me permettent de fournir
+          des conseils expert sur la sélection, l'installation, la maintenance et la réparation de volets roulants pour
+          assurer une satisfaction client optimale.
+        </Fragment>
+      </Hakim>
+      <div class="mt-2 sticky top-28">
+        <CallToAction
+          callToAction={{
+            text: 'Appelez Nous',
+            href: 'tel:01 85 49 07 07',
+          }}
         >
-          Manuel, avec sangle (1 m x 1 m) : Environ 250 €
-        </li><li class="ml-6">Électrique, avec émetteur et télécommande (1 m x 1 m) : Environ 450 €</li>
-        <br /><span class="font-semibold">Aluminium</span><li class="ml-6">
-          Manuel, avec sangle (1 m x 1 m) : Environ 220 €
-        </li><li class="ml-6">Électrique, avec émetteur et télécommande (1 m x 1 m) : Environ 600 €</li>
-      </p>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50"></div>
-    </Fragment>
-  </Content>
-  <Content
-    id="section3"
-    image={{
-      src: '~/assets/images/cout-des-volets-roulants.png',
-      alt: "Frais d'Installation des Volets Roulants",
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-xl font-bold leading-tighter tracking-wide mb-4">Frais d'Installation des Volets Roulants</h2>
-      <p>
-        Il est fortement recommandé de faire appel à un professionnel pour l'installation de vos volets roulants, car
-        l'expérience est un atout essentiel. Une installation incorrecte pourrait entraîner des coûts considérables en
-        réparations. En moyenne, un installateur professionnel facture environ 280 € pour 4 heures de travail, TVA et
-        frais de déplacement inclus.<br /><br />Lorsque vous envisagez d'installer des volets roulants, prenez le temps
-        de comparer les options en fonction de vos besoins et de votre budget. Cela vous permettra de faire un choix
-        éclairé en assurant la qualité et la sécurité de votre installation.
-      </p>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50"></div>
-    </Fragment>
-  </Content>
-  <CallToAction
-    callToAction={{
-      text: 'Appelez Nous',
-      href: 'tel:01 85 49 07 07',
-    }}
-  >
-    <Fragment slot="title">Demandez un devis gratuite dès aujourd'hui.</Fragment>
-    <Fragment slot="subtitle">Des artisans experts à votre service pour répondre à toutes vos demandes.</Fragment>
-  </CallToAction>
+          <Fragment slot="title">Obtenez un devis gratuit dès maintenant.</Fragment>
+          <Fragment slot="subtitle">
+            Des artisans experts à votre disposition pour répondre à toutes vos questions et satisfaire tous vos besoins
+            en matière de volets.
+          </Fragment>
+        </CallToAction>
+      </div>
+    </div>
+  </section>
 </Layout>

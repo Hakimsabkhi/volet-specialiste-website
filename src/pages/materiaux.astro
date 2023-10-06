@@ -1,230 +1,491 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import TelMob from '~/components/widgets/telMob.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Hakim from '~/components/widgets/Hakim.astro';
+import HakimMobi from '~/components/widgets/HakimMobi.astro';
 const metadata = {
-  title: 'Trouvez des informations et des conseils spécialisés sur les volets roulants',
+  title: 'Quel matériau pour ses volets roulants : le comparatif !',
+  description:
+    'Un guide complet pour choisir le meilleur matériau pour vos volets roulants, en comparant les avantages et inconvénients de chaque option.',
+  keywords: [
+    'volets roulants',
+    'matériaux',
+    'aluminium',
+    'PVC',
+    'bois',
+    'métal',
+    'composite',
+    'polycarbonate',
+    'comparatif',
+  ],
+  tags: ['guide', 'maison', 'rénovation', 'sécurité', 'isolation', 'esthétique'],
+  slug: 'quel-materiau-pour-volets-roulants-comparatif',
+  canonical: 'volet-specialiste.com/quel-materiau-pour-volets-roulants-comparatif',
+  altText: [
+    'Volets roulants en aluminium',
+    'Volets roulants en PVC',
+    'Volets roulants en bois',
+    'Volets roulants en métal',
+    'Volets roulants en composite',
+    'Volets roulants en polycarbonate',
+  ],
   ignoreTitleTemplate: true,
 };
 ---
-
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-  <Hero
-    callToAction={{
-      text: 'Applez-Nous',
-      href: '/',
-      icon: 'tabler:download',
-    }}
-    callToAction2={{ text: 'Devis Gratuit', href: '#features' }}
-    image={{ src: '~/assets/images/imgvoletroulant.png', alt: 'Matériaux des Volets Roulants' }}
-  >
-    <Fragment slot="title">Les Matériaux des Volets Roulants : Bois, PVC et Aluminium.</Fragment>
-    <Fragment slot="subtitle">
-      Lorsque vous envisagez d'installer des volets roulants, le choix du matériau est une décision cruciale. Les volets
-      roulants sont disponibles dans une variété de matériaux, chacun ayant ses propres avantages et inconvénients.
-      Parmi les matériaux les plus couramment utilisés, nous retrouvons le bois, le PVC et l'aluminium. Dans cet
-      article, nous examinerons en détail ces trois matériaux pour vous aider à prendre une décision éclairée.
-    </Fragment>
-    <Fragment slot="sommaire1">1. Le Volet Roulant en Bois : Tradition et Durabilité.</Fragment>
-    <Fragment slot="sommaire2">2. Le Volet Roulant en PVC : Léger et Facile d'Entretien.</Fragment>
-    <Fragment slot="sommaire3">3. Le Volet Roulant en Aluminium : Solidité et Résistance</Fragment>
-    <Fragment slot="sommaire4">4. Comparaison des Coûts et des Avantages</Fragment>
-  </Hero>
-  <Content
-    id="section1"
-    image={{
-      src: '~/assets/images/types-de-volets-roulants.png',
-      alt: 'Volet Roulant en Bois',
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-xl font-bold leading-tighter tracking-wide mb-4">Le Bois : Tradition et Durabilité.</h2>
-      <p class="mb-4">
-        Le bois est un matériau traditionnel et intemporel pour les volets roulants. Il offre plusieurs avantages,
-        notamment une excellente isolation thermique et phonique. Voici un aperçu de ses caractéristiques positives et
-        de ses points à considérer :
-      </p>
-      <div class="mb-4">
-        <h3 class="text-xl font-semibold mb-2">Avantages du Bois :</h3>
-        <ul class="list-disc pl-6">
-          <li>
-            Durabilité : Le bois est réputé pour sa durabilité. Avec un entretien régulier, les volets en bois peuvent
-            durer de nombreuses années.
-          </li>
-          <li>
-            Isolation Thermique : Les volets en bois offrent une isolation thermique exceptionnelle, ce qui peut
-            contribuer à réduire vos coûts de chauffage et de climatisation.
-          </li>
-          <li>
-            Isolation Phonique : Le bois est un excellent absorbant sonore, ce qui signifie qu'il peut aider à réduire
-            le bruit extérieur indésirable.
-          </li>
-        </ul>
+  <section class="relative md:-mt-[76px] not-prose mt-4 md:mx-10 md:flex md:justify-around">
+    <div>
+      <div class="relative my-2 visible md:hidden">
+        <HakimMobi image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants' }}>
+          <Fragment slot="subtitle">
+            <span class="font-bold">Rédacteur: S.Abdelhakim</span>
+            <br />Je suis un spécialiste qualifié dans le domaine des volets roulants.
+          </Fragment>
+        </HakimMobi>
       </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Inconvénients du Bois :</h3>
-        <p>
-          Entretien : Le bois nécessite un entretien régulier pour le protéger des intempéries, de la pourriture et des
-          insectes. Cela peut inclure la peinture ou la lasure périodique et le traitement contre les termites.
-        </p>
-        <p>Coût Initial : Les volets en bois ont tendance à avoir un coût initial plus élevé que d'autres matériaux.</p>
+      <Hero
+        callToAction={{
+          text: 'Appelez Nous',
+          href: 'tel:01 85 49 07 07',
+        }}
+        callToAction2={{ text: 'Devis Gratuit', href: '/devis-gratuit' }}
+        image={{ src: '~/assets/images/Volet-roulant.png', alt: 'les volets roulants' }}
+      >
+        <Fragment slot="title">Guide Ultime des Matériaux pour Volets Roulants: Lequel Choisir?</Fragment>
+        <Fragment slot="subtitle">
+          Découvrez les nuances des coûts associés aux volets roulants, les matériaux disponibles, et les divers
+          éléments qui peuvent influencer votre choix. Ce guide vous éclaire pour un investissement éclairé et adapté à
+          vos besoins.
+        </Fragment>
+        <Fragment slot="sommaire1">I. Introduction</Fragment>
+        <Fragment slot="sommaire2">II. Quels sont les différents matériaux disponibles ?</Fragment>
+        <Fragment slot="sommaire3">III. Comparatif : quel matériau choisir ?</Fragment>
+        <Fragment slot="sommaire4">IV. Quel est le meilleur matériau ?</Fragment>
+        <Fragment slot="sommaire5">V. Choix du volet roulant : les autres critères</Fragment>
+        <Fragment slot="sommaire6">VI. Conclusion</Fragment>
+        <Fragment slot="sommaire7">VII. Conclusion</Fragment>
+      </Hero>
+      <Content id="section1">
+        <Fragment slot="content">
+          <div class="my-8">
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">I. Introduction</h2>
+            <p>
+              Le choix des volets roulants est crucial pour toute maison. Non seulement ils jouent un rôle esthétique,
+              mais ils ont également des implications fonctionnelles, telles que la sécurité, l'isolation thermique et
+              la durabilité. L'un des aspects les plus importants à considérer lors de la sélection des volets roulants
+              est le matériau. Comme le disait un expert en design d'intérieur :
+            </p>
+            <div class="mt-8 max-w-2xl mx-auto">
+              <blockquote class="italic border-l-4 pl-4 border-gray-400 text-gray-700">
+                "Le choix du matériau pour un volet roulant n'est pas seulement une question d'esthétique, c'est une
+                décision qui impacte la durabilité, la sécurité et l'efficacité énergétique de votre maison."
+              </blockquote>
+              <cite class="block mt-2 text-gray-500"></cite>
+            </div>
+          </div>
+        </Fragment>
+      </Content>
+      <Content
+        id="section2"
+        image={{
+          src: '~/assets/images/cout-des-volets-roulants.png',
+          alt: 'Volet Roulant pour Velux',
+        }}
+      >
+        <Fragment slot="content">
+          <div class="my-8">
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">
+              II. Quels sont les différents matériaux disponibles ?
+            </h2>
+          </div>
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">a. Aluminium</h3>
+          <p>
+            L'aluminium est l'un des matériaux les plus populaires pour les volets roulants. Il est léger, résistant à
+            la corrosion et offre une excellente isolation thermique.<br /><br />
+            <span class="font-bold">Caractéristiques et avantages:</span><br /><br />
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Durabilité :</span>L'aluminium ne rouille pas, ce qui le rend idéal pour les
+                zones côtières.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Entretien facile :</span>Il nécessite peu d'entretien et peut être facilement
+                nettoyé avec de l'eau et du savon.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Variété de couleurs :</span>Disponible dans une gamme de couleurs pour s'adapter
+                à l'esthétique de n'importe quelle maison.
+              </li><br />
+            </ul>
+            <span class="font-bold">Limitations et inconvénients :</span><br /><br />
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Coût :</span> L'aluminium peut être plus coûteux que d'autres matériaux.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Sensibilité aux bosses :</span> Bien que durable, il peut se déformer sous un
+                impact sévère.
+              </li><br />
+            </ul>
+          </p>
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">b. PVC</h3>
+          <p>
+            Le PVC est un choix populaire pour de nombreuses raisons, notamment sa polyvalence et son coût abordable.<br
+            /><br />
+            <span class="font-bold">Caractéristiques et avantages:</span><br /><br />
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Abordable :</span>Le PVC est généralement moins cher que l'aluminium ou le bois.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Isolation :</span>Offre une bonne isolation thermique et acoustique.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Résistant aux intempéries :</span>Il résiste bien aux éléments, y compris à la
+                pluie et au soleil.
+              </li><br />
+            </ul>
+            <span class="font-bold">Limitations et inconvénients :</span><br /><br />
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Durabilité :</span> L'aluminium peut être plus coûteux que d'autres matériaux.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Impact environnemental :</span> La production de PVC peut avoir des implications
+                environnementales.
+              </li>
+            </ul>
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">c. Bois</h3>
+          <p>
+            Le bois est un choix classique qui offre une esthétique naturelle et chaleureuse.<br /><br />
+            <span class="font-bold">Caractéristiques et avantages:</span><br /><br />
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Esthétique :</span>Offre une apparence naturelle et peut être peint ou teint
+                pour s'adapter à n'importe quel style de maison.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Isolation :</span>Le bois offre une excellente isolation thermique.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Durabilité :</span>Avec un entretien approprié, les volets roulants en bois
+                peuvent durer de nombreuses années.
+              </li>
+            </ul><br />
+            <span class="font-bold">Limitations et inconvénients :</span><br />
+            <ul class="ml-8">
+              <br />
+              <li class="list-disc">
+                <span class="font-bold">Entretien :</span> Nécessite un entretien régulier pour éviter la pourriture et
+                les termites.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Coût :</span>Peut être plus coûteux que d'autres matériaux.
+              </li>
+            </ul>
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">d. Métal</h3>
+          <p>
+            Outre l'aluminium, d'autres métaux, tels que l'acier, sont utilisés pour les volets roulants.<br /><br />
+            <span class="font-bold">Caractéristiques et avantages:</span><br /><br />
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Sécurité :</span>Les volets roulants en métal sont robustes et offrent une
+                excellente sécurité.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Durabilité :</span>Résiste bien à la corrosion et à la rouille avec un
+                traitement approprié.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Esthétique :</span>Peut être peint dans une variété de couleurs.
+              </li>
+            </ul><br />
+            <span class="font-bold">Limitations et inconvénients :</span><br />
+            <ul class="ml-8">
+              <br />
+              <li class="list-disc">
+                <span class="font-bold">Poids :</span>Plus lourd que d'autres matériaux, ce qui peut nécessiter des
+                mécanismes de soutien supplémentaires.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Coût :</span>Les métaux comme l'acier peuvent être coûteux.
+              </li>
+            </ul>
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">e. Composite</h3>
+          <p>
+            Les matériaux composites sont une combinaison de matériaux tels que le bois et le plastique, offrant le
+            meilleur des deux mondes.<br /><br />
+            <span class="font-bold">Caractéristiques et avantages:</span><br /><br />
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Durabilité :</span>Les volets roulants en métal sont robustes et offrent une
+                excellente sécurité.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Entretien :</span>Nécessite moins d'entretien que le bois pur.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Isolation :</span>Offre une bonne isolation thermique et acoustique.
+              </li>
+            </ul><br />
+            <span class="font-bold">Limitations et inconvénients :</span><br />
+            <ul class="ml-8">
+              <br />
+              <li class="list-disc">
+                <span class="font-bold">Coût :</span>Peut être plus cher que d'autres options, comme le PVC pur.
+              </li>
+            </ul>
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">f. Polycarbonate</h3>
+          <p>
+            Le polycarbonate est un matériau moderne utilisé pour les volets roulants en raison de sa résistance et de
+            sa transparence.<br /><br />
+            <span class="font-bold">Caractéristiques et avantages:</span><br /><br />
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Légèreté :</span>Le polycarbonate est léger, ce qui facilite son installation.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Résistance :</span>Il est résistant aux chocs, ce qui le rend idéal pour les
+                zones sujettes aux intempéries.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Transparence :</span>Permet la transmission de la lumière tout en offrant une
+                isolation.
+              </li>
+            </ul><br />
+            <span class="font-bold">Limitations et inconvénients :</span><br /><br />
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Sensibilité aux rayures :</span> Bien que résistant, le polycarbonate peut se
+                rayer.
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Coût :</span>Peut être plus cher que certains autres matériaux.
+              </li>
+            </ul>
+          </p>
+        </Fragment>
+      </Content>
+      <Content
+        id="section3"
+        image={{
+          src: '~/assets/images/cout-des-volets-roulants.png',
+          alt: 'Volet Roulant pour Velux',
+        }}
+      >
+        <Fragment slot="content">
+          <div class="my-8">
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">
+              III. Comparatif : quel matériau choisir ?
+            </h2>
+            <p>
+              Lors du choix du matériau pour vos volets roulants, il est essentiel de considérer vos besoins
+              individuels. Par exemple, si vous vivez dans une région côtière, l'aluminium ou le composite peut être un
+              meilleur choix en raison de leur résistance à la corrosion. Si la sécurité est une préoccupation majeure,
+              les volets roulants en métal peuvent être la meilleure option.
+            </p>
+          </div>
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">a. Analyse des besoins individuels</h3>
+          <p>Il est essentiel de comprendre vos besoins et priorités. Posez-vous les questions suivantes:</p><br />
+          <p>
+            <ul class="ml-8">
+              <li class="list-disc">Quel est mon budget?</li>
+              <br />
+              <li class="list-disc">Quelle est l'importance de l'esthétique par rapport à la fonctionnalité?</li>
+              <br />
+              <li class="list-disc">Quelle est la durabilité que je recherche?</li>
+            </ul>
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">
+            b. Les avantages et inconvénients de chaque matériau
+          </h3>
+          <p>
+            Chaque matériau a ses avantages et inconvénients. Il est crucial de peser ces facteurs en fonction de vos
+            besoins spécifiques.
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">c. Les tendances actuelles et futures</h3>
+          <p>
+            Il est également essentiel de considérer les tendances actuelles et futures. Par exemple, avec une prise de
+            conscience croissante des questions environnementales, les matériaux écologiques gagnent en popularité.
+          </p>
+        </Fragment>
+      </Content>
+      <TelMob
+        callToAction={{
+          text: 'Appelez Nous',
+          href: 'tel:01 85 49 07 07',
+        }}
+        callToAction2={{ text: 'Devis Gratuit', href: '/devis-gratuit' }}
+      >
+        <Fragment slot="title">Obtenez une estimation gratuite aujourd'hui !</Fragment>
+        <Fragment slot="subtitle">
+          Nos artisans experts sont là pour répondre à vos questions et combler vos besoins avec des solutions de
+          qualité et sur mesure.
+        </Fragment>
+         />
+      </TelMob>
+      <Content
+        id="section4"
+        image={{
+          src: '~/assets/images/cout-des-volets-roulants.png',
+          alt: 'Volet Roulant pour Velux',
+        }}
+      >
+        <Fragment slot="content">
+          <div class="my-8">
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">
+              IV. Quel est le meilleur matériau ? Tableau comparatif des différents matériaux
+            </h2>
+            <p>
+              Lorsque vous comparez les matériaux, il est essentiel de considérer plusieurs critères, tels que la
+              durabilité, l'entretien, le coût et l'esthétique. Un tableau comparatif peut aider à visualiser ces
+              différences et à prendre une décision éclairée.
+            </p>
+          </div>
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">a. Critères de comparaison</h3>
+          <p>
+            <ul class="ml-8">
+              <li class="list-disc">
+                <span class="font-bold">Durabilité :</span>Combien de temps le matériau durera-t-il?
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Entretien :</span>Quel niveau d'entretien est requis?
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Coût :</span>Quel est le coût initial et les coûts d'entretien à long terme?
+              </li><br />
+              <li class="list-disc">
+                <span class="font-bold">Esthétique :</span>Comment le matériau s'intègre-t-il à l'esthétique globale de
+                la maison?
+              </li>
+            </ul>
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">b. Résultats du comparatif</h3>
+          <p>
+            Après avoir évalué chaque matériau selon les critères ci-dessus, vous pouvez déterminer lequel est le mieux
+            adapté à vos besoins.
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">c. Remise en question des idées reçues</h3>
+          <p>
+            Il est essentiel de remettre en question les idées reçues et de ne pas simplement suivre la tendance. Par
+            exemple, bien que le PVC soit populaire, il n'est peut-être pas le meilleur choix pour tout le monde.
+          </p><br />
+        </Fragment>
+      </Content>
+      <Content
+        id="section5"
+        image={{
+          src: '~/assets/images/cout-des-volets-roulants.png',
+          alt: 'Volet Roulant pour Velux',
+        }}
+      >
+        <Fragment slot="content">
+          <div class="my-8">
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">
+              V. Choix du volet roulant : les autres critères
+            </h2>
+            <p>Outre le matériau, d'autres critères sont essentiels à considérer lors du choix des volets roulants.</p>
+          </div>
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">a. L'importance de l'installation :</h3>
+          <p>
+            Une installation correcte est cruciale pour garantir la durabilité et l'efficacité des volets roulants.
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">b. L'impact environnemental</h3>
+          <p>
+            Avec une prise de conscience croissante des questions environnementales, il est essentiel de considérer
+            l'impact environnemental du matériau choisi.
+          </p><br />
+          <h3 class="text-lg font-bold leading-tighter tracking-wide mb-4">c. La sécurité et la protection</h3>
+          <p>
+            La sécurité est une préoccupation majeure pour de nombreux propriétaires. Certains matériaux offrent une
+            meilleure protection que d'autres.
+          </p>
+        </Fragment>
+      </Content>
+      <Content id="section6">
+        <Fragment slot="content">
+          <div class="my-8">
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">VI. Conclusion</h2>
+            <p>
+              Le choix du matériau pour les volets roulants est une décision cruciale qui nécessite une réflexion
+              approfondie. En considérant les différents matériaux disponibles, leurs avantages et inconvénients, et en
+              pesant ces informations contre vos besoins individuels, vous pouvez faire un choix éclairé qui vous
+              servira bien pendant de nombreuses années.
+            </p><br /><br />
+            <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">Foire aux questions</h2>
+            <p>
+              <span class="font-bold">Q1: Quels sont les principaux matériaux utilisés pour les volets roulants?</span
+              ><br />Les principaux matériaux sont l'aluminium, le PVC, le bois, le métal, le composite et le
+              polycarbonate.
+              <br /><br />
+              <span class="font-bold"
+                >Q2: Pourquoi le choix du matériau est-il si important pour les volets roulants?</span
+              ><br /> Le matériau influence la durabilité, l'efficacité énergétique, l'esthétique, le coût, et la
+              sécurité des volets roulants.
+              <br /><br /><span class="font-bold"
+                >Q3: Est-ce que certains matériaux sont plus écologiques que d'autres?</span
+              ><br />Oui, par exemple, le bois est souvent considéré comme une option plus écologique, tandis que la
+              production de PVC peut avoir des implications environnementales.
+              <br /><br /><span class="font-bold">Q4: Quel matériau offre la meilleure isolation thermique?</span><br
+              />Le bois et le PVC sont généralement reconnus pour offrir une excellente isolation thermique, mais cela
+              peut varier en fonction de la qualité et de la fabrication.
+              <br /><br /><span class="font-bold">Q5: Les volets roulants en métal sont-ils plus sécurisés?</span><br
+              />Les volets roulants en métal, en particulier en acier, sont souvent considérés comme plus robustes et
+              peuvent offrir une meilleure sécurité contre les effractions<br /><br /><span class="font-bold"
+                >Q6: Comment entretenir mes volets roulants en fonction du matériau?</span
+              ><br />L'entretien varie selon le matériau. Par exemple, le bois nécessite un traitement régulier pour
+              éviter la pourriture, tandis que l'aluminium peut simplement être nettoyé avec de l'eau et du savon.
+              <br /><br /><span class="font-bold">Q7: Le polycarbonate est-il résistant aux intempéries?</span><br
+              />Oui, le polycarbonate est connu pour sa résistance aux chocs et aux intempéries, ce qui le rend idéal
+              pour les zones sujettes aux intempéries.<br /><br /><span class="font-bold"
+                >Q8: Quel est le coût relatif des différents matériaux?</span
+              ><br />Le coût varie en fonction du matériau, de la qualité et de la fabrication. Généralement, le PVC est
+              considéré comme une option plus abordable, tandis que le bois et certains métaux peuvent être plus
+              coûteux.<br /><br /><span class="font-bold"
+                >Q9: Puis-je peindre ou teindre mes volets roulants pour changer leur apparence?</span
+              ><br />Oui, selon le matériau. Les volets roulants en bois peuvent être peints ou teints, et ceux en métal
+              peuvent être peints. Cependant, il est essentiel de choisir la bonne peinture ou teinture pour le matériau
+              spécifique.<br /><br /><span class="font-bold"
+                >Q10: Où puis-je trouver plus d'informations sur les tendances actuelles en matière de volets roulants?</span
+              ><br /> Notre "Guide Ultime" couvre les tendances actuelles et futures. Vous pouvez également consulter
+              des salons de la maison, des magazines de design d'intérieur, ou consulter des experts de l'industrie pour
+              des informations à jour.
+            </p>
+          </div>
+        </Fragment>
+      </Content>
+    </div>
+    <div class="hidden md:mt-10 md:block">
+      <Hakim image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants' }}>
+        <Fragment slot="title">Rédacteur: S.Abdelhakim</Fragment>
+        <Fragment slot="subtitle">
+          Je suis un spécialiste qualifié dans le domaine des volets roulants, avec une expertise approfondie dans les
+          systèmes de volets roulants modernes et traditionnels. Ma formation et mon expérience me permettent de fournir
+          des conseils expert sur la sélection, l'installation, la maintenance et la réparation de volets roulants pour
+          assurer une satisfaction client optimale.
+        </Fragment>
+      </Hakim>
+      <div class="mt-2 sticky top-28">
+        <CallToAction
+          callToAction={{
+            text: 'Appelez Nous',
+            href: 'tel:01 85 49 07 07',
+          }}
+        >
+          <Fragment slot="title">Obtenez un devis gratuit dès maintenant.</Fragment>
+          <Fragment slot="subtitle">
+            Des artisans experts à votre disposition pour répondre à toutes vos questions et satisfaire tous vos besoins
+            en matière de volets.
+          </Fragment>
+        </CallToAction>
       </div>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50"></div>
-    </Fragment>
-  </Content>
-  <Content
-    id="section2"
-    image={{
-      src: '~/assets/images/methode-de-commande-des-volets-roulants.png',
-      alt: 'Volet Roulant en PVC',
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-xl font-bold leading-tighter tracking-wide mb-4">Le PVC : Léger et Facile d'Entretien.</h2>
-      <p class="mb-4">
-        Le PVC est un matériau populaire pour les volets roulants en raison de sa légèreté et de son entretien facile.
-        Voici ce que vous devez savoir sur les volets en PVC :
-      </p>
-      <div class="mb-4">
-        <h3 class="text-xl font-semibold mb-2">Avantages du PVC :</h3>
-        <ul class="list-disc pl-6">
-          <li>Légèreté : Les volets en PVC sont légers, ce qui facilite leur manipulation et leur installation.</li>
-          <li>Isolation Thermique : Comme le bois, le PVC offre une isolation thermique efficace.</li>
-          <li>Isolation Phonique : Les volets en PVC réduisent également les nuisances sonores de l'extérieur.</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Inconvénients du PVC :</h3>
-        <p>
-          Moins Durable : Bien que le PVC soit résistant aux intempéries, il est moins durable que le bois ou
-          l'aluminium.
-        </p>
-        <p>Aspect Esthétique : Certains peuvent considérer que le PVC a un aspect moins traditionnel que le bois.</p>
-      </div>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50"></div>
-    </Fragment>
-  </Content>
-  <Content
-    id="section3"
-    image={{
-      src: '~/assets/images/cout-des-volets-roulants.png',
-      alt: 'Volet Roulant en Aluminium',
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-xl font-bold leading-tighter tracking-wide mb-4">L'Aluminium : Solidité et Résistance</h2>
-      <p class="mb-4">
-        L'aluminium est un matériau robuste et résistant, idéal pour les volets roulants. Voici ce qu'il faut savoir sur
-        les volets en aluminium :
-      </p>
-      <div class="mb-4">
-        <h3 class="text-xl font-semibold mb-2">Avantages de l'Aluminium :</h3>
-        <ul class="list-disc pl-6">
-          <li>
-            Solidité : L'aluminium est extrêmement solide et durable, capable de résister aux intempéries et aux chocs.
-          </li>
-          <li>Isolation Thermique : Les volets en aluminium offrent une excellente isolation thermique.</li>
-          <li>Isolation Phonique : Ils contribuent également à réduire les bruits extérieurs indésirables.</li>
-          <li>Faible Entretien : L'aluminium nécessite très peu d'entretien par rapport au bois.</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Inconvénients de l'Aluminium :</h3>
-        <p>Coût : Les volets en aluminium ont tendance à être plus coûteux que ceux en PVC ou en bois.</p>
-      </div>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50"></div>
-    </Fragment>
-  </Content>
-  <CallToAction
-    callToAction={{
-      text: 'Appelez Nous',
-      href: 'tel:01 85 49 07 07',
-    }}
-  >
-    <Fragment slot="title">Demandez un devis gratuite dès aujourd'hui.</Fragment>
-    <Fragment slot="subtitle">Des artisans experts à votre service pour répondre à toutes vos demandes.</Fragment>
-  </CallToAction>
-  <Content
-    id="section4"
-    image={{
-      src: '~/assets/images/motoriser-des-volets-roulants.png',
-      alt: 'Coûts et Avantages de volet roulant',
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-xl md:text-xl font-bold leading-tighter tracking-wide mb-4">
-        Comparaison des Coûts et des Avantages:
-      </h2>
-      <p>
-        Voici une comparaison des coûts et des avantages de chaque matériau :<br /><br />
-        <table class="min-w-full">
-          <tr class="border-b border-gray-300">
-            <td class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wide">Matériau</td>
-            <td class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wide">Avantages</td>
-            <td class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wide">Inconvénients</td>
-          </tr>
-          <tr class="bg-gray-100 border-b border-gray-300">
-            <td class="px-6 py-3">Bois</td>
-            <td class="px-6 py-3">
-              • Durabilité<br />
-               • Isolation thermique et phonique
-            </td>
-            <td class="px-6 py-3">
-              • Nécessite un entretien régulier<br />
-               • Coût initial plus élevé
-            </td>
-          </tr>
-          <tr class="bg-white border-b border-gray-300">
-            <td class="px-6 py-3">PVC</td>
-            <td class="px-6 py-3">
-              • Légèreté<br />
-               • Isolation thermique et phonique
-            </td>
-            <td class="px-6 py-3">
-              • Moins durable<br />
-               • Aspect esthétique
-            </td>
-          </tr>
-          <tr class="bg-gray-100">
-            <td class="px-6 py-3">Aluminium</td>
-            <td class="px-6 py-3">
-              • Solidité<br />
-               • Isolation thermique et phonique<br />
-               • Faible entretien
-            </td>
-            <td class="px-6 py-3"> • Coût initial plus élevé</td>
-          </tr>
-        </table>
-      </p>
-      <br />
-      <br />
-      <p class="mb-4">
-        En conclusion, le choix du matériau des volets roulants dépend de vos besoins, de votre budget et de vos
-        préférences esthétiques. Le bois offre une touche traditionnelle et une grande durabilité, mais nécessite un
-        entretien régulier. Le PVC est léger et facile à entretenir, mais moins durable. L'aluminium est solide,
-        résistant et nécessite peu d'entretien, mais peut être plus coûteux. Prenez le temps de réfléchir à vos
-        priorités et aux conditions locales avant de faire votre choix final.
-      </p>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50"></div>
-    </Fragment>
-  </Content>
-  <CallToAction
-    callToAction={{
-      text: 'Appelez Nous',
-      href: 'tel:01 85 49 07 07',
-    }}
-  >
-    <Fragment slot="title">Demandez une devis gratuite dès aujourd'hui.</Fragment>
-    <Fragment slot="subtitle">Des artisans experts à votre service pour répondre à toutes vos demandes.</Fragment>
-  </CallToAction>
+    </div>
+  </section>
 </Layout>

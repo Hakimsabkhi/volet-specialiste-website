@@ -3,17 +3,13 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Devis from '~/components/widgets/Devis.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-
 const metadata = {
   title: 'Devis Gratuit',
 };
 ---
-
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
-
   <HeroText title="Devis Gratuit" />
-
   <Devis
     title="Obtenez votre devis en quelques étapes !"
     subtitle="Veuillez remplir les informations ci-dessous et envoyez-les afin que nous puissions estimer votre projet !"
@@ -33,14 +29,12 @@ const metadata = {
         name: 'Produit',
         label: 'Sur quel produit cherchez-vous à intervenir ?',
       },
-
       {
         type: 'intervention',
         name: 'intervention',
         label: "type d'intervention",
       },
     ]}
-    
     textarea={{
       label: 'Décrivez davantage votre projet.',
     }}
@@ -50,9 +44,7 @@ const metadata = {
     }}
     description="Notre équipe de support répond généralement dans les 24 heures ouvrables."
   />
-
   <!-- Features2 Widget ************** -->
-
   <Features2
     title="Nous sommes là pour vous aider !"
     items={[
