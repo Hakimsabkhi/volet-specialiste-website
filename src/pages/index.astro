@@ -7,51 +7,52 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Hakim from '~/components/widgets/Hakim.astro';
 import HakimMobi from '~/components/widgets/HakimMobi.astro';
 const metadata = {
-  title: "Guide Complet des Volets Roulants par Volet Spécialiste",
+  title: 'Guide Complet des Volets Roulants par Volet Spécialiste',
   // Mots-clés (Keywords)
   keywords: [
-    "volets roulants",
-    "installation de volets",
-    "types de volets",
-    "volets en PVC",
-    "volets en aluminium",
-    "volets en bois",
-    "sécurité",
-    "esthétique",
-    "intégration domotique",
-    "entretien de volets",
-    "coût des volets",
-    "efficacité énergétique"
+    'volets roulants',
+    'installation de volets',
+    'types de volets',
+    'volets en PVC',
+    'volets en aluminium',
+    'volets en bois',
+    'sécurité',
+    'esthétique',
+    'intégration domotique',
+    'entretien de volets',
+    'coût des volets',
+    'efficacité énergétique',
   ],
   // Balises Méta (Meta Tags)
   tags: [
-    "guide volets roulants",
-    "solutions volets",
+    'guide volets roulants',
+    'solutions volets',
     "conseils d'installation",
-    "meilleurs matériaux pour volets",
-    "options de commande"
+    'meilleurs matériaux pour volets',
+    'options de commande',
   ],
   // URL Slug
-  slug: "guide-complet-volets-roulants",
+  slug: 'guide-complet-volets-roulants',
   // Balise Canonique (Canonical Tag)
-  canonical: "volet-specialiste.com/guide-complet-volets-roulants",  // Remplacez par l'URL exacte
+  canonical: 'https://www.volet-specialiste.com/guide-complet-volets-roulants',
   // Texte alternatif pour les images potentielles (Alt text for potential images)
   altText: [
     "image d'un volet roulant moderne",
     "schéma d'installation de volet",
-    "volets en différents matériaux",
-    "interface de commande domotique"
+    'volets en différents matériaux',
+    'interface de commande domotique',
   ],
   ignoreTitleTemplate: true,
 };
 ---
+
 <Layout metadata={metadata}>
   <section class="relative md:-mt-[76px] not-prose mt-4 md:mx-10 md:flex md:justify-around">
     <div>
       <div class="relative my-2 visible md:hidden">
         <HakimMobi image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants' }}>
           <Fragment slot="subtitle">
-            <span class="font-bold">RédacteuS.Abdelhakim</span>
+            <span class="font-bold">Rédacteur S.Abdelhakim</span>
             <br />Je suis un spécialiste qualifié dans le domaine des volets roulants.
           </Fragment>
         </HakimMobi>
@@ -431,9 +432,9 @@ const metadata = {
               ><br />Un entretien régulier, incluant le nettoyage et la vérification des pièces, est essentiel pour
               maintenir vos volets roulants en bon état. Les volets en bois peuvent nécessiter un traitement périodique
               pour protéger le bois contre les éléments.
-              <br /><br /><span class="font-bold">Q6: Combien coûtent les volets roulants?</span><br />Le coût varie
-              en fonction de la taille, du matériau, et de la méthode de commande. Il est conseillé de comparer
-              plusieurs devis d’installateurs professionnels pour obtenir une estimation précise et personnalisée.
+              <br /><br /><span class="font-bold">Q6: Combien coûtent les volets roulants?</span><br />Le coût varie en
+              fonction de la taille, du matériau, et de la méthode de commande. Il est conseillé de comparer plusieurs
+              devis d’installateurs professionnels pour obtenir une estimation précise et personnalisée.
               <br /><br /><span class="font-bold"
                 >Q7: Les volets roulants peuvent-ils réduire mes factures d'énergie?</span
               ><br />Oui, des volets roulants bien isolés peuvent réduire significativement vos factures d'énergie en
@@ -443,10 +444,10 @@ const metadata = {
               sur smartphone, maximisant ainsi le confort et la sécurité de votre domicile.
               <br /><br /><span class="font-bold"
                 >Q9: Les volets roulants augmentent-ils la valeur de ma propriété?</span
-              ><br />Les volets roulants peuvent effectivement augmenter la valeur de votre propriété en améliorant
-              la sécurité, l'efficacité énergétique, et l'esthétique de votre domicile.
+              ><br />Les volets roulants peuvent effectivement augmenter la valeur de votre propriété en améliorant la
+              sécurité, l'efficacité énergétique, et l'esthétique de votre domicile.
               <br /><br /><span class="font-bold">Q10: Où puis-je acheter des volets roulants de qualité?</span><br />
-              Il est recommandé d'acheter des volets roulants auprès de fournisseurs réputés et d'installateurs
+               Il est recommandé d'acheter des volets roulants auprès de fournisseurs réputés et d'installateurs
               professionnels pour garantir la qualité et la durabilité des produits.
             </p>
           </div>
@@ -472,8 +473,8 @@ const metadata = {
         >
           <Fragment slot="title">Obtenez un devis gratuit dès maintenant.</Fragment>
           <Fragment slot="subtitle">
-            Des artisans experts à votre disposition pour répondre à toutes vos questions et
-            satisfaire tous vos besoins en matière de volets.
+            Des artisans experts à votre disposition pour répondre à toutes vos questions et satisfaire tous vos besoins
+            en matière de volets.
           </Fragment>
         </CallToAction>
       </div>
