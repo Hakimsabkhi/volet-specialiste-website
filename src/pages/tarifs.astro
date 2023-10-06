@@ -34,6 +34,7 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 ---
+
 <Layout metadata={metadata}>
   <section class="relative md:-mt-[76px] not-prose mt-4 md:mx-10 md:flex md:justify-around">
     <div>
@@ -371,9 +372,25 @@ const metadata = {
           </div>
           <p>
             <ul>
-              <li><a href="https://www.maprimerenov.gouv.fr/" target="_blank" class="text-blue-900 hover:underline">MaPrimeRénov’ Sérénité :</a>C'est une subvention, donc elle est accordée sans avoir à la rembourser. Il n'y a pas de frais associés à la réception de cette aide. Cependant, il peut y avoir des critères d'éligibilité à respecter pour en bénéficier.</li><br />
-              <li><a href="https://www.economie.gouv.fr/particuliers/eco-pret-taux-zero" target="_blank" class="text-blue-900 hover:underline">Éco-prêt à taux zéro (éco-PTZ) :</a>Comme son nom l'indique, c'est un prêt à taux zéro, ce qui signifie qu'il n'y a pas d'intérêt à payer sur le montant emprunté. Cependant, c'est toujours un prêt, donc le montant principal doit être remboursé. Il n'y a pas de frais supplémentaires associés à ce prêt en termes d'intérêts.</li>
-          </ul>
+              <li>
+                <a
+                  href="https://www.maprimerenov.gouv.fr/"
+                  target="_blank"
+                  class="text-blue-900 hover:underline font-bold">MaPrimeRénov’ Sérénité :</a
+                > C'est une subvention, donc elle est accordée sans avoir à la rembourser. Il n'y a pas de frais
+                associés à la réception de cette aide. Cependant, il peut y avoir des critères d'éligibilité à respecter
+                pour en bénéficier.
+              </li>
+              <li class="mt-4">
+                <a
+                  href="https://www.economie.gouv.fr/particuliers/eco-pret-taux-zero"
+                  target="_blank"
+                  class="text-blue-900 font-bold hover:underline">Éco-prêt à taux zéro (éco-PTZ) :</a
+                > Comme son nom l'indique, c'est un prêt à taux zéro, ce qui signifie qu'il n'y a pas d'intérêt à payer
+                sur le montant emprunté. Cependant, c'est toujours un prêt, donc le montant principal doit être
+                remboursé. Il n'y a pas de frais supplémentaires associés à ce prêt en termes d'intérêts.
+              </li>
+            </ul>
           </p>
         </Fragment>
       </Content>
@@ -396,31 +413,53 @@ const metadata = {
           <div class="my-8">
             <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">VII. Conclusion:</h2>
             <p>
-              Opter pour des volets roulants n'est pas une simple décision d'achat, c'est un investissement judicieux pour les années à venir. Ils apportent non seulement une touche esthétique moderne à votre domicile, mais garantissent également une sécurité renforcée et un confort optimal. Qu'il s'agisse de modèles traditionnels, solaires ou en polycarbonate, chaque type de volet roulant offre des avantages spécifiques adaptés aux besoins et aux préférences de chacun. En fin de compte, bien choisir ses volets roulants, c'est valoriser son habitat, réaliser des économies d'énergie et améliorer son quotidien. Il est donc essentiel de bien s'informer, de comparer les offres et de considérer cet achat comme un investissement à long terme pour votre maison et votre bien-être.
+              Opter pour des volets roulants n'est pas une simple décision d'achat, c'est un investissement judicieux
+              pour les années à venir. Ils apportent non seulement une touche esthétique moderne à votre domicile, mais
+              garantissent également une sécurité renforcée et un confort optimal. Qu'il s'agisse de modèles
+              traditionnels, solaires ou en polycarbonate, chaque type de volet roulant offre des avantages spécifiques
+              adaptés aux besoins et aux préférences de chacun. En fin de compte, bien choisir ses volets roulants,
+              c'est valoriser son habitat, réaliser des économies d'énergie et améliorer son quotidien. Il est donc
+              essentiel de bien s'informer, de comparer les offres et de considérer cet achat comme un investissement à
+              long terme pour votre maison et votre bien-être.
             </p><br /><br />
             <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">Foire aux questions</h2>
             <p>
               <span class="font-bold"
                 >Q1: Pourquoi existe-t-il une telle variation de prix entre les volets roulants en PVC et en aluminium ?</span
-              ><br />Le coût des matériaux, le processus de fabrication, et la durabilité diffèrent entre le PVC et l'aluminium. L'aluminium est souvent plus coûteux car il est robuste, ne rouille pas, et est généralement considéré comme ayant une meilleure longévité que le PVC.
+              ><br />Le coût des matériaux, le processus de fabrication, et la durabilité diffèrent entre le PVC et
+              l'aluminium. L'aluminium est souvent plus coûteux car il est robuste, ne rouille pas, et est généralement
+              considéré comme ayant une meilleure longévité que le PVC.
               <br /><br />
-              <span class="font-bold"
-                >Q2: La motorisation de mes volets roulants actuels sera-t-elle coûteuse ?</span
-              ><br /> Motoriser des volets roulants existants peut coûter entre 200 € et 700 € par volet, selon le type de motorisation choisi et la complexité de l'installation.
+              <span class="font-bold">Q2: La motorisation de mes volets roulants actuels sera-t-elle coûteuse ?</span
+              ><br /> Motoriser des volets roulants existants peut coûter entre 200 € et 700 € par volet, selon le type
+              de motorisation choisi et la complexité de l'installation.
               <br /><br /><span class="font-bold"
                 >Q3: Pourquoi les volets roulants en bois sont-ils généralement plus chers ?</span
-              ><br />Le bois est un matériau naturel qui offre une esthétique distincte et une excellente isolation. Cependant, sa production, son traitement contre les parasites et les intempéries, et le coût intrinsèque du matériau contribuent à un prix plus élevé.
-              <br /><br /><span class="font-bold">Q4: Est-ce que les fonctionnalités supplémentaires comme les capteurs de soleil ou les commandes à distance augmentent considérablement le prix ?</span><br />Oui, ces fonctionnalités peuvent majorer le prix. Par exemple, un capteur de soleil peut ajouter entre 50 € et 100 €, tandis qu'une commande à distance peut coûter entre 30 € et 70 € supplémentaires.
+              ><br />Le bois est un matériau naturel qui offre une esthétique distincte et une excellente isolation.
+              Cependant, sa production, son traitement contre les parasites et les intempéries, et le coût intrinsèque
+              du matériau contribuent à un prix plus élevé.
+              <br /><br /><span class="font-bold"
+                >Q4: Est-ce que les fonctionnalités supplémentaires comme les capteurs de soleil ou les commandes à
+                distance augmentent considérablement le prix ?</span
+              ><br />Oui, ces fonctionnalités peuvent majorer le prix. Par exemple, un capteur de soleil peut ajouter
+              entre 50 € et 100 €, tandis qu'une commande à distance peut coûter entre 30 € et 70 € supplémentaires.
               <br /><br /><span class="font-bold"
                 >Q5: L'installation est-elle généralement incluse dans le prix des volets roulants ?</span
-              ><br />Pas toujours. Certains fournisseurs peuvent offrir une installation à un tarif réduit ou comme une promotion, mais généralement, le coût de l'installation est facturé séparément et varie en fonction de la complexité de la tâche. <br /><br /><span class="font-bold"
-              >Q6: Y a-t-il des aides ou des subventions disponibles pour réduire le coût des volets roulants ?</span
-            ><br />Oui, en fonction de votre région et de vos qualifications, il peut y avoir des aides financières telles que MaPrimeRénov’ Sérénité ou l'éco-prêt à taux zéro pour aider à financer les volets roulants, surtout s'ils contribuent à l'efficacité énergétique de votre maison.
-            <br /><br /><span class="font-bold"
-              >Q6: Les volets roulants solaires sont-ils plus chers ?</span
-            ><br />Oui, en général, les volets roulants solaires ont un coût initial plus élevé en raison de la technologie solaire intégrée. Cependant, ils peuvent générer des économies sur le long terme en réduisant les coûts énergétiques.<br /><br /><span class="font-bold"
-            >Q6: Les volets roulants en polycarbonate sont-ils plus chers ?</span
-          ><br />En général, les volets roulants en polycarbonate peuvent être plus coûteux en raison de la robustesse et de la transparence du matériau. Les prix peuvent commencer à partir de 250€ pour une fenêtre standard.
+              ><br />Pas toujours. Certains fournisseurs peuvent offrir une installation à un tarif réduit ou comme une
+              promotion, mais généralement, le coût de l'installation est facturé séparément et varie en fonction de la
+              complexité de la tâche. <br /><br /><span class="font-bold"
+                >Q6: Y a-t-il des aides ou des subventions disponibles pour réduire le coût des volets roulants ?</span
+              ><br />Oui, en fonction de votre région et de vos qualifications, il peut y avoir des aides financières
+              telles que MaPrimeRénov’ Sérénité ou l'éco-prêt à taux zéro pour aider à financer les volets roulants,
+              surtout s'ils contribuent à l'efficacité énergétique de votre maison.
+              <br /><br /><span class="font-bold">Q6: Les volets roulants solaires sont-ils plus chers ?</span><br
+              />Oui, en général, les volets roulants solaires ont un coût initial plus élevé en raison de la technologie
+              solaire intégrée. Cependant, ils peuvent générer des économies sur le long terme en réduisant les coûts
+              énergétiques.<br /><br /><span class="font-bold"
+                >Q6: Les volets roulants en polycarbonate sont-ils plus chers ?</span
+              ><br />En général, les volets roulants en polycarbonate peuvent être plus coûteux en raison de la
+              robustesse et de la transparence du matériau. Les prix peuvent commencer à partir de 250€ pour une fenêtre
+              standard.
             </p>
           </div>
         </Fragment>
