@@ -21,7 +21,7 @@ const {
 } = Astro.props;
 ---
 <section class="relative not-prose scroll-mt-[72px] mx-4">
-  <div class="md:max-w-2xl xl:max-w-3xl px-4 sm:px-6">
+  <div class="md:max-w-2xl xl:max-w-3xl sm:px-6">
     <div class="mt-4 py-4">
       <div class=" max-w-screen-lg">
         {
@@ -35,7 +35,7 @@ const {
         {
           title && (
             <p
-              class="text-lg font-bold text-center leading-tighter tracking-wide"
+              class="text-sm md:text-lg font-bold text-center leading-tighter tracking-wide mb-4"
               set:html={title}
             />
           )
