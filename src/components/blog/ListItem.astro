@@ -78,7 +78,7 @@ const link = APP_BLOG_CONFIG?.post?.isEnabled ? getPermalink(post.permalink, 'po
     </header>
     {post.excerpt && <p class="flex-grow text-muted text-lg">{post.excerpt.split(' ').slice(0, 8).join(' ')}...</p>}
     <footer class="mt-5">
-      <PostTags tags={post.tags} />
+      <PostTags tags={post?.tags?.slice(0, 3)} />
     </footer>
   </div>
 </article>
