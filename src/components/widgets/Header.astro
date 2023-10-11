@@ -70,12 +70,13 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         <ToggleMenu />
       </div>
     </div>
+  <div class=" flex justify-around w-full h-1/2 md:h-full md:w-2/5 md:flex text-default flex-col">
     <nav
-      class="w-full h-1/2 md:h-full hidden md:w-2/5 md:flex text-default flex-col justify-center"
+      class="h-4/5 hidden md:block"
       aria-label="Main navigation"
     >
       <ul
-        class="h-4/5 md:h-full flex justify-around md:justify-around flex-col md:flex-row md:self-center w-full text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
+        class="h-full md:h-full flex justify-around md:justify-around flex-col md:flex-row md:self-center w-full text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
       >
         {
           links.map(({ text, href, links }) => (
@@ -112,6 +113,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         }
       </ul>
     </nav>
+  </div>
     <div
       class:list={[
         { 'ml-auto rtl:ml-0 rtl:mr-auto': position === '' },
