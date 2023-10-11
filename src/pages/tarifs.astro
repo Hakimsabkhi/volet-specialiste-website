@@ -35,6 +35,7 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 ---
+
 <Layout metadata={metadata}>
   <section class="relative md:-mt-[76px] not-prose mt-4 md:mx-10 md:flex md:justify-around">
     <div>
@@ -52,7 +53,7 @@ const metadata = {
           href: 'tel:01 85 49 07 07',
         }}
         callToAction2={{ text: 'Devis Gratuit', href: '/devis-gratuit' }}
-        image={{ src: '~/assets/images/Volet-roulant.png', alt: 'les volets roulants' }}
+        image={{ src: '~/assets/images/volet-roulant-square-06.png', alt: 'les volets roulants' }}
       >
         <Fragment slot="title">Prix des Volets Roulants 2023 : Tarifs, Options et Conseils d'Achat.</Fragment>
         <Fragment slot="subtitle">
@@ -89,7 +90,7 @@ const metadata = {
       <Content
         id="section2"
         image={{
-          src: '~/assets/images/cout-des-volets-roulants.png',
+          src: '~/assets/images/volet-roulant-square-06.png',
           alt: 'Volet Roulant pour Velux',
         }}
       >
@@ -142,7 +143,7 @@ const metadata = {
       <Content
         id="section3"
         image={{
-          src: '~/assets/images/cout-des-volets-roulants.png',
+          src: '~/assets/images/volet-roulant-square-06.png',
           alt: 'Volet Roulant pour Velux',
         }}
       >
@@ -177,7 +178,7 @@ const metadata = {
                 Velux est l'une des meilleures marques disponibles. Les prix peuvent commencer à partir de 200€ et aller
                 jusqu'à 600€ ou plus, en fonction de la taille et des fonctionnalités.
               </li>
-             <li class="list-disc">
+              <li class="list-disc">
                 <span class="font-bold">Profalux :</span>
                  Une marque qui offre une gamme variée de volets roulants. Les prix peuvent commencer à partir de 150€
                 et varier en fonction du modèle et de la taille.
@@ -240,7 +241,7 @@ const metadata = {
       <Content
         id="section4"
         image={{
-          src: '~/assets/images/cout-des-volets-roulants.png',
+          src: '~/assets/images/volet-roulant-square-06.png',
           alt: 'Volet Roulant pour Velux',
         }}
       >
@@ -266,7 +267,7 @@ const metadata = {
                 <span class="font-bold">Économique :</span>Bien que l'investissement initial puisse être plus élevé, les
                 économies réalisées sur les factures d'électricité compensent sur le long terme.
               </li>
-              <li class="list-disc ">
+              <li class="list-disc">
                 <span class="font-bold">Autonomie :</span>Pas besoin de raccordement électrique, ce qui facilite
                 l'installation et la rend idéale pour les rénovations ou les bâtiments éloignés des sources
                 d'électricité.
@@ -299,7 +300,7 @@ const metadata = {
       <Content
         id="section5"
         image={{
-          src: '~/assets/images/cout-des-volets-roulants.png',
+          src: '~/assets/images/volet-roulant-square-06.png',
           alt: 'Volet Roulant pour Velux',
         }}
       >
@@ -353,13 +354,21 @@ const metadata = {
           </p><br />
         </Fragment>
       </Content>
-      <Content
-        id="section6"
-        image={{
-          src: '~/assets/images/cout-des-volets-roulants.png',
-          alt: 'Volet Roulant pour Velux',
+      <TelMob
+        callToAction={{
+          text: 'Appelez Nous',
+          href: 'tel:01 85 49 07 07',
         }}
+        callToAction2={{ text: 'Devis Gratuit', href: '/devis-gratuit' }}
       >
+        <Fragment slot="title">Obtenez une estimation gratuite aujourd'hui !</Fragment>
+        <Fragment slot="subtitle">
+          Nos artisans experts sont là pour répondre à vos questions et combler vos besoins avec des solutions de
+          qualité et sur mesure.
+        </Fragment>
+         />
+      </TelMob>
+      <Content id="section6">
         <Fragment slot="content">
           <div class="my-8">
             <h2 class="text-xl font-bold leading-tighter tracking-wide my-4">
@@ -391,20 +400,7 @@ const metadata = {
           </p>
         </Fragment>
       </Content>
-      <TelMob
-        callToAction={{
-          text: 'Appelez Nous',
-          href: 'tel:01 85 49 07 07',
-        }}
-        callToAction2={{ text: 'Devis Gratuit', href: '/devis-gratuit' }}
-      >
-        <Fragment slot="title">Obtenez une estimation gratuite aujourd'hui !</Fragment>
-        <Fragment slot="subtitle">
-          Nos artisans experts sont là pour répondre à vos questions et combler vos besoins avec des solutions de
-          qualité et sur mesure.
-        </Fragment>
-         />
-      </TelMob>
+
       <Content id="section7">
         <Fragment slot="content">
           <div class="my-8">

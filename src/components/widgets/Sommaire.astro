@@ -9,38 +9,42 @@ const {
   sommaire7 = await Astro.slots.render('sommaire7'),
   sommaire8 = await Astro.slots.render('sommaire8'),
   sommaire9 = await Astro.slots.render('sommaire9'),
+  sommaire10 = await Astro.slots.render('sommaire10'),
 } = Astro.props;
 ---
 
 <section class="bg-gray-50 rounded-md h-auto pb-4">
   <p class="pt-4 text-2xl font-bold text-center">Sommaire :</p>
   <ul class="px-8 list-disc mt-8 tracking-wide leading-2 text-sm">
-    <li class="mt-5">
+    <li class="mt-5 list-none">
       {sommaire1 && <a href="#section1" class="hover:underline" set:html={sommaire1} />}
     </li>
-    <li class="mt-5">
+    <li class="mt-5 list-none">
       {sommaire2 && <a href="#section2" class="hover:underline" set:html={sommaire2} />}
     </li>
-    <li class="mt-5">
+    <li class="mt-5 list-none">
       {sommaire3 && <a href="#section3" class="hover:underline" set:html={sommaire3} />}
     </li>
-    <li class="mt-5">
+    <li class="mt-5 list-none">
       {sommaire4 && <a href="#section4" class="hover:underline" set:html={sommaire4} />}
     </li>
-    <li class="mt-5">
+    <li class="mt-5 list-none">
       {sommaire5 && <a href="#section5" class="hover:underline" set:html={sommaire5} />}
     </li>
-    <li class="mt-5">
-      {sommaire5 && <a href="#section6" class="hover:underline" set:html={sommaire6} />}
+    <li class="mt-5 list-none">
+      {sommaire6 && <a href="#section6" class="hover:underline" set:html={sommaire6} />}
     </li>
-    <li class="mt-5">
-      {sommaire5 && <a href="#section7" class="hover:underline" set:html={sommaire7} />}
+    <li class="mt-5 list-none">
+      {sommaire7 && <a href="#section7" class="hover:underline" set:html={sommaire7} />}
     </li>
-    <li class="mt-5">
-      {sommaire5 && <a href="#section8" class="hover:underline" set:html={sommaire8} />}
+    <li class="mt-5 list-none">
+      {sommaire8 && <a href="#section8" class="hover:underline" set:html={sommaire8} />}
     </li>
-    <li class="mt-5">
-      {sommaire5 && <a href="#section9" class="hover:underline" set:html={sommaire9} />}
+    <li class="mt-5 list-none">
+      {sommaire9 && <a href="#section9" class="hover:underline" set:html={sommaire9} />}
+    </li>
+    <li class="mt-5 list-none">
+      {sommaire10 && <a href="#section10" class="hover:underline" set:html={sommaire10} />}
     </li>
   </ul>
 </section>

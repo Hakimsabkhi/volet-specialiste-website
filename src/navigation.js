@@ -7,20 +7,24 @@ export const headerData = {
       href: getPermalink('/'),
     },
     {
-      text: 'Type de volet roulant',
+      text: 'Type',
       href: getPermalink('/type-volet-roulant'),
     },
     {
-      text: 'Tarifs et prix',
+      text: 'Prix',
       href: getPermalink('/tarifs'),
     },
     {
-      text: 'matériaux',
+      text: 'Matériaux',
       href: getPermalink('/materiaux'),
     },
     {
       text: 'Devis gratuit',
       href: '/devis-gratuit',
+    },
+    {
+      text: 'Blog',
+      href: getPermalink('/category/volets-roulants'),
     },
   ],
   actions: [

@@ -89,12 +89,12 @@ const {
                 <Fragment set:html={image} />
               ) : (
                 <Image
-                  class="items-center w-full"
+                  class="items-center w-full rounded-lg bg-gray-500 shadow-lg"
                   widths={[400, 768, 1024, 2040]}
                   sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
                   loading="eager"
-                  width={800}
-                  height={600}
+                  width={950}
+                  height={350}
                   {...image}
                 />
               )}

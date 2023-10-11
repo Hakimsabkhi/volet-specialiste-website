@@ -12,6 +12,7 @@ collections:
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'TitleH1', name: 'titleH1', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
       - { label: 'Category', name: 'category', widget: 'string' }
       - {
