@@ -56,7 +56,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   <div class="absolute inset-0"></div>
   <div
     class:list={[
-      'relative py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between',
+      'relative py-3 px-3 md:px-6 mx-auto h-full w-full md:flex md:justify-between',
       {
         'max-w-7xl': !isFullWidth,
       },
@@ -71,11 +71,11 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       </div>
     </div>
     <nav
-      class="w-full md:w-2/5 mt-10 sm:mt-1 hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto"
+      class="w-full h-1/2 md:w-2/5 mt-10 sm:mt-1 hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto"
       aria-label="Main navigation"
     >
       <ul
-        class="flex md:justify-around flex-col md:flex-row md:self-center w-full text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
+        class="h-full flex justify-around md:justify-around md:h-2/5 flex-col md:flex-row md:self-center  w-full text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
       >
         {
           links.map(({ text, href, links }) => (
