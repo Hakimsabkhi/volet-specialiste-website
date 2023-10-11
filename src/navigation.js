@@ -24,7 +24,7 @@ export const headerData = {
     },
     {
       text: 'Blog',
-      href: getPermalink('/category/volets-roulants'),
+      href: getPermalink('/blog'),
     },
   ],
   actions: [
