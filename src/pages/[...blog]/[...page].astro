@@ -25,17 +25,14 @@ const metadata = {
   },
   openGraph: {
     type: 'blog',
+    image: 'https://example.com/path/to/image.jpg'
   },
 };
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto py-12 md:py-16 w-11/12 md:max-w-4xl">
-    <Headline
-      subtitle="Trouvez des informations et des conseils sur les volets roulants"
-    >
-      Blog
-    </Headline>
+    <Headline subtitle="Trouvez des informations et des conseils sur les volets roulants">Univers du Savoir Éternel</Headline>
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
