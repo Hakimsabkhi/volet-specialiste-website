@@ -1,5 +1,5 @@
 site:
-  name: volet specialiste
+  name: Volet Spécialiste
   site: 'https://volet-specialiste.vercel.app'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: volet specialiste
+    default: Volet Spécialiste
     template: '%s'
   description: "Obtenez des informations essentielles sur les volets roulants grâce à notre d'experts."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: volet specialiste
+    site_name: Volet Spécialiste
     images:
       - url: '~/assets/images/volet-roulant-square-03.png'
         width: 950
