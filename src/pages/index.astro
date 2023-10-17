@@ -8,6 +8,8 @@ import Hakim from '~/components/widgets/Hakim.astro';
 import HakimMobi from '~/components/widgets/HakimMobi.astro';
 const metadata = {
   title: 'Guide Complet des Volets Roulants par Volet Spécialiste',
+  description:
+    'Explorez des perspectives uniques et des insights inexplorés sur la sécurité, l’esthétique, et l’innovation dans le domaine des volets roulants.',
   // Mots-clés (Keywords)
   keywords: [
     'volets roulants',
@@ -34,7 +36,7 @@ const metadata = {
   // URL Slug
   slug: 'guide-complet-volets-roulants',
   // Balise Canonique (Canonical Tag)
-  canonical: 'https://www.volet-specialiste.com/volet-roulant-square-13.png',
+  canonical: 'https://www.volet-specialiste.com/',
   // Texte alternatif pour les images potentielles (Alt text for potential images)
   altText: [
     "image d'un volet roulant moderne",
@@ -42,6 +44,20 @@ const metadata = {
     'volets en différents matériaux',
     'interface de commande domotique',
   ],
+  openGraph: {
+    url: '~/assets/images/volet-roulant-square-13.png',
+    siteName: 'Volet Spécialiste',
+    images: [
+      {
+        url: '~/assets/images/hakimimg.jpg',
+        width: 950, // Optional: replace with your image's width
+        height: 350, // Optional: replace with your image's height
+      },
+      // ... you can add more images if needed ...
+    ],
+    locale: 'fr_FR', // Optional: replace with the appropriate locale if different
+    type: 'article', // As it's a guide, 'article' seems appropriate
+  },
   ignoreTitleTemplate: true,
 };
 ---
