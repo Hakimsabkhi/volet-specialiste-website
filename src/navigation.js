@@ -31,14 +31,14 @@ export const headerData = {
     {
       type: 'button',
       class:
-        'btn btn-primary btn md:hidden text-white font-medium rounded-4xl text-sm px-5 py-3 text-center inline-flex items-center 2xl:mr-24',
+        'btn btn-primary font-medium rounded-4xl md:hidden',
       text: 'Appelez Nous',
       href: 'tel:01 85 49 07 07',
     },
     {
       type: 'button',
       class:
-        'btn btn-primary text-white font-medium rounded-4xl text-sm px-5 py-3 text-center inline-flex items-center 2xl:mr-24',
+        'btn btn-primary font-medium rounded-4xl',
       text: 'Contactez Nous',
       href: '/contact',
     },

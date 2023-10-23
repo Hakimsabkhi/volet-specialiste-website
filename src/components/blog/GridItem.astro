@@ -7,13 +7,12 @@ import Image from '~/components/common/Image.astro';
 import { findImage } from '~/utils/images';
 import { getPermalink } from '~/utils/permalinks';
 
-
 export interface Props {
   post: Post;
 }
 
 const { post } = Astro.props;
-const image = (await findImage(post.image));
+const image = await findImage(post.image);
 ---
 
 <article class="mb-6 transition">
@@ -27,7 +26,7 @@ const image = (await findImage(post.image));
             widths={[400, 900]}
             width={400}
             sizes="(max-width: 900px) 400px, 900px"
-            alt={post.title}
+            alt={post.titleH1}
             aspectRatio="16:9"
             layout="cover"
             loading="lazy"
@@ -42,10 +41,7 @@ const image = (await findImage(post.image));
       !APP_BLOG_CONFIG?.post?.isEnabled ? (
         post.title
       ) : (
-        <a
-          href={getPermalink(post.permalink, 'post')}
-          class="hover:text-primary   transition ease-in duration-200"
-        >
+        <a href={getPermalink(post.permalink, 'post')} class="hover:text-primary   transition ease-in duration-200">
           {post.title}
         </a>
       )

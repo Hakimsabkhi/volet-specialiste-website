@@ -120,10 +120,10 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         'hidden md:self-center md:flex mt-6 md:mt-0 md:w-auto md:static ',
       ]}
     >
-      <div class="">
+      <div>
         {
           actions?.length ? (
-            <div class="w-4/5 md:w-full flex flex-col mx-auto md:ml-4 rtl:ml-0 rtl:mr-4">
+            <div class="w-4/5 md:w-full flex flex-col justify-around mx-auto">
               {actions.map(({ text, href, class: className }) => (
                 <a class:list={['btn mt-4 md:mt-0', className]} href={href}>
                   <Fragment set:html={text} />
