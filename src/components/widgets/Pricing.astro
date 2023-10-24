@@ -20,10 +20,9 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
   <div class="flex items-stretch justify-center">
-    <div class=" max-w-xs md:max-w-full grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-2 md:mx-0">
+    <div class="max-w-xs md:max-w-full grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-2 md:mx-0">
       {
         prices &&
           prices.map(({ title, subtitle, price, period, items, callToAction, hasRibbon = false, ribbonTitle }) => (
@@ -37,40 +36,41 @@ const {
                       </span>
                     </div>
                   )}
-                  <div>
-    {
-      image && (
-        <div class="m-auto max-w-5xl">
-          {typeof image === 'string' ? (
-            <Fragment set:html={image} />
-          ) : (
-            <Image
-              class="items-center w-full bg-gray-500"
-              widths={[400, 768, 1024, 2040]}
-              sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-              loading="eager"
-              width={950}
-              height={350}
-              {...image}
-            />
-          )}
-        </div>
-      )
-    }
-                  </div>
+
                   <div class="pb-4">
                     {title && (
-                      <h2 class=" bg-blue-800 text-white text-center text-xl font-normal uppercase leading-6 tracking-wide mb-2">{title}</h2>
+                      <h2 class="text-center text-base font-bold uppercase leading-6 tracking-wide p-2">
+                        {title}
+                      </h2>
                     )}
                     {subtitle && <p class="font-light sm:text-lg text-gray-600 ">{subtitle}</p>}
+                    <div>
+                      {image && (
+                        <div class="m-auto max-w-5xl">
+                          {typeof image === 'string' ? (
+                            <Fragment set:html={image} />
+                          ) : (
+                            <Image
+                              class="items-center w-full bg-gray-500"
+                              widths={[400, 768, 1024, 2040]}
+                              sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                              loading="eager"
+                              width={950}
+                              height={350}
+                              {...image}
+                            />
+                          )}
+                        </div>
+                      )}
+                    </div>
                     <div class="my-2">
                       <span class="text-base leading-6 text-gray-600 ">{period}</span>
                       <div class="flex items-center justify-center text-center mb-1">
-                        <span class="text-6xl font-extrabold">{price}</span>
+                        <span class="text-4xl font-extrabold">{price}</span>
                         <span class="ml-2 font-bold text-sm">€ TTC</span>
                       </div>
                     </div>
-                    
+
                     {items && (
                       <ul role="list" class="m-2  md:my-2 space-y-2 text-left">
                         {items.map(

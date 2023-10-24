@@ -54,6 +54,7 @@ const postCollection = defineCollection({
 
     title: z.string(),
     titleH1: z.string().optional(),
+    callToActionb: z.string().optional(),
     excerpt: z.string().optional(),
     descriptionH1: z.string().optional(),
     image: z.string().optional(),
@@ -61,7 +62,7 @@ const postCollection = defineCollection({
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
     author: z.string().optional(),
-
+   
     sec1: z.string().optional(),
     sec2: z.string().optional(),
     sec3: z.string().optional(),
