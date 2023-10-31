@@ -1,20 +1,15 @@
 ---
-import { twMerge } from "tailwind-merge";
-import Background from "./Background.astro";
+import { twMerge } from 'tailwind-merge';
+import Background from './Background.astro';
 
-const { id, isDark = false, containerClass = "", bg, as = "section" } = Astro.props;
+const { id, isDark = false, containerClass = '', bg, as = 'section' } = Astro.props;
 
 const WrapperTag = as;
 ---
 
-<WrapperTag class="relative not-prose mx-4 scroll-mt-[72px]" {...id ? { id } : {}}>
-  <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
-  </div>
-  <div
-    class:list={[
-      twMerge("relative max-w-7xl text-default", containerClass),
-    ]}
-  >
+<WrapperTag class="relative not-prose mx-4 scroll-mt-[74px]" {...id ? { id } : {}}>
+  <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true"></div>
+  <div class:list={[twMerge('relative max-w-7xl text-default', containerClass)]}>
     <slot />
   </div>
 </WrapperTag>
