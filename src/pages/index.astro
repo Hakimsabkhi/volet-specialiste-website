@@ -50,6 +50,7 @@ const metadata = {
     images: [
       {
         url: '~/assets/images/volet-roulant-square-13.png',
+        title: 'Your Title Here',
         alt: 'les volets roulants',
         width: 950, // Optional: replace with your image's width
         height: 350, // Optional: replace with your image's height
@@ -65,9 +66,11 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="relative not-prose mt-4 md:mx-10 md:flex md:justify-around">
-    <div class="">
+    <div>
       <div class="relative my-2 visible md:hidden">
-        <HakimMobi image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants' }}>
+        <HakimMobi
+          image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants', title: 'Your Title Here' }}
+        >
           <Fragment slot="subtitle">
             <span class="font-bold">Rédacteur S.Abdelhakim</span>
             <br />Spécialiste qualifié dans le domaine des volets roulants.
@@ -80,7 +83,11 @@ const metadata = {
           href: 'tel:01 85 49 07 07',
         }}
         callToAction2={{ text: 'Devis Gratuit', href: '/devis-gratuit' }}
-        image={{ src: '~/assets/images/volet-roulant-square-13.png', alt: 'les volets roulants' }}
+        image={{
+          src: '~/assets/images/volet-roulant-square-13.png',
+          title: 'Your Title Here',
+          alt: 'les volets roulants',
+        }}
       >
         <Fragment slot="title">Explorez les Volets Roulants: Types, Matériaux et Prix</Fragment>
         <Fragment slot="subtitle">
@@ -132,6 +139,7 @@ const metadata = {
         id="section3"
         image={{
           src: '~/assets/images/volet-roulant-square-13.png',
+          title: 'Your Title Here',
           alt: 'Volet Roulant pour Velux',
         }}
       >
@@ -207,6 +215,7 @@ const metadata = {
         id="section4"
         image={{
           src: '~/assets/images/volet-roulant-square-13.png',
+          title: 'Your Title Here',
           alt: 'Volet Roulant pour Velux',
         }}
       >
@@ -268,6 +277,7 @@ const metadata = {
         id="section5"
         image={{
           src: '~/assets/images/volet-roulant-square-13.png',
+          title: 'Your Title Here',
           alt: 'Volet Roulant pour Velux',
         }}
       >
@@ -323,6 +333,7 @@ const metadata = {
         id="section6"
         image={{
           src: '~/assets/images/volet-roulant-square-13.png',
+          title: 'Your Title Here',
           alt: 'Volet Roulant pour Velux',
         }}
       >

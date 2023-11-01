@@ -30,7 +30,11 @@ import Image from '~/components/common/Image.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 
 <Prices
-  image={{ src: '~/assets/images/volet-roulant-square-03.png', alt: 'les volets roulants' }}
+  image={{
+    src: '~/assets/images/volet-roulant-square-03.png',
+    title: 'Your Title Here',
+    alt: 'les volets roulants',
+  }}
   title="Défis et Prix de Dépannage"
   subtitle="Assurés par les maîtres incontestés du volet roulant à Paris 9."
   prices={[

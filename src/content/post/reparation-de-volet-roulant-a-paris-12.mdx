@@ -30,19 +30,22 @@ import Image from '~/components/common/Image.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 
 <Prices
-  image={{ src: '~/assets/images/volet-roulant-square-32.png', alt: 'les volets roulants' }}
+  image={{
+    src: '~/assets/images/volet-roulant-square-32.png',
+    title: 'Your Title Here',
+    alt: 'les volets roulants',
+  }}
   title="Solutions Avancées et Tarification Transparente"
   subtitle="Approuvée par les experts en volets à Paris 11."
   prices={[
     {
-      title: "Problème de Récepteur Radio",
+      title: 'Problème de Récepteur Radio',
       subtitle: '',
       price: 105,
       period: 'A partir de',
       items: [
         {
-          description:
-            "Le récepteur radio du volet, permettant la commande à distance, ne capte pas ou mal le signal.",
+          description: 'Le récepteur radio du volet, permettant la commande à distance, ne capte pas ou mal le signal.',
         },
       ],
       callToAction: {

@@ -31,7 +31,11 @@ import Image from '~/components/common/Image.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 
 <Prices
-  image={{ src: '~/assets/images/volet-roulant-square-08.png', alt: 'les volets roulants' }}
+  image={{
+    src: '~/assets/images/volet-roulant-square-08.png',
+    title: 'Your Title Here',
+    alt: 'les volets roulants',
+  }}
   title="Solutions Avancées et Tarification Transparente"
   subtitle="Approuvée par les experts en volets à Paris 11."
   prices={[
@@ -60,7 +64,7 @@ import Prices from '~/components/widgets/Pricing.astro';
       items: [
         {
           description:
-            "Les capteurs qui détectent la pluie ou le vent et ajustent le volet en conséquence ne fonctionnent pas correctement.",
+            'Les capteurs qui détectent la pluie ou le vent et ajustent le volet en conséquence ne fonctionnent pas correctement.',
         },
       ],
       callToAction: {
@@ -78,7 +82,7 @@ import Prices from '~/components/widgets/Pricing.astro';
       items: [
         {
           description:
-            "Le volet ne se synchronise pas correctement avec les autres appareils connectés ou les applications de contrôle à distance.",
+            'Le volet ne se synchronise pas correctement avec les autres appareils connectés ou les applications de contrôle à distance.',
         },
       ],
       callToAction: {

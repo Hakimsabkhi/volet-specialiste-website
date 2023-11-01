@@ -4,7 +4,7 @@ title: 'Services de Réparation de Volet Roulant à Paris 2 par Volet specialist
 titleH1: 'Réparation de Volet Roulant à Paris 2 par Volet specialiste'
 excerpt: 'Découvrez les services premium offerts par Volet specialiste pour la réparation de volets roulants à Paris 2. Expertise, rapidité et professionnalisme garantis.'
 descriptionH1: "Volet specialiste offre des services de réparation de volets roulants à Paris 2. Mettant l'accent sur la qualité, la rapidité et le professionnalisme, cette entreprise se distingue par son expertise dans le domaine. Que vous ayez un problème mineur ou majeur, Volet specialiste garantit une intervention efficace et adaptée à vos besoins."
-callToAction: "Applez nous"
+callToAction: 'Applez nous'
 image: ~/assets/images/volet-roulant-square-20.png
 author: 'Auteur: S.Abdelhakim (Spécialiste technique en systèmes de volets roulants)'
 category: volets roulants
@@ -32,7 +32,11 @@ import Image from '~/components/common/Image.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 
 <Prices
-  image={{ src: '~/assets/images/volet-roulant-square-09.png', alt: 'les volets roulants' }}
+  image={{
+    src: '~/assets/images/volet-roulant-square-09.png',
+    title: 'Your Title Here',
+    alt: 'les volets roulants',
+  }}
   title="intervention immédiate et de haute qualité"
   subtitle="Assurée par les storistes les plus renommés à Paris 2."
   prices={[
@@ -46,7 +50,7 @@ import Prices from '~/components/widgets/Pricing.astro';
           description:
             "Un diagnostic rapide, des réparations durables, des tarifs compétitifs et l'utilisation de pièces authentiques garantissent une intervention de qualité supérieure.",
         },
-      ],   
+      ],
       callToAction: {
         target: '_blank',
         text: 'Appelez Nous!',
@@ -74,7 +78,7 @@ import Prices from '~/components/widgets/Pricing.astro';
     {
       title: 'Installation volet roulant à Paris 2 (75002)',
       subtitle: '',
-      price:  290,
+      price: 290,
       period: 'A partir de',
       items: [
         {

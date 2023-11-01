@@ -38,6 +38,7 @@ const metadata = {
     images: [
       {
         url: '~/assets/images/volet-roulant-square-19.png',
+        title: 'Your Title Here',
         alt: 'materiaux des volets roulants',
         width: 950, // Optional: replace with your image's width
         height: 350, // Optional: replace with your image's height
@@ -55,7 +56,9 @@ const metadata = {
   <section class="relative not-prose mt-4 md:mx-10 md:flex md:justify-around">
     <div>
       <div class="relative my-2 visible md:hidden">
-        <HakimMobi image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants' }}>
+        <HakimMobi
+          image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants', title: 'Your Title Here' }}
+        >
           <Fragment slot="subtitle">
             <span class="font-bold">Rédacteur: S.Abdelhakim</span>
             <br />Spécialiste qualifié dans le domaine des volets roulants.
@@ -68,7 +71,11 @@ const metadata = {
           href: 'tel:01 85 49 07 07',
         }}
         callToAction2={{ text: 'Devis Gratuit', href: '/devis-gratuit' }}
-        image={{ src: '~/assets/images/volet-roulant-square-19.png', alt: 'les volets roulants' }}
+        image={{
+          src: '~/assets/images/volet-roulant-square-19.png',
+          title: 'Your Title Here',
+          alt: 'les volets roulants',
+        }}
       >
         <Fragment slot="title">Guide Ultime des Matériaux pour Volets Roulants: Lequel Choisir?</Fragment>
         <Fragment slot="subtitle">
@@ -107,6 +114,7 @@ const metadata = {
         id="section2"
         image={{
           src: '~/assets/images/volet-roulant-square-19.png',
+          title: 'Your Title Here',
           alt: 'Volet Roulant pour Velux',
         }}
       >
@@ -289,6 +297,7 @@ const metadata = {
         id="section3"
         image={{
           src: '~/assets/images/volet-roulant-square-19.png',
+          title: 'Your Title Here',
           alt: 'Volet Roulant pour Velux',
         }}
       >
@@ -345,6 +354,7 @@ const metadata = {
         id="section4"
         image={{
           src: '~/assets/images/volet-roulant-square-19.png',
+          title: 'Your Title Here',
           alt: 'Volet Roulant pour Velux',
         }}
       >
@@ -466,8 +476,8 @@ const metadata = {
         </Fragment>
       </Content>
     </div>
-    <div class="hidden md:mt-10 md:block">
-      <Hakim image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants' }}>
+    <div class="hidden md:mt-10 md:block md:w-5/12">
+      <Hakim image={{ src: '~/assets/images/hakimimg.jpg', alt: 'les volets roulants', title: 'Your Title Here' }}>
         <Fragment slot="title">Rédacteur: S.Abdelhakim</Fragment>
         <Fragment slot="subtitle">
           Spécialiste qualifié dans le domaine des volets roulants, avec une expertise approfondie dans les systèmes de

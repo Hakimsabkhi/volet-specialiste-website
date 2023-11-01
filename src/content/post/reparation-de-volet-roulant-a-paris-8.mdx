@@ -23,7 +23,6 @@ sec2: 'Panorama des défaillances courantes'
 sec3: "L'Excellence du Service"
 sec4: 'Pourquoi choisir Volet specialiste?'
 sec5: 'Votre Partenaire de Confiance'
-
 ---
 
 import TelMob from '~/components/widgets/telMob.astro';
@@ -31,7 +30,11 @@ import Image from '~/components/common/Image.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 
 <Prices
-  image={{ src: '~/assets/images/volet-roulant-square-38.png', alt: 'les volets roulants' }}
+  image={{
+    src: '~/assets/images/volet-roulant-square-38.png',
+    title: 'Your Title Here',
+    alt: 'les volets roulants',
+  }}
   title="Anomalies et Tarifs de Réparation"
   subtitle="Garantie par les experts en volet les plus reconnus de Paris 8"
   prices={[
@@ -42,8 +45,7 @@ import Prices from '~/components/widgets/Pricing.astro';
       period: 'A partir de',
       items: [
         {
-          description:
-            "Les capteurs solaires sont endommagés ou encrassés, réduisant l'efficacité du volet solaire.",
+          description: "Les capteurs solaires sont endommagés ou encrassés, réduisant l'efficacité du volet solaire.",
         },
       ],
       callToAction: {
@@ -59,8 +61,7 @@ import Prices from '~/components/widgets/Pricing.astro';
       period: 'A partir de',
       items: [
         {
-          description:
-            "Une ou plusieurs lames sont endommagées, tordues ou désalignées.",
+          description: 'Une ou plusieurs lames sont endommagées, tordues ou désalignées.',
         },
       ],
       callToAction: {
@@ -77,8 +78,7 @@ import Prices from '~/components/widgets/Pricing.astro';
       period: 'A partir de',
       items: [
         {
-          description:
-            "Le boîtier de commande ne répond pas ou présente des signes de dysfonctionnement.",
+          description: 'Le boîtier de commande ne répond pas ou présente des signes de dysfonctionnement.',
         },
       ],
       callToAction: {

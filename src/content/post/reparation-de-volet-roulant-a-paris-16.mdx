@@ -31,7 +31,11 @@ import Image from '~/components/common/Image.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 
 <Prices
-  image={{ src: '~/assets/images/volet-roulant-square-19.png', alt: 'les volets roulants' }}
+  image={{
+    src: '~/assets/images/volet-roulant-square-19.png',
+    title: 'Your Title Here',
+    alt: 'les volets roulants',
+  }}
   title="Services Experts et Devis Clair"
   subtitle="Plébiscité par les spécialistes de volets roulants à Paris 16 (75016)."
   prices={[
@@ -43,7 +47,7 @@ import Prices from '~/components/widgets/Pricing.astro';
       items: [
         {
           description:
-            "Problèmes de connexion ou boutons inopérants sur la télécommande, empêchant le contrôle du volet roulant.",
+            'Problèmes de connexion ou boutons inopérants sur la télécommande, empêchant le contrôle du volet roulant.',
         },
       ],
       callToAction: {
@@ -78,7 +82,7 @@ import Prices from '~/components/widgets/Pricing.astro';
       items: [
         {
           description:
-            "Détérioration ou obstruction des capteurs solaires, diminuant la fonctionnalité optimale du volet solaire.",
+            'Détérioration ou obstruction des capteurs solaires, diminuant la fonctionnalité optimale du volet solaire.',
         },
       ],
       callToAction: {
