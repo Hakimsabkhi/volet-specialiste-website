@@ -28,7 +28,12 @@ import Image from '~/components/common/Image.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 
 <Prices
-  image={{ src: '~/assets/images/volet-roulant-square-09.png' , title:  "Your Title Here",alt: 'les volets roulants' , title:  "Your Title Here"}}
+  image={{
+    src: '~/assets/images/volet-roulant-square-09.png',
+    title: 'Your Title Here',
+    alt: 'les volets roulants',
+    title: 'Your Title Here',
+  }}
   title="Types de Pannes et Tarifs de Réparation"
   subtitle="Garanties par les storistes les plus réputés du 6e arrondissement de Paris."
   prices={[
@@ -39,7 +44,7 @@ import Prices from '~/components/widgets/Pricing.astro';
       period: 'A partir de',
       items: [
         {
-          description:'Remplacement efficace de la sangle avec des matériaux de qualité pour une longévité accrue.',
+          description: 'Remplacement efficace de la sangle avec des matériaux de qualité pour une longévité accrue.',
         },
       ],
       callToAction: {
@@ -55,7 +60,7 @@ import Prices from '~/components/widgets/Pricing.astro';
       period: 'A partir de',
       items: [
         {
-          description:'Évaluation précise et intervention rapide pour un fonctionnement fluide de la manivelle.',
+          description: 'Évaluation précise et intervention rapide pour un fonctionnement fluide de la manivelle.',
         },
       ],
       callToAction: {
@@ -125,7 +130,7 @@ Les volets solaires représentent la technologie de demain. Face à des problèm
   loading="eager"
   width={950}
   height={350}
-  loading="eager"
+  loading="lazy"
   decoding="async"
   title="Your Title Here"
 />
@@ -164,7 +169,7 @@ Les volets solaires représentent la technologie de demain. Face à des problèm
   loading="eager"
   width={950}
   height={350}
-  loading="eager"
+  loading="lazy"
   decoding="async"
   title="Your Title Here"
 />

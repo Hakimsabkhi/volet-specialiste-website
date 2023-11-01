@@ -12,11 +12,11 @@ export const headerData = {
     },
     {
       text: 'Prix',
-      href: getPermalink('/tarifs'),
+      href: getPermalink('/tarifs-volet-roulant'),
     },
     {
       text: 'Matériaux',
-      href: getPermalink('/materiaux'),
+      href: getPermalink('/materiaux-volet-roulant'),
     },
     {
       text: 'Devis gratuit',
@@ -30,15 +30,13 @@ export const headerData = {
   actions: [
     {
       type: 'button',
-      class:
-        'btn btn-primary font-medium rounded-4xl md:hidden',
+      class: 'btn btn-primary font-medium rounded-4xl md:hidden',
       text: 'Appelez Nous',
       href: 'tel:01 85 49 07 07',
     },
     {
       type: 'button',
-      class:
-        'btn btn-primary font-medium rounded-4xl',
+      class: 'btn btn-primary font-medium rounded-4xl',
       text: 'Contactez Nous',
       href: '/contact',
     },
