@@ -83,6 +83,8 @@ const Content = post?.Content || null;
               height={350}
               loading="eager"
               decoding="async"
+              title="Your Title Here"
+              title={post?.titleH1 || ' volet roulant '}
             />
           ) : (
             <div class="max-w-3xl px-4 sm:px-6">
