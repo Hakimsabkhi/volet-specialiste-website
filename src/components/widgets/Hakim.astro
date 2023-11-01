@@ -25,7 +25,7 @@ const {
 ---
 
 <WidgetWrapper containerClass={`max-w-6xl ${classes?.container ?? ''}`} bg={bg}>
-  <div class="max-w-lg text-center p-6 rounded-md shadow-xl">
+  <div class="max-w-lg text-center p-6 rounded-md">
     <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
       {
         image && (
@@ -38,8 +38,8 @@ const {
                 widths={[400, 768, 1024, 2040]}
                 sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
                 loading="eager"
-                width={600}
-                height={300}
+                width={300}
+                height={150}
                 {...image}
               />
             )}
@@ -53,8 +53,8 @@ const {
       tagline={tagline}
       classes={{
         container: 'my-5 md:mb-0',
-        title: 'text-2xl md:text-xl font-bold leading-tighter tracking-wide mb-4 ',
-        subtitle: 'text-base',
+        title: 'md:text-lg font-bold leading-tighter tracking-wide mb-4 ',
+        subtitle: 'text-sm',
       }}
     />
     {
