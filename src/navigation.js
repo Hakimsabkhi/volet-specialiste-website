@@ -48,15 +48,15 @@ export const footerData = {
     {
       title: 'INFOS LÉGALES',
       links: [
-        { text: 'Conditions générales', href: '#' },
-        { text: 'politique de confidentialité', href: '#' },
+        { text: 'Conditions générales', href: '/conditions-generales' },
+        { text: 'politique de confidentialité', href: '/politique-de-confidentialite' },
       ],
     },
     {
       title: 'CONTACT',
       links: [
-        { text: 'Qui sommes-nous ?', href: '#' },
-        { text: 'Contact', href: '#' },
+        { text: 'Qui sommes-nous ?', href: '/qui-sommes-nous ' },
+        { text: 'Contact', href: '/contact' },
       ],
     },
   ],
@@ -68,6 +68,6 @@ export const footerData = {
     { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: '#' },
   ],
   footNote: `
-    Made by <a class="text-blue-600 hover:underline " href="/"> © 2023 -Volet specialiste </a> · All rights reserved.
+    Made by <a class="text-blue-600 hover:underline " href="/"> © 2023 -S.Abdelhakim </a> · All rights reserved.
   `,
 };
