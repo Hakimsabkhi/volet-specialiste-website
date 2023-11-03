@@ -30,6 +30,7 @@ import TelMob from '~/components/widgets/telMob.astro';
 import Image from '~/components/common/Image.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 
+<br />
 <Prices
   image={{
     src: '~/assets/images/volet-roulant-square-32.png',
@@ -139,6 +140,66 @@ Nous bâtissons la confiance avec notre clientèle grâce à notre savoir-faire 
   </TelMob>
 </div>
 
+<br />
+<br />
+
+<Prices
+  title="Types de Pannes et Tarifs de Réparation"
+  subtitle="Votre partenaire de confiance dans toute la région parisienne."
+  prices={[
+    {
+      title: 'Panne de Sangle',
+      subtitle: '',
+      price: 40,
+      period: 'A partir de',
+      items: [
+        {
+          description: ' La sangle est cassée ou détachée, empêchant le volet de monter ou de descendre.',
+        },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: 'Appelez Nous!',
+        href: '#',
+      },
+    },
+    {
+      title: 'Problème de Manivelle',
+      subtitle: '',
+      price: 60,
+      period: 'A partir de',
+      items: [
+        {
+          description:
+            "La manivelle est bloquée ou tourne dans le vide, rendant l'ouverture ou la fermeture du volet impossible.",
+        },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: 'Appelez Nous!',
+        href: '#',
+      },
+      hasRibbon: true,
+    },
+    {
+      title: 'Défaut de Moteur Électrique',
+      subtitle: '',
+      price: 150,
+      period: 'A partir de',
+      items: [
+        {
+          description: 'Le moteur ne fonctionne pas, fait un bruit anormal ou surchauffe.',
+        },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: 'Appelez Nous!',
+        href: '#',
+      },
+    },
+  ]}
+/>
+
 <a id="section3"></a>
 <br />
 <br />
@@ -170,7 +231,7 @@ Nous bâtissons la confiance avec notre clientèle grâce à notre savoir-faire 
   widths={[350, 950]}
   sizes="(max-width: 950px) 310px, 700px"
   alt="les volets roulants"
-  loading="lazy"
+  loading="lazyr"
   width={950}
   height={350}
   loading="lazy"
