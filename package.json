@@ -21,8 +21,6 @@
     "@astrolib/analytics": "^0.4.2",
     "@astrolib/seo": "^0.6.0",
     "@fontsource/lexend": "^5.0.17",
-    "@iconify-json/flat-color-icons": "^1.1.7",
-    "@iconify-json/tabler": "^1.1.96",
     "@tailwindcss/typography": "^0.5.10",
     "@types/lodash.merge": "^4.6.8",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
@@ -40,19 +38,16 @@
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.1",
     "reading-time": "^1.5.0",
-    "svgo": "3.0.2",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2",
     "unpic": "^3.12.0"
   },
   "engines": {
     "node": ">=16.12.0"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.1.1",
-    "sharp": "^0.32.6",
-    "svelte": "^4.2.2",
-    "utils": "^0.2.2"
+    "@iconify-json/tabler": "^1.1.96",
+    "astro-eslint-parser": "^0.16.0",
+    "sharp": "^0.32.6"
   }
 }
