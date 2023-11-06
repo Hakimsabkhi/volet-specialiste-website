@@ -46,6 +46,7 @@
     "node": ">=16.12.0"
   },
   "dependencies": {
+    "@astrojs/vercel": "^5.1.0",
     "@iconify-json/tabler": "^1.1.96",
     "astro-eslint-parser": "^0.16.0",
     "sharp": "^0.32.6"
