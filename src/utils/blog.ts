@@ -34,7 +34,7 @@ const generatePermalink = async ({
 
   return permalink
     .split('/')
-    .map((el) => trimSlash(el))
+    .flatMap((el) => trimSlash(el))
     .filter((el) => !!el)
     .join('/');
 };
@@ -74,7 +74,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
   const publishDate = new Date(rawPublishDate);
   const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
   const category = rawCategory ? cleanSlug(rawCategory) : undefined;
-  const tags = rawTags.map((tag: string) => cleanSlug(tag));
+  const tags = rawTags.flatMap((tag: string) => cleanSlug(tag));
 
   return {
     id: id,
@@ -118,7 +118,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
 const load = async function (): Promise<Array<Post>> {
   const posts = await getCollection('post');
-  const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
+  const normalizedPosts = posts.flatMap(async (post) => await getNormalizedPost(post));
 
   const results = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
@@ -200,7 +200,7 @@ export const getStaticPathsBlogList = async ({ paginate }) => {
 /** */
 export const getStaticPathsBlogPost = async () => {
   if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
-  return (await fetchPosts()).map((post) => ({
+  return (await fetchPosts()).flatMap((post) => ({
     params: {
       blog: post.permalink,
     },
@@ -214,11 +214,11 @@ export const getStaticPathsBlogCategory = async ({ paginate }) => {
 
   const posts = await fetchPosts();
   const categories = new Set();
-  posts.map((post) => {
+  posts.flatMap((post) => {
     typeof post.category === 'string' && categories.add(post.category.toLowerCase());
   });
 
-  return Array.from(categories).map((category: string) =>
+  return Array.from(categories).flatMap((category: string) =>
     paginate(
       posts.filter((post) => typeof post.category === 'string' && category === post.category.toLowerCase()),
       {
@@ -236,11 +236,11 @@ export const getStaticPathsBlogTag = async ({ paginate }) => {
 
   const posts = await fetchPosts();
   const tags = new Set();
-  posts.map((post) => {
-    Array.isArray(post.tags) && post.tags.map((tag) => tags.add(tag.toLowerCase()));
+  posts.flatMap((post) => {
+    Array.isArray(post.tags) && post.tags.flatMap((tag) => tags.add(tag.toLowerCase()));
   });
 
-  return Array.from(tags).map((tag: string) =>
+  return Array.from(tags).flatMap((tag: string) =>
     paginate(
       posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.toLowerCase() === tag)),
       {

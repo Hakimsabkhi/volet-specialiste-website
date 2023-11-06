@@ -79,7 +79,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         class="h-full md:h-full flex justify-around md:justify-around flex-col md:flex-row md:self-center w-full text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
       >
         {
-          links.map(({ text, href, links }) => (
+          links.flatMap(({ text, href, links }) => (
             <li class={links?.length ? 'dropdown' : 'hover:scale-110 hover:text-blue-600'}>
               {links?.length ? (
                 <>
@@ -88,7 +88,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                     <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
                   </button>
                   <ul class="dropdown-menu md:backdrop-blur-md rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
-                    {links.map(({ text: text2, href: href2 }) => (
+                    {links.flatMap(({ text: text2, href: href2 }) => (
                       <li>
                         <a
                           class:list={[
@@ -124,7 +124,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         {
           actions?.length ? (
             <div class="w-4/5 md:w-full flex flex-col justify-around mx-auto">
-              {actions.map(({ text, href, class: className }) => (
+              {actions.flatMap(({ text, href, class: className }) => (
                 <a class:list={['btn mt-4 md:mt-0', className]} href={href}>
                   <Fragment set:html={text} />
                 </a>

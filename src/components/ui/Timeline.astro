@@ -23,7 +23,7 @@ const {
 {
   items && items.length && (
     <div class={containerClass}>
-      {items.map(
+      {items.flatMap(
         (
           { title, description, icon, classes: itemClasses = {} },
           index = 0

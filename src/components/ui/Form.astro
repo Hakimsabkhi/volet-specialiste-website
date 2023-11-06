@@ -9,7 +9,7 @@ const { inputs, textarea, disclaimer, button = 'Envoyer', description = '' } = A
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   {
     inputs &&
-      inputs.map(
+      inputs.flatMap(
         ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
           name && (
             <div class="mb-6">

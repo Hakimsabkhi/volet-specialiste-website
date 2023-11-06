@@ -45,7 +45,7 @@ const {
         {
           items && (
             <div class="space-y-8">
-              {items.map(({ title: title2, description, icon }) => (
+              {items.flatMap(({ title: title2, description, icon }) => (
                 <div class="flex">
                   <div class="flex-shrink-0">
                     <div class="flex h-7 w-7 items-center justify-center rounded-full bg-green-600 text-gray-50">

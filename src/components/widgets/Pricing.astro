@@ -25,7 +25,7 @@ const {
     <div class="max-w-xs md:max-w-full grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-2 md:mx-0">
       {
         prices &&
-          prices.map(({ title, subtitle, price, period, items, callToAction, hasRibbon = false, ribbonTitle }) => (
+          prices.flatMap(({ title, subtitle, price, period, items, callToAction, hasRibbon = false, ribbonTitle }) => (
             <div class="col-span-3 mx-auto flex w-full md:col-span-1">
               {price && period && (
                 <div class="rounded-lg backdrop-blur border border-gray-200 bg-white shadow pb-2 flex w-full max-w-sm flex-col justify-between text-center">
@@ -71,7 +71,7 @@ const {
 
                     {items && (
                       <ul role="list" class="m-2  md:my-2 space-y-2 text-left">
-                        {items.map(
+                        {items.flatMap(
                           ({ description, icon }) =>
                             description && (
                               <li class="mb-1.5 flex text-sm items-start space-x-3 leading-2 text-center">

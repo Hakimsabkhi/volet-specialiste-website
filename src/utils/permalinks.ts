@@ -7,7 +7,7 @@ import { trim } from '~/utils/utils';
 export const trimSlash = (s: string) => trim(trim(s, '/'));
 const createPath = (...params: string[]) => {
   const paths = params
-    .map((el) => trimSlash(el))
+    .flatMap((el) => trimSlash(el))
     .filter((el) => !!el)
     .join('/');
   return '/' + paths + (SITE_CONFIG.trailingSlash && paths ? '/' : '');
@@ -18,7 +18,7 @@ const BASE_PATHNAME = SITE_CONFIG.base || '/';
 export const cleanSlug = (text = '') =>
   trimSlash(text)
     .split('/')
-    .map((slug) => slugify(slug))
+    .flatMap((slug) => slugify(slug))
     .join('/');
 
 export const BLOG_BASE = cleanSlug(APP_BLOG_CONFIG?.list?.pathname);
@@ -74,7 +74,7 @@ export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);
 export const getAsset = (path: string): string =>
   '/' +
   [BASE_PATHNAME, path]
-    .map((el) => trimSlash(el))
+    .flatMap((el) => trimSlash(el))
     .filter((el) => !!el)
     .join('/');
 

@@ -69,7 +69,7 @@ const parseAspectRatio = (aspectRatio: number | string | null | undefined): numb
     const match = aspectRatio.match(/(\d+)\s*[/:]\s*(\d+)/);
 
     if (match) {
-      const [, num, den] = match.map(Number);
+      const [, num, den] = match.flatMap(Number);
       if (den && !isNaN(num)) return num / den;
     } else {
       const numericValue = parseFloat(aspectRatio);
@@ -173,7 +173,7 @@ const getStyle = ({
   const styles = Object.fromEntries(styleEntries.filter(([, value]) => value));
 
   return Object.entries(styles)
-    .map(([key, value]) => `${key}: ${value};`)
+    .flatMap(([key, value]) => `${key}: ${value};`)
     .join(' ');
 };
 
@@ -216,7 +216,7 @@ export const astroAsseetsOptimizer: ImagesOptimizer = async (image, breakpoints)
   }
 
   return Promise.all(
-    breakpoints.map(async (w: number) => {
+    breakpoints.flatMap(async (w: number) => {
       const url = (await getImage({ src: image, width: w })).src;
       return {
         src: url,
@@ -238,7 +238,7 @@ export const unpicOptimizer: ImagesOptimizer = async (image, breakpoints, width,
   }
 
   return Promise.all(
-    breakpoints.map(async (w: number) => {
+    breakpoints.flatMap(async (w: number) => {
       const url =
         (await transformUrl({
           url: image,
@@ -299,7 +299,7 @@ export async function getImagesOptimized(
   breakpoints = [...new Set(breakpoints)].sort((a, b) => a - b);
 
   const srcset = (await transform(image, breakpoints, Number(width) || undefined, Number(height) || undefined))
-    .map(({ src, width }) => `${src} ${width}w`)
+    .flatMap(({ src, width }) => `${src} ${width}w`)
     .join(', ');
 
   return {

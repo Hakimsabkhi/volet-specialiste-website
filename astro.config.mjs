@@ -20,7 +20,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const whenExternalScripts = (items = []) =>
   ANALYTICS_CONFIG.vendors.googleAnalytics.id && ANALYTICS_CONFIG.vendors.googleAnalytics.partytown
     ? Array.isArray(items)
-      ? items.map((item) => item())
+      ? items.flatMap((item) => item())
       : [items()]
     : [];
 
@@ -78,8 +78,8 @@ export default defineConfig({
     remarkPlugins: [readingTimeRemarkPlugin],
   },
 
-  experimental:{
-    assets: true
+  experimental: {
+    devOverlay: true,
   },
 
   vite: {
