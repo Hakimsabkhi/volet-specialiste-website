@@ -1,6 +1,6 @@
 site:
   name: Volet Spécialiste
-  site: 'https://volet-specialiste.vercel.app'
+  site: 'https://volet-specialiste.com/'
   base: '/'
   trailingSlash: false
 
