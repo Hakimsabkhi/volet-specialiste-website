@@ -19,7 +19,7 @@ export default defineConfig({
   site: SITE_CONFIG.site,
   base: SITE_CONFIG.base,
   trailingSlash: SITE_CONFIG.trailingSlash ? 'always' : 'never',
-  output: 'hybrid',
+  output: 'server',
   integrations: [tailwind({
     applyBaseStyles: false
   }), sitemap(), mdx(), icon({
