@@ -22,7 +22,7 @@
     "@astrolib/seo": "^0.6.0",
     "@fontsource/lexend": "^5.0.17",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/lodash.merge": "^4.6.8",
+    "@types/lodash.merge": "^4.6.9",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "astro": "^3.4.3",
@@ -40,7 +40,7 @@
     "reading-time": "^1.5.0",
     "tailwind-merge": "^2.0.0",
     "tailwindcss": "^3.3.5",
-    "unpic": "^3.12.0"
+    "unpic": "^3.13.0"
   },
   "engines": {
     "node": ">=16.12.0"
