@@ -1,7 +1,7 @@
 {
   "name": "volet-specialiste",
   "description": "Obtenez des informations essentielles sur les volets roulants grâce à notre d'experts.",
-  "version": "0.9.9",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -43,7 +43,7 @@
     "unpic": "^3.13.0"
   },
   "engines": {
-    "node": "^18.18.2"
+    "node": "^18.17.1"
   },
   "dependencies": {
     "@astrojs/vercel": "^5.2.0",
