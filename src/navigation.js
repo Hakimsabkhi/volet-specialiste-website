@@ -68,7 +68,7 @@ export const footerData = {
     { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: '#' },
   ],
   footNote: `
-    Made by <a class="text-blue-600 hover:underline"> © 2023 -S.Abdelhakim </a> · All rights reserved.
+    Made by <spam class="text-blue-600"> © 2023 -S.Abdelhakim </spam> · All rights reserved.
   `,
 };
 
