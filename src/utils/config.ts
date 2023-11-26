@@ -103,7 +103,7 @@ const getMetadata = () => {
     },
     description: '',
     robots: {
-      index: true,
+      index: false,
       follow: false,
     },
     openGraph: {
@@ -164,7 +164,7 @@ const getAppBlog = () => {
       isEnabled: true,
       pathname: 'tag',
       robots: {
-        index: true,
+        index: false,
         follow: true,
       },
     },
