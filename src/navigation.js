@@ -62,10 +62,10 @@ export const footerData = {
   ],
   secondaryLinks: [],
   socialLinks: [
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: '#' },
-    { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: '#' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/volet.specialiste' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/volet.specialiste/' },
+    { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/volet-sepcialiste' },
+    { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/@volet.specialiste' },
   ],
   footNote: `
     Made by <spam class="text-blue-600"> © 2023 -S.Abdelhakim </spam> · All rights reserved.
