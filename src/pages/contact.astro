@@ -5,6 +5,40 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 const metadata = {
   title: 'Contact',
+  description:
+    "Contactez-nous pour toutes vos demandes de volets roulants sur mesure. Notre équipe experte dans le domaine des volets vous offre des solutions fiables et personnalisées.",
+  // Mots-clés (Keywords)
+  keywords: [
+    'volets roulants',
+    'installation de volets',
+    'types de volets',
+    'volets en PVC',
+    'volets en aluminium',
+    'volets en bois',
+    'sécurité',
+    'esthétique',
+    'intégration domotique',
+    'entretien de volets',
+    'coût des volets',
+    'efficacité énergétique',
+  ],
+  openGraph: {
+    url: 'volet-specialiste.com',
+    siteName: 'Volet Spécialiste',
+    images: [
+      {
+        url: '~/assets/images/volet-roulant-square-13.png',
+        title: 'Contactez-nous pour toutes vos demandes de volets roulants sur mesure.',
+        alt: 'Contactez des volet specialiste',
+        width: 950, // Optional: replace with your image's width
+        height: 350, // Optional: replace with your image's height
+      },
+      // ... you can add more images if needed ...
+    ],
+    locale: 'fr_FR', // Optional: replace with the appropriate locale if different
+    type: 'article', // As it's a guide, 'article' seems appropriate
+  },
+  ignoreTitleTemplate: true,
 };
 ---
 <Layout metadata={metadata}>

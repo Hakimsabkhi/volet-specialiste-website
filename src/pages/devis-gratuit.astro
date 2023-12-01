@@ -6,6 +6,40 @@ import Features2 from '~/components/widgets/Features2.astro';
 const metadata = {
   title: 'Devis Gratuit Chez Volet Spécialiste',
   canonical: 'https://volet-specialiste.com/devis-gratuit',
+  description:
+    "Demandez votre devis gratuit pour des volets roulants sur mesure. Notre équipe de spécialistes dans le domaine des volets vous fournir une estimation sans engagement.",
+  // Mots-clés (Keywords)
+  keywords: [
+    'volets roulants',
+    'installation de volets',
+    'types de volets',
+    'volets en PVC',
+    'volets en aluminium',
+    'volets en bois',
+    'sécurité',
+    'esthétique',
+    'intégration domotique',
+    'entretien de volets',
+    'coût des volets',
+    'efficacité énergétique',
+  ],
+  openGraph: {
+    url: 'volet-specialiste.com',
+    siteName: 'Devis Gratuit chez Volet Spécialiste',
+    images: [
+      {
+        url: '~/assets/images/volet-roulant-square-13.png',
+        title: 'Devis Gratuit chez Volet Spécialiste',
+        alt: 'Devis Gratuit chez Volet Spécialiste',
+        width: 950, // Optional: replace with your image's width
+        height: 350, // Optional: replace with your image's height
+      },
+      // ... you can add more images if needed ...
+    ],
+    locale: 'fr_FR', // Optional: replace with the appropriate locale if different
+    type: 'article', // As it's a guide, 'article' seems appropriate
+  },
+  ignoreTitleTemplate: true,
 };
 ---
 
