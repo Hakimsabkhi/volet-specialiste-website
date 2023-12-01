@@ -4,6 +4,7 @@ import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 
+
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
 
 export async function getStaticPaths({ paginate }) {
@@ -15,13 +16,14 @@ const currentPage = page.currentPage ?? 1;
 
 const metadata = {
   title: `Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  description:`Découvrez les dernières tendances et conseils sur les volets roulants sur notre blog${currentPage > 1 ? ` — Page de blog ${currentPage}` : ''}`,
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
   },
   openGraph: {
     type: 'blog',
-    image: 'https://example.com/path/to/image.jpg'
+    image: '~/assets/images/volet-roulant-square-13.png'
   },
 };
 ---
