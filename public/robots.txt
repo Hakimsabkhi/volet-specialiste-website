@@ -1,5 +1,5 @@
 User-agent: *
-Allow: /
+Allow:
 Disallow:*/tag/
 Disallow:*/category/
 Disallow:*/#
