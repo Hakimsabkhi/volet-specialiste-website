@@ -49,6 +49,7 @@
     "@astrojs/vercel": "^5.2.0",
     "@iconify-json/tabler": "^1.1.96",
     "@iconify/json": "^2.2.138",
+    "@vercel/analytics": "^1.1.1",
     "astro-eslint-parser": "^0.16.0",
     "sharp": "^0.32.6"
   }
