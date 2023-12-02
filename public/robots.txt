@@ -1,10 +1,10 @@
 User-agent: *
-Allow: /
+Allow: *
 Disallow: */tag/
 Disallow: */category/
 Disallow: */#
 User-agent: SiteAuditBot
-Allow: /
+Allow: *
 Disallow: */tag/
 Disallow: */category/
 Disallow: */#
