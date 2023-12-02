@@ -6,8 +6,7 @@ Disallow: */#
 Allow: /
 
 User-agent: SiteAuditBot
+Allow: /
 
-Disallow: */tag/
-Disallow: */category/
-Disallow: */#
+User-agent: Screaming Frog SEO Spider
 Allow: /
