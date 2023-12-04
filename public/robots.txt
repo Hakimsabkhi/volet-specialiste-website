@@ -1,9 +1,7 @@
 User-agent: *
-
 Disallow: */tag/
 Disallow: */category/
 Disallow: */#
-Allow: /
 
 User-agent: SiteAuditBot
 Allow: /
