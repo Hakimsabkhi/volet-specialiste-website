@@ -15,7 +15,7 @@ const { page, category } = Astro.props;
 const currentPage = page.currentPage ?? 1;
 
 const metadata = {
-  title: `Category ${category} ${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  title: `Univers de savoir sur les ${category} ${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
   description:`Découvrez notre gamme de volets roulants : élégance, fonctionnalité et conseils experts pour habiller vos fenêtres avec style ${category}${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
   robots: {
     index: blogCategoryRobots?.index,
