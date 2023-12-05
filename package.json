@@ -1,7 +1,7 @@
 {
   "name": "volet-specialiste",
-  "description": "Obtenez des informations essentielles sur les volets roulants grâce à notre d'experts.",
-  "version": "1.0.0",
+  "description": "Obtenez des informations essentielles sur les volets roulants grâce à notre équipe d'experts.",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -23,12 +23,12 @@
     "@fontsource/lexend": "^5.0.17",
     "@tailwindcss/typography": "^0.5.10",
     "@types/lodash.merge": "^4.6.9",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
     "astro": "^3.4.3",
     "astro-compress": "^2.2.3",
     "astro-icon": "^1.0.0-next.2",
-    "eslint": "^8.53.0",
+    "eslint": "^8.55.0",
     "eslint-plugin-astro": "^0.29.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "js-yaml": "^4.1.0",
@@ -43,7 +43,7 @@
     "unpic": "^3.13.0"
   },
   "engines": {
-    "node": "^18.17.1"
+    "node": ">=18.17.1"
   },
   "dependencies": {
     "@astrojs/vercel": "^5.2.0",
