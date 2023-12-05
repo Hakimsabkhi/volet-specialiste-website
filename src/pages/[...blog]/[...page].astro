@@ -15,7 +15,7 @@ const { page } = Astro.props;
 const currentPage = page.currentPage ?? 1;
 
 const metadata = {
-  title: `Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  title: `Spécialiste en volets: Notre Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
   description:`Découvrez les dernières tendances et conseils sur les volets roulants sur notre blog${currentPage > 1 ? ` — Page de blog ${currentPage}` : ''}`,
   robots: {
     index: blogListRobots?.index && currentPage === 1,

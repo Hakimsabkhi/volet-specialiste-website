@@ -15,7 +15,8 @@ const { page, category } = Astro.props;
 const currentPage = page.currentPage ?? 1;
 
 const metadata = {
-  title: `Category '${category}' ${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  title: `Category ${category} ${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  description:`Découvrez notre gamme de volets roulants : élégance, fonctionnalité et conseils experts pour habiller vos fenêtres avec style ${category}${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
   robots: {
     index: blogCategoryRobots?.index,
     follow: blogCategoryRobots?.follow,
@@ -25,7 +26,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 max-w-4xl mx-auto">
-    <Headline><span class="capitalize">{category.replaceAll('-', ' ')}</span></Headline>
+    <Headline><span class="capitalize">Tout savoir sur les {category.replaceAll('-', ' ')}{currentPage > 1 ? ` — Page ${currentPage}` : ''}</span></Headline>
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
