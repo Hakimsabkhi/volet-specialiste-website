@@ -26,12 +26,12 @@ const { tags, class: className = 'text-sm', title = undefined, isCategory = fals
             {!APP_BLOG_CONFIG?.tag?.isEnabled ? (
               tag
             ) : (
-              <a
-                href={getPermalink(tag, (isCategory ? 'category' : 'tag'))}
+              <span
+                
                 class="text-muted hover:text-primary "
               >
                 {tag}
-              </a>
+              </span>
             )}
           </li>
         ))}

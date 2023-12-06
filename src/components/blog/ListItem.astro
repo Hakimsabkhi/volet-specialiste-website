@@ -57,9 +57,9 @@ const link = APP_BLOG_CONFIG?.post?.isEnabled ? getPermalink(post.permalink, 'po
               <>
                 {' '}
                 ·{' '}
-                <a class="capitalize hover:underline" href={getPermalink(post.category, 'category')}>
+                <span class="capitalize hover:underline">
                   {post.category.replaceAll('-', ' ')}
-                </a>
+                </span>
               </>
             )
           }
