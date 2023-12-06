@@ -69,7 +69,7 @@ export const footerData = {
     { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/@volet.specialiste' },
   ],
   footNote: `
-    Made by <spam class="text-blue-600"> © 2023 -S.Abdelhakim </spam> · All rights reserved.
+    Made by <span class="text-blue-600"> © 2023 -S.Abdelhakim </span> · All rights reserved.
   `,
 };
 

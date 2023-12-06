@@ -35,9 +35,9 @@ const Content = post?.Content || null;
                 <>
                   {' '}
                   ·{' '}
-                  <a class="capitalize hover:underline inline-block" href={getPermalink(post.category, 'category')}>
+                  <span class="capitalize hover:underline inline-block">
                     {post.category.replaceAll('-', ' ')}
-                  </a>
+                  </span>
                 </>
               )
             }
