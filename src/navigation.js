@@ -56,7 +56,7 @@ export const footerData = {
       title: 'CONTACT',
       links: [
         { text: 'Qui sommes-nous ?', href: '/qui-sommes-nous ' },
-        { text: 'Contact', href: '/contact' },
+        /* { text: 'Contact', href: '/contact' }, */
       ],
     },
   ],
