@@ -22,16 +22,16 @@ const link = APP_BLOG_CONFIG?.post?.isEnabled ? getPermalink(post.permalink, 'po
 ---
 
 <article
-  class={`max-w-md md:max-w-none grid rounded-md hover:bg-gray-100 gap-6 md:gap-8 ${image ? 'md:grid-cols-2' : ''}`}
+  class={`max-w-md md:max-w-none ${image ? 'md:grid-cols-2' : ''}`}
 >
   {
     image && (
       <a class="relative block group" href={link ?? 'javascript:void(0)'}>
-        <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-white rounded shadow-lg">
+        <div class="relative h-0 pb-[40.25%] md:h-2 overflow-hidden rounded shadow-lg">
           {image && (
             <Image
               src={image}
-              class="absolute inset-0 object-cover w-full h-full mb-6 md:mb-0 rounded shadow-lg bg-white"
+              class="absolute inset-0 object-cover w-full h-full mb-6 md:mb-0 shadow-lg bg-white"
               widths={[400, 1000]}
               width={1000}
               sizes="(max-width: 900px) 400px, 900px"
@@ -49,8 +49,8 @@ const link = APP_BLOG_CONFIG?.post?.isEnabled ? getPermalink(post.permalink, 'po
   <div class="mt-2">
     <header>
       <div class="mb-1">
-        <span class="text-sm">
-          <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block -mt-0.5" />
+        <span class="text-xs">
+          <Icon name="tabler:clock" class="w-3.5 h-3.5 mx-2 inline-block -mt-0.5" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
           {
             post.category && (
@@ -65,7 +65,7 @@ const link = APP_BLOG_CONFIG?.post?.isEnabled ? getPermalink(post.permalink, 'po
           }
         </span>
       </div>
-      <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2">
+      <h2 class="text-base sm:text-sm font-bold leading-tight mb-2 mx-2">
         {
           link ? (
             <a class="hover:text-primary transition ease-in duration-200" href={link}>
@@ -77,9 +77,9 @@ const link = APP_BLOG_CONFIG?.post?.isEnabled ? getPermalink(post.permalink, 'po
         }
       </h2>
     </header>
-    {post.excerpt && <p class="flex-grow text-muted text-lg">{post.excerpt.split(' ').slice(0, 8).join(' ')}...</p>}
-    <footer class="mt-5">
-      <PostTags tags={post?.tags?.slice(0, 3)} />
+    {post.excerpt && <p class="flex-grow text-muted text-xs mx-2">{post.excerpt.split(' ').slice(0, 8).join(' ')}...</p>}
+    <footer class="mt-2">
+      <PostTags tags={post?.tags?.slice(0, 2)} />
     </footer>
   </div>
 </article>

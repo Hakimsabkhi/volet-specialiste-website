@@ -1,6 +1,5 @@
 ---
 import { getPermalink } from '~/utils/permalinks';
-
 import {  APP_BLOG_CONFIG } from '~/utils/config';
 import type { Post } from '~/types';
 
@@ -11,7 +10,7 @@ export interface Props {
   isCategory?: boolean;
 }
 
-const { tags, class: className = 'text-sm', title = undefined, isCategory = false } = Astro.props;
+const { tags, class: className = 'list-disc text-xs mx-4', title = undefined, isCategory = false } = Astro.props;
 ---
 
 {
@@ -21,21 +20,21 @@ const { tags, class: className = 'text-sm', title = undefined, isCategory = fals
         {title !== undefined && <span class="align-super font-normal hover:underline hover:underline-offset-4 decoration-2 ">{title}</span>}
       </>
       <ul class={className}>
-        {tags.flatMap((tag) => (
-          <li class="bg-gray-100  inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium">
-            {!APP_BLOG_CONFIG?.tag?.isEnabled ? (
-              tag
-            ) : (
-              <span
-                
-                class="text-muted hover:text-primary "
-              >
-                {tag}
-              </span>
-            )}
-          </li>
-        ))}
-      </ul>
+  {tags.flatMap((tag) => (
+    <li class="mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium" key={tag}>
+      {!APP_BLOG_CONFIG?.tag?.isEnabled ? (
+        tag
+      ) : (
+        <p>
+          {tag
+            .replaceAll('-', ' ')
+            .replace(/^\w/, (c) => c.toUpperCase())}
+        </p>
+      )}
+    </li>
+  ))}
+</ul>
+
     </>
   )
 }
