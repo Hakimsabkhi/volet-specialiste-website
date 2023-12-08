@@ -49,8 +49,9 @@
     "@iconify-json/tabler": "^1.1.96",
     "@iconify/json": "^2.2.138",
     "@vercel/analytics": "^1.1.1",
+    "acorn": "^8.11.2",
+    "astro": "^3.6.4",
     "astro-eslint-parser": "^0.16.0",
-  
     "tsc": "^2.0.4",
     "typescript": "^5.3.2"
   }
