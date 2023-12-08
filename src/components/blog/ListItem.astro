@@ -24,9 +24,8 @@ const link = APP_BLOG_CONFIG?.post?.isEnabled ? getPermalink(post.permalink, 'po
 <article
   class={`max-w-md justify-between  ${image ? 'md:flex-col' : ''}`}
 >
-<header class="w-full h-8">
-  <div class="text-center my-2 text-[12px]">
-      <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block" />
+<header class="w-full h-20">
+  <div class="text-center text-[12px] pt-2">
       <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
       {
         post.category && (
@@ -39,6 +38,17 @@ const link = APP_BLOG_CONFIG?.post?.isEnabled ? getPermalink(post.permalink, 'po
           </>
         )
       }
+        <h2 class="text-xs sm:text-xs font-bold leading-tight my-2 mx-2">
+          {
+            link ? (
+              <a class="hover:text-primary transition ease-in duration-200" href={link}>
+                {post.title}
+              </a>
+            ) : (
+              post.title
+            )
+          }
+        </h2>
   </div>
 
 </header>
@@ -62,22 +72,12 @@ const link = APP_BLOG_CONFIG?.post?.isEnabled ? getPermalink(post.permalink, 'po
       </a>
     )
   }
-    <h2 class="text-xs sm:text-xs font-bold leading-tight mb-2 mx-2">
-      {
-        link ? (
-          <a class="hover:text-primary transition ease-in duration-200" href={link}>
-            {post.title}
-          </a>
-        ) : (
-          post.title
-        )
-      }
-    </h2>
+  
   <div class="mt-2">
     
     {post.excerpt && <p class="flex-grow text-muted text-[12px] mx-2">{post.excerpt.split(' ').slice(0, 8).join(' ')}...</p>}
     <footer class="mt-2">
-      <PostTags tags={post?.tags?.slice(0, 2)} />
+      <PostTags tags={post?.tags?.slice(0, 1)} />
     </footer>
   </div>
 </article>
