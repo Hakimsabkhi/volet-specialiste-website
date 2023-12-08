@@ -22,12 +22,30 @@ const link = APP_BLOG_CONFIG?.post?.isEnabled ? getPermalink(post.permalink, 'po
 ---
 
 <article
-  class={`max-w-md md:max-w-none ${image ? 'md:grid-cols-2' : ''}`}
+  class={`max-w-md justify-between  ${image ? 'md:flex-col' : ''}`}
 >
+<header class="w-full h-8">
+  <div class="text-center my-2 text-[12px]">
+      <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block" />
+      <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
+      {
+        post.category && (
+          <>
+            {' '}
+            ·{' '}
+            <p class="inline-block">
+              {post.category.replaceAll('-', ' ')}
+            </p>
+          </>
+        )
+      }
+  </div>
+
+</header>
   {
     image && (
       <a class="relative block group" href={link ?? 'javascript:void(0)'}>
-        <div class="relative h-0 pb-[40.25%] md:h-2 overflow-hidden rounded">
+        <div class="relative h-0 pb-[40.25%] md:h-2 overflow-hidden">
           {image && (
             <Image
               src={image}
@@ -44,38 +62,20 @@ const link = APP_BLOG_CONFIG?.post?.isEnabled ? getPermalink(post.permalink, 'po
       </a>
     )
   }
+    <h2 class="text-xs sm:text-xs font-bold leading-tight mb-2 mx-2">
+      {
+        link ? (
+          <a class="hover:text-primary transition ease-in duration-200" href={link}>
+            {post.title}
+          </a>
+        ) : (
+          post.title
+        )
+      }
+    </h2>
   <div class="mt-2">
-    <header>
-      <div class="mb-1">
-        <span class="text-xs">
-          <Icon name="tabler:clock" class="w-3.5 h-3.5 mx-2 inline-block -mt-0.5" />
-          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
-          {
-            post.category && (
-              <>
-                {' '}
-                ·{' '}
-                <span class="capitalize hover:underline">
-                  {post.category.replaceAll('-', ' ')}
-                </span>
-              </>
-            )
-          }
-        </span>
-      </div>
-      <h2 class="text-base sm:text-sm font-bold leading-tight mb-2 mx-2">
-        {
-          link ? (
-            <a class="hover:text-primary transition ease-in duration-200" href={link}>
-              {post.title}
-            </a>
-          ) : (
-            post.title
-          )
-        }
-      </h2>
-    </header>
-    {post.excerpt && <p class="flex-grow text-muted text-xs mx-2">{post.excerpt.split(' ').slice(0, 8).join(' ')}...</p>}
+    
+    {post.excerpt && <p class="flex-grow text-muted text-[12px] mx-2">{post.excerpt.split(' ').slice(0, 8).join(' ')}...</p>}
     <footer class="mt-2">
       <PostTags tags={post?.tags?.slice(0, 2)} />
     </footer>

@@ -10,18 +10,18 @@ export interface Props {
   isCategory?: boolean;
 }
 
-const { tags, class: className = 'list-disc text-xs mx-4', title = undefined, isCategory = false } = Astro.props;
+const {tags, class: className = 'text-[12px]', title = undefined, isCategory = false } = Astro.props;
 ---
 
 {
   tags && Array.isArray(tags) && (
     <>
       <>
-        {title !== undefined && <span class="align-super font-normal hover:underline hover:underline-offset-4 decoration-2 ">{title}</span>}
+        {title !== undefined && <span class="align-super font-normal">{title}</span>}
       </>
       <ul class={className}>
   {tags.flatMap((tag) => (
-    <li class="mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium" key={tag}>
+    <li class="mr-2 rtl:mr-0 rtl:ml-2 py-0.5 px-2 font-medium" key={tag}>
       {!APP_BLOG_CONFIG?.tag?.isEnabled ? (
         tag
       ) : (
