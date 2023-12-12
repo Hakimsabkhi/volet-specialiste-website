@@ -72,5 +72,3 @@ export const footerData = {
     Made by <span class="text-blue-600"> © 2023 -S.Abdelhakim </span> · All rights reserved.
   `,
 };
-
-////href="https://volet-specialiste.com/type-volet"
