@@ -14,13 +14,10 @@ const {
   image = await Astro.slots.render('image'),
   isReversed = false,
   isAfterContent = false,
-
 } = Astro.props as Content;
 ---
 
-<WidgetWrapper
-  containerClass={`max-w-7xl ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''}`}
->
+<WidgetWrapper containerClass={`max-w-7xl ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''}`}>
   <Headline
     title={title}
     subtitle={subtitle}

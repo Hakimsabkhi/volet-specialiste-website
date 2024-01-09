@@ -27,7 +27,7 @@ const link = APP_BLOG_CONFIG?.post?.isEnabled ? getPermalink(post.permalink, 'po
       {
         post.category && (
           <>
-            {' '}
+            
             · <p class="inline-block">{post.category.replaceAll('-', ' ')}</p>
           </>
         )
