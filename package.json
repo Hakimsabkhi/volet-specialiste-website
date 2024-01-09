@@ -42,7 +42,7 @@
     "unpic": "^3.13.0"
   },
   "engines": {
-    "node": "18.19.0"
+    "node": "18.18.2"
   },
   "dependencies": {
     "@astrojs/vercel": "^5.2.0",
