@@ -63,7 +63,7 @@ export default defineConfig({
       Image: false,
       JavaScript: true,
       SVG: true,
-      Logger: 1
+      Logger: 1,
     }),
   ],
   markdown: {

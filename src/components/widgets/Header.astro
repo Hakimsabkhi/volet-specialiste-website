@@ -3,8 +3,6 @@ import { Icon } from 'astro-icon/components';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import { Image } from 'astro:assets';
 import logo from '../../assets/logo.svg';
-
-import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash } from '~/utils/permalinks';
 
 interface Link {
@@ -38,7 +36,6 @@ const {
   links = [],
   actions = [],
   isSticky = false,
-  isDark = false,
   isFullWidth = false,
   position = 'center',
 } = Astro.props;
@@ -64,56 +61,63 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   >
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
       <a href="https://volet-specialiste.com/">
-        <Image src={logo} alt="logo volet specialiste" title="volet Specialiste" width="160" height="50" loading="eager"/>
+        <Image
+          src={logo}
+          alt="logo volet specialiste"
+          title="volet Specialiste"
+          width="160"
+          height="50"
+          loading="eager"
+        />
       </a>
       <div class="items-center mt-3 md:hidden">
         <ToggleMenu />
       </div>
     </div>
-  <div class="flex justify-around w-full h-1/2 md:h-full md:w-2/5 md:flex text-default flex-col">
-    <nav
-      class="h-4/5 hidden md:block"
-      aria-label="Main navigation"
-    >
-      <ul
-        class="h-full md:h-full flex justify-around md:justify-around flex-col md:flex-row md:self-center w-full text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
-      >
-        {
-          links.flatMap(({ text, href, links }) => (
-            <li class={links?.length ? 'dropdown' : 'hover:scale-110 hover:text-blue-600'}>
-              {links?.length ? (
-                <>
-                  <button class="hover:text-link px-4 py-3 flex items-center">
-                    {text}{' '}
-                    <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
-                  </button>
-                  <ul class="dropdown-menu md:backdrop-blur-md rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
-                    {links.flatMap(({ text: text2, href: href2 }) => (
-                      <li>
-                        <a
-                          class:list={[
-                            'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link py-2 px-5 block whitespace-no-wrap',
-                            { 'aw-link-active': href2 === currentPath },
-                          ]}
-                          href={href2}
-                        >
-                          {text2}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : (
-                <a class:list={['hover:text-link ', { 'aw-link-active': href === currentPath }]} href={href}>
-                  {text}
-                </a>
-              )}
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-  </div>
+    <div class="flex justify-around w-full h-1/2 md:h-full md:w-2/5 md:flex text-default flex-col">
+      <nav class="h-4/5 hidden md:block" aria-label="Main navigation">
+        <ul
+          class="h-full md:h-full flex justify-around md:justify-around flex-col md:flex-row md:self-center w-full text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
+        >
+          {
+            links.flatMap(({ text, href, links }) => (
+              <li class={links?.length ? 'dropdown' : 'hover:scale-110 hover:text-blue-600'}>
+                {links?.length ? (
+                  <>
+                    <button class="hover:text-link px-4 py-3 flex items-center">
+                      {text}{' '}
+                      <Icon
+                        name="tabler:chevron-down"
+                        class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline"
+                      />
+                    </button>
+                    <ul class="dropdown-menu md:backdrop-blur-md rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
+                      {links.flatMap(({ text: text2, href: href2 }) => (
+                        <li>
+                          <a
+                            class:list={[
+                              'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link py-2 px-5 block whitespace-no-wrap',
+                              { 'aw-link-active': href2 === currentPath },
+                            ]}
+                            href={href2}
+                          >
+                            {text2}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <a class:list={['hover:text-link ', { 'aw-link-active': href === currentPath }]} href={href}>
+                    {text}
+                  </a>
+                )}
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
     <div
       class:list={[
         { 'ml-auto rtl:ml-0 rtl:mr-auto': position === '' },

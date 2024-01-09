@@ -1,40 +1,31 @@
 ---
-import { getPermalink } from '~/utils/permalinks';
-import {  APP_BLOG_CONFIG } from '~/utils/config';
+import { APP_BLOG_CONFIG } from '~/utils/config';
 import type { Post } from '~/types';
 
 export interface Props {
   tags: Post['tags'];
-  class?: string;  
+  class?: string;
   title?: string | undefined;
-  isCategory?: boolean;
 }
 
-const {tags, class: className = 'text-[12px]', title = undefined, isCategory = false } = Astro.props;
+const { tags, class: className = 'text-[12px]', title = undefined,} = Astro.props;
 ---
 
 {
   tags && Array.isArray(tags) && (
     <>
-      <>
-        {title !== undefined && <span class="align-super font-normal">{title}</span>}
-      </>
+      <>{title !== undefined && <span class="align-super font-normal">{title}</span>}</>
       <ul class={className}>
-  {tags.flatMap((tag) => (
-    <li class="mr-2 rtl:mr-0 rtl:ml-2 py-0.5 px-2 font-medium" key={tag}>
-      {!APP_BLOG_CONFIG?.tag?.isEnabled ? (
-        tag
-      ) : (
-        <p>
-          {tag
-            .replaceAll('-', ' ')
-            .replace(/^\w/, (c) => c.toUpperCase())}
-        </p>
-      )}
-    </li>
-  ))}
-</ul>
-
+        {tags.flatMap((tag) => (
+          <li class="mr-2 rtl:mr-0 rtl:ml-2 py-0.5 px-2 font-medium" key={tag}>
+            {!APP_BLOG_CONFIG?.tag?.isEnabled ? (
+              tag
+            ) : (
+              <p>{tag.replaceAll('-', ' ').replace(/^\w/, (c) => c.toUpperCase())}</p>
+            )}
+          </li>
+        ))}
+      </ul>
     </>
   )
 }

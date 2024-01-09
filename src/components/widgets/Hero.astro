@@ -20,30 +20,21 @@ const {
   sommaire8 = await Astro.slots.render('sommaire8'),
 } = Astro.props;
 ---
+
 <section class="relative mx-4 md:mt-6 md:ml-5">
   <div class="relative md:max-w-3xl xl:max-w-4xl sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="py-1 md:py-1">
-      <div class=" pb-10 max-w-screen-lg">
-        {
-          tagline && (
-            <p
-              class="text-base text-secondary font-bold tracking-wide uppercase"
-              set:html={tagline}
-            />
-          )
-        }
-        {
-          title && (
-            <h1
-              class="text-xl md:text-xl font-bold leading-tighter tracking-wide mb-4 "
-              set:html={title}
-            />
-          )
-        }
-        <div class="max-w-3xl ">
+      <div class="pb-10 max-w-screen-lg">
+        {tagline && <p class="text-base text-secondary font-bold tracking-wide uppercase" set:html={tagline} />}
+        {title && <h1 class="text-xl md:text-xl font-bold leading-tighter tracking-wide mb-4 " set:html={title} />}
+        <div class="max-w-3xl">
           {subtitle && <p class=" text-base mb-6" set:html={subtitle} />}
-          <div class="max-w-full flex justify-center text-center mb-4"> <p class="max-w-lg font-bold text-xl ">Problème avec votre volet roulant ou besoin de rénovation ? Contactez un expert !</p></div>
+          <div class="max-w-full flex justify-center text-center mb-4">
+            <p class="max-w-lg font-bold text-xl">
+              Problème avec votre volet roulant ou besoin de rénovation ? Contactez un expert !
+            </p>
+          </div>
           <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
             {
               callToAction && (
@@ -52,7 +43,7 @@ const {
                     <Fragment set:html={callToAction} />
                   ) : (
                     <a class="btn btn-primary sm:mb-0 w-full" href={callToAction?.href} rel="noopener">
-                      {callToAction?.icon && <></>}
+                      {callToAction?.icon}
                       {callToAction?.text}
                     </a>
                   )}
@@ -79,7 +70,7 @@ const {
               )
             }
           </div>
-  </div>
+        </div>
         {content && <Fragment set:html={content} />}
       </div>
       <div>
@@ -102,61 +93,38 @@ const {
             </div>
           )
         }
-  </div>
-  <div>
-    <div>
-        <p class="mt-8 ml-4 mb-4 text-xl uppercase font-bold">Sommaire:</p>
-        <ul class="text-gray-500 font-sm ml-4 mb-2">
+      </div>
+      <div>
+        <div>
+          <p class="mt-8 ml-4 mb-4 text-xl uppercase font-bold">Sommaire:</p>
+          <ul class="text-gray-500 font-sm ml-4 mb-2">
             <li class="">
-              {
-                sommaire1 && (
-                <a href="#section1" class="hover:underline" set:html={sommaire1}></a>
-                )}
+              {sommaire1 && <a href="#section1" class="hover:underline" set:html={sommaire1} />}
             </li>
             <li class="">
-              {
-                sommaire2 && (
-                <a href="#section2" class="hover:underline" set:html={sommaire2}></a>
-                )}
+              {sommaire2 && <a href="#section2" class="hover:underline" set:html={sommaire2} />}
             </li>
             <li class="">
-              {
-                sommaire3 && (
-                <a href="#section3" class="hover:underline" set:html={sommaire3}></a>
-                )}
+              {sommaire3 && <a href="#section3" class="hover:underline" set:html={sommaire3} />}
             </li>
             <li class="">
-              {
-                sommaire4 && (
-                <a href="#section4" class="hover:underline" set:html={sommaire4}></a>
-                )}
+              {sommaire4 && <a href="#section4" class="hover:underline" set:html={sommaire4} />}
             </li>
             <li class="">
-              {
-                sommaire5 && (
-                <a href="#section5" class="hover:underline" set:html={sommaire5}></a>
-                )}
+              {sommaire5 && <a href="#section5" class="hover:underline" set:html={sommaire5} />}
             </li>
             <li class="">
-              {
-                sommaire6 && (
-                <a href="#section6" class="hover:underline" set:html={sommaire6}></a>
-                )}
+              {sommaire6 && <a href="#section6" class="hover:underline" set:html={sommaire6} />}
             </li>
             <li class="">
-              {
-                sommaire7 && (
-                <a href="#section7" class="hover:underline" set:html={sommaire7}></a>
-                )}
+              {sommaire7 && <a href="#section7" class="hover:underline" set:html={sommaire7} />}
             </li>
             <li class="">
-              {
-                sommaire8 && (
-                <a href="#section8" class="hover:underline" set:html={sommaire8}></a>
-                )}
+              {sommaire8 && <a href="#section8" class="hover:underline" set:html={sommaire8} />}
             </li>
-        </ul>
+          </ul>
+        </div>
+      </div>
     </div>
- </div>
-</div>
+  </div>
 </section>

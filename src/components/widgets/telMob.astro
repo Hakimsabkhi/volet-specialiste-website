@@ -1,6 +1,5 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Image from '~/components/common/Image.astro';
 
 const {
   title = await Astro.slots.render('title'),
@@ -9,38 +8,24 @@ const {
   content = await Astro.slots.render('content'),
   callToAction = await Astro.slots.render('callToAction'),
   callToAction2 = await Astro.slots.render('callToAction2'),
-  image = await Astro.slots.render('image'),
-  sommaire1 = await Astro.slots.render('sommaire1'),
-  sommaire2 = await Astro.slots.render('sommaire2'),
-  sommaire3 = await Astro.slots.render('sommaire3'),
-  sommaire4 = await Astro.slots.render('sommaire4'),
-  sommaire5 = await Astro.slots.render('sommaire5'),
-  sommaire6 = await Astro.slots.render('sommaire6'),
-  sommaire7 = await Astro.slots.render('sommaire7'),
-  sommaire8 = await Astro.slots.render('sommaire8'),
 } = Astro.props;
 ---
+
 <section class="relative not-prose scroll-mt-[74px] mx-4">
   <div class="md:max-w-2xl xl:max-w-3xl sm:px-6">
     <div class="mt-4 py-4">
-      <div class=" max-w-screen-lg">
+      <div class="max-w-screen-lg">
         {
           tagline && (
-            <p
-              class="text-base text-center text-secondary font-bold tracking-wide uppercase"
-              set:html={tagline}
-            />
+            <p class="text-base text-center text-secondary font-bold tracking-wide uppercase" set:html={tagline} />
           )
         }
         {
           title && (
-            <p
-              class="text-base md:text-lg font-bold text-center leading-tighter tracking-wide mb-4"
-              set:html={title}
-            />
+            <p class="text-base md:text-lg font-bold text-center leading-tighter tracking-wide mb-4" set:html={title} />
           )
         }
-        <div class="max-w-3xl ">
+        <div class="max-w-3xl">
           {subtitle && <p class=" text-center text-base mb-6" set:html={subtitle} />}
           <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
             {
@@ -50,7 +35,7 @@ const {
                     <Fragment set:html={callToAction} />
                   ) : (
                     <a class="btn btn-primary sm:mb-0 w-full" href={callToAction?.href} rel="noopener">
-                      {callToAction?.icon && <></>}
+                      {callToAction?.icon}
                       {callToAction?.text}
                     </a>
                   )}
@@ -77,8 +62,9 @@ const {
               )
             }
           </div>
-  </div>
+        </div>
         {content && <Fragment set:html={content} />}
       </div>
-</div>
+    </div>
+  </div>
 </section>

@@ -4,7 +4,6 @@ import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 
-
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
 
 export async function getStaticPaths({ paginate }) {
@@ -16,21 +15,25 @@ const currentPage = page.currentPage ?? 1;
 
 const metadata = {
   title: `Spécialiste en volets: Notre Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
-  description:`Explorez les tendances des volets roulants sur notre blog ! Designs modernes et astuces pratiques pour votre maison.${currentPage > 1 ? ` — Page de blog ${currentPage}` : ''}`,
+  description: `Explorez les tendances des volets roulants sur notre blog ! Designs modernes et astuces pratiques pour votre maison.${
+    currentPage > 1 ? ` — Page de blog ${currentPage}` : ''
+  }`,
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
   },
   openGraph: {
     type: 'blog',
-    image: '~/assets/images/volet-roulant-square-13.png'
+    image: '~/assets/images/volet-roulant-square-13.png',
   },
 };
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto py-12 md:py-16 w-11/12 md:max-w-5xl">
-    <Headline subtitle="Trouvez des informations et des conseils sur les volets roulants.">Univers de volet roulant</Headline>
+    <Headline subtitle="Trouvez des informations et des conseils sur les volets roulants.">
+      Univers de volet roulant
+    </Headline>
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>

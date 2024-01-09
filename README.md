@@ -25,13 +25,13 @@ All commands are run from the root of the project, from a terminal:
 | `git commit -m "git commit message example"` | This starts the commit process                                                   |
 | `git switch "branch name"`                   | switch to branch                                                                 |
 | `git merge -m "git merge message example"`   | switch to branch                                                                 |
-| `git branch -d "branch name"`                | delete branch          |
+| `git branch -d "branch name"`                | delete branch                                                                    |
 
-| Command                                      | Action                                                                           |
-| :------------------------------------------- | :------------------------------------------------------------------------------- |
-| `^\s*$\n`                                    | This is quantity operator for \s it match zero or more |
-| `^`                                    | Caret matches the beginning of the line |
-| `\s`                                    | Caret matches the beginning of the line |
-| `*`                                    | This is quantity operator for \s it match zero or more |
-| `$`                                    | Dollar sign matches end of the line |
-| `\n`                                    | and this one matches new line character |
+| Command   | Action                                                 |
+| :-------- | :----------------------------------------------------- |
+| `^\s*$\n` | This is quantity operator for \s it match zero or more |
+| `^`       | Caret matches the beginning of the line                |
+| `\s`      | Caret matches the beginning of the line                |
+| `*`       | This is quantity operator for \s it match zero or more |
+| `$`       | Dollar sign matches end of the line                    |
+| `\n`      | and this one matches new line character                |

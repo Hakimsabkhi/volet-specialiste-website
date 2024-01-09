@@ -19,7 +19,7 @@ const { metadata = {} } = Astro.props;
 const { language, textDirection } = I18N_CONFIG;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
     <CommonMeta />
@@ -31,7 +31,7 @@ const { language, textDirection } = I18N_CONFIG;
   </head>
   <body class="antialiased text-default bg-page tracking-wide">
     <slot />
-  <BasicScripts />
+    <BasicScripts />
     <style is:global>
       img {
         content-visibility: auto;

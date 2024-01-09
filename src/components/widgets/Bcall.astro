@@ -7,13 +7,18 @@ const {
   callToAction2 = await Astro.slots.render('callToAction2'),
 } = Astro.props;
 ---
+
 <section class="relative mx-4 md:mt-6 md:ml-5">
   <div class="relative md:max-w-3xl xl:max-w-4xl sm:px-6">
     <div class="py-1 md:py-1">
-      <div class=" pb-10 max-w-screen-lg">
-        <div class="max-w-3xl ">
+      <div class="pb-10 max-w-screen-lg">
+        <div class="max-w-3xl">
           {subtitle && <p class=" text-base mb-6" set:html={subtitle} />}
-          <div class="max-w-full flex justify-center text-center mb-4"><p class="max-w-lg font-bold text-base">Problème avec votre volet roulant ou besoin de rénovation ? Contactez un expert !</p></div>
+          <div class="max-w-full flex justify-center text-center mb-4">
+            <p class="max-w-lg font-bold text-base">
+              Problème avec votre volet roulant ou besoin de rénovation ? Contactez un expert !
+            </p>
+          </div>
           <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
             {
               callToAction && (
@@ -22,7 +27,7 @@ const {
                     <Fragment set:html={callToAction} />
                   ) : (
                     <a class="btn btn-primary sm:mb-0 w-full" href={callToAction?.href} rel="noopener">
-                      {callToAction?.icon && <></>}
+                      {callToAction?.icon}
                       {callToAction?.text}
                     </a>
                   )}
@@ -49,6 +54,8 @@ const {
               )
             }
           </div>
-          </div>
         </div>
+      </div>
+    </div>
+  </div>
 </section>

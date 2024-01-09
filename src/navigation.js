@@ -64,7 +64,11 @@ export const footerData = {
   socialLinks: [
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/volet.specialiste' },
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/volet.specialiste/' },
-    { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/volet-sepcialiste' },
+    {
+      ariaLabel: 'Linkedin',
+      icon: 'tabler:brand-linkedin',
+      href: 'https://www.linkedin.com/company/volet-sepcialiste',
+    },
     { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: 'https://twitter.com/voletspecialist' },
     { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/@volet.specialiste' },
   ],
