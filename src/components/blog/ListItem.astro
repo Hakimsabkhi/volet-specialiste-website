@@ -1,7 +1,7 @@
 ---
 import type { ImageMetadata } from 'astro';
 import Image from '~/components/common/Image.astro';
-import PostTags from '~/components/blog/Tags.astro';
+/* import PostTags from '~/components/blog/Tags.astro'; */
 
 import { APP_BLOG_CONFIG } from '~/utils/config';
 import type { Post } from '~/types';
@@ -73,7 +73,7 @@ const link = APP_BLOG_CONFIG?.post?.isEnabled ? getPermalink(post.permalink, 'po
       )
     }
     <footer class="my-2">
-      <PostTags tags={post?.tags?.slice(0, 1)} />
+      
     </footer>
   </div>
 </article>
