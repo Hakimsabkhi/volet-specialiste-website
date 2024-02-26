@@ -10,7 +10,7 @@
     "resolveJsonModule": true, // Allow importing JSON files
     "isolatedModules": true, // Enable transpiling each file as a separate module
     "jsx": "react", // Specify JSX factory (React in this case)
-    "baseUrl": "./src", // Base directory to resolve non-relative module names
+    "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
     }
