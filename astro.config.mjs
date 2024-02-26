@@ -1,31 +1,36 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { defineConfig } from 'astro/config';
+
+import { defineConfig, squooshImageService } from 'astro/config';
+
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
+import compress from 'astro-compress';
 import tasks from './src/utils/tasks';
-import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
-import { ANALYTICS_CONFIG, SITE_CONFIG } from './src/utils/config.ts';
-import vercel from '@astrojs/vercel/static';
 
+import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter.mjs';
+
+import { ANALYTICS, SITE } from './src/utils/config.ts';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 const whenExternalScripts = (items = []) =>
-  ANALYTICS_CONFIG.vendors.googleAnalytics.id && ANALYTICS_CONFIG.vendors.googleAnalytics.partytown
+  ANALYTICS.vendors.googleAnalytics.id && ANALYTICS.vendors.googleAnalytics.partytown
     ? Array.isArray(items)
-      ? items.flatMap((item) => item())
+      ? items.map((item) => item())
       : [items()]
     : [];
 
-// https://astro.build/config
 export default defineConfig({
-  site: SITE_CONFIG.site,
-  base: SITE_CONFIG.base,
-  trailingSlash: SITE_CONFIG.trailingSlash ? 'always' : 'never',
+  site: SITE.site,
+  base: SITE.base,
+  trailingSlash: SITE.trailingSlash ? 'always' : 'never',
+
   output: 'static',
+
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -48,39 +53,43 @@ export default defineConfig({
         ],
       },
     }),
+
     ...whenExternalScripts(() =>
       partytown({
-        config: {
-          forward: ['dataLayer.push'],
-        },
+        config: { forward: ['dataLayer.push'] },
       })
     ),
+
+    compress({
+      CSS: true,
+      HTML: {
+        'html-minifier-terser': {
+          removeAttributeQuotes: false,
+        },
+      },
+      Image: false,
+      JavaScript: true,
+      SVG: false,
+      Logger: 1,
+    }),
+
     tasks(),
-    
   ],
+
+  image: {
+    service: squooshImageService(),
+  },
+
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],
+    rehypePlugins: [responsiveTablesRehypePlugin],
   },
-  // Enable experimental features
-  experimental: {
-    devOverlay: true,
-  },
-  // Configure Vite for resolving aliases
+
   vite: {
     resolve: {
       alias: {
-        // Correctly resolve the '~' alias to the src directory
         '~': path.resolve(__dirname, './src'),
       },
     },
   },
-  // Configure the Vercel adapter with options
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-    speedInsights: {
-      enabled: true,
-    },
-  }),
 });

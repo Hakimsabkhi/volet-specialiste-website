@@ -17,14 +17,11 @@ const {
   tagline = await Astro.slots.render('tagline'),
   callToAction = await Astro.slots.render('callToAction'),
 
-  id,
-  isDark = false,
-  classes = {},
-  bg = await Astro.slots.render('bg'),
+
 } = Astro.props as Props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper  containerClass={`max-w-6xl`}>
   <div class="max-w-lg text-center p-6 rounded-md shadow-md">
     <Headline
       title={title}
