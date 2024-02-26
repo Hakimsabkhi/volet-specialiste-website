@@ -2,7 +2,7 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
 import { APP_BLOG_CONFIG } from '~/utils/config';
-import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
+import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN } from './permalinks';
 
 const generatePermalink = async ({
   id,
@@ -88,9 +88,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     titleH1: titleH1,
     excerpt: excerpt,
     descriptionH1: descriptionH1,
-    callToActionb: callToActionb,
     image: image,
-
     category: category,
     tags: tags,
     author: author,
@@ -133,14 +131,8 @@ let _posts: Array<Post>;
 export const isBlogEnabled = APP_BLOG_CONFIG.isEnabled;
 export const isBlogListRouteEnabled = APP_BLOG_CONFIG.list.isEnabled;
 export const isBlogPostRouteEnabled = APP_BLOG_CONFIG.post.isEnabled;
-export const isBlogCategoryRouteEnabled = APP_BLOG_CONFIG.category.isEnabled;
-export const isBlogTagRouteEnabled = APP_BLOG_CONFIG.tag.isEnabled;
-
 export const blogListRobots = APP_BLOG_CONFIG.list.robots;
 export const blogPostRobots = APP_BLOG_CONFIG.post.robots;
-export const blogCategoryRobots = APP_BLOG_CONFIG.category.robots;
-export const blogTagRobots = APP_BLOG_CONFIG.tag.robots;
-
 export const blogPostsPerPage = APP_BLOG_CONFIG?.postsPerPage;
 
 /** */
@@ -206,48 +198,4 @@ export const getStaticPathsBlogPost = async () => {
     },
     props: { post },
   }));
-};
-
-/** */
-export const getStaticPathsBlogCategory = async ({ paginate }) => {
-  if (!isBlogEnabled || !isBlogCategoryRouteEnabled) return [];
-
-  const posts = await fetchPosts();
-  const categories = new Set();
-  posts.flatMap((post) => {
-    typeof post.category === 'string' && categories.add(post.category.toLowerCase());
-  });
-
-  return Array.from(categories).flatMap((category: string) =>
-    paginate(
-      posts.filter((post) => typeof post.category === 'string' && category === post.category.toLowerCase()),
-      {
-        params: { category: category, blog: CATEGORY_BASE || undefined },
-        pageSize: blogPostsPerPage,
-        props: { category },
-      }
-    )
-  );
-};
-
-/** */
-export const getStaticPathsBlogTag = async ({ paginate }) => {
-  if (!isBlogEnabled || !isBlogTagRouteEnabled) return [];
-
-  const posts = await fetchPosts();
-  const tags = new Set();
-  posts.flatMap((post) => {
-    Array.isArray(post.tags) && post.tags.flatMap((tag) => tags.add(tag.toLowerCase()));
-  });
-
-  return Array.from(tags).flatMap((tag: string) =>
-    paginate(
-      posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.toLowerCase() === tag)),
-      {
-        params: { tag: tag, blog: TAG_BASE || undefined },
-        pageSize: blogPostsPerPage,
-        props: { tag },
-      }
-    )
-  );
 };

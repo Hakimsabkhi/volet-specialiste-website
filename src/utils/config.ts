@@ -134,7 +134,7 @@ const getI18N = () => {
 
 const getAppBlog = () => {
   const _default = {
-    isEnabled: false,
+    isEnabled: true,
     postsPerPage: 100,
     post: {
       isEnabled: true,
@@ -149,22 +149,6 @@ const getAppBlog = () => {
       pathname: 'blog',
       robots: {
         index: true,
-        follow: true,
-      },
-    },
-    category: {
-      isEnabled: true,
-      pathname: 'category',
-      robots: {
-        index: true,
-        follow: true,
-      },
-    },
-    tag: {
-      isEnabled: true,
-      pathname: 'tag',
-      robots: {
-        index: false,
         follow: true,
       },
     },
