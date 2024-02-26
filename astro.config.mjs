@@ -10,9 +10,6 @@ import tasks from './src/utils/tasks';
 import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
 import { ANALYTICS_CONFIG, SITE_CONFIG } from './src/utils/config.ts';
 import vercel from '@astrojs/vercel/static';
-// Import necessary modules and functions
-import vercel from '@astrojs/vercel';
-import readingTimeRemarkPlugin from 'some-reading-time-plugin'; // Ensure you import this from the correct package
 
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
