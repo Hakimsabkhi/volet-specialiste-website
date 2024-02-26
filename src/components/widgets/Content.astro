@@ -1,5 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components';
 import type { Content } from '~/types';
 import Headline from '../ui/Headline.astro';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
@@ -14,10 +13,11 @@ const {
   image = await Astro.slots.render('image'),
   isReversed = false,
   isAfterContent = false,
+  id,
 } = Astro.props as Content;
 ---
 
-<WidgetWrapper containerClass={`max-w-7xl ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''}`}>
+<WidgetWrapper id={id}  containerClass={`max-w-7xl ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''}`}>
   <Headline
     title={title}
     subtitle={subtitle}
@@ -32,17 +32,11 @@ const {
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
       <div class="mt-4 self-center">
         {content && <div class="text-base font-sans tracking-wide" set:html={content} />}
-
         {
           items && (
             <div class="space-y-8">
-              {items.flatMap(({ title: title2, description, icon }) => (
+              {items.flatMap(({ title: title2, description}) => (
                 <div class="flex">
-                  <div class="flex-shrink-0">
-                    <div class="flex h-7 w-7 items-center justify-center rounded-full bg-green-600 text-gray-50">
-                      <Icon name={icon ? icon : 'tabler:check'} class="w-5 h-5" />
-                    </div>
-                  </div>
                   <div class="ml-4 rtl:ml-0 rtl:mr-4">
                     {title2 && <h3 class="text-lg font-medium leading-6 ">{title2}</h3>}
                     {description && <p class="mt-2 " set:html={description} />}
@@ -73,17 +67,6 @@ const {
             )
           }
         </div>
-        <!-- <div id="logo-sidebar" class=" fixed top-20 right-20 lg:right-0 xl:right-20 w-80 lg:w-60 xl:w-80 h-screen  invisible lg:visible">
-          <div class="h-full px-3 py-4 overflow-y-auto text-center bg-gray-50">
-            <p class="mt-5 mb-6 text-xl uppercase font-bold">Savoir plus:</p>
-             <ul class="space-y-2 font-medium">
-              
-                <li>
-                  <a href="/reparation-volet-roulant" class="items-center text-center text-blod p-2 text-gray-900 rounded-lg hover:bg-gray-100">Comment Réparer un Volet Roulant</a>
-                </li>
-             </ul>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
