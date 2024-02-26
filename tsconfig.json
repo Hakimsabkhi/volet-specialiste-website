@@ -1,11 +1,18 @@
 {
-  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "strictNullChecks": true,
-    "allowJs": true,
-    "baseUrl": ".",
+    "target": "es2020", // Target ECMAScript version
+    "module": "commonjs", // Module system (CommonJS for Node.js)
+    "strict": true, // Enable strict type-checking
+    "esModuleInterop": true, // Allows importing CommonJS modules as default imports
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true, // Enforce consistent casing in file names
+    "moduleResolution": "node", // Module resolution strategy (Node.js style)
+    "resolveJsonModule": true, // Allow importing JSON files
+    "isolatedModules": true, // Enable transpiling each file as a separate module
+    "jsx": "react", // Specify JSX factory (React in this case)
+    "baseUrl": "./src", // Base directory to resolve non-relative module names
     "paths": {
       "~/*": ["src/*"]
     }
-  }
+  },
 }
